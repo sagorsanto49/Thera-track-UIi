@@ -1,3 +1,4 @@
+import 'package:doctor/colour/colour.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -18,9 +19,13 @@ final IconButton? suffixIcons;
 
         hintText: text,
         focusedBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: CustomColor.buttonColor),
+
 
         ),
-        enabledBorder: OutlineInputBorder()
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: CustomColor.buttonColor),
+        )
 
       ),
 
