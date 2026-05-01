@@ -5,6 +5,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:flutter/material.dart';
 
 import 'Signup.dart';
+import 'forgotpage.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -47,7 +48,9 @@ class Signin extends StatelessWidget {
             ),
             SizedBox(height: 16,width: 50,),
             InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgotpage()));
+                },
                 child: Text('Forgot Password?')),
             SizedBox(height: 32),
             Primarybutten(
