@@ -1,11 +1,15 @@
-import 'package:doctor/colour/font.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class Texts extends StatelessWidget {
-  const Texts({super.key, required this.text});
-final String text;
+  const Texts({super.key, required this.text, this.color = Colors.black});
+  final String text;
+  final Color color;
   @override
   Widget build(BuildContext context) {
-    return Text(text,style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),);
+    return Text(
+      text,
+      style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: color),
+    );
   }
 }

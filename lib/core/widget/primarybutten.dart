@@ -15,7 +15,7 @@ class Primarybutten extends StatelessWidget {
       child: Container(
         height: 54,
         width: 400,
-        child: Center(child: Text(title,style: TextStyle(fontSize: size,fontWeight: bold),)),
+        child: Center(child: Text(title,style: TextStyle(fontSize: size,fontWeight: bold,color: Colors.white),)),
         decoration: BoxDecoration(
           color: CustomColor.buttonColor,borderRadius: BorderRadius.circular(2),
 
