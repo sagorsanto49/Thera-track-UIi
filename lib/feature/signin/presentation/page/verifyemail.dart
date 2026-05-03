@@ -2,6 +2,7 @@ import 'package:doctor/colour/colour.dart';
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
+import 'package:doctor/feature/signin/presentation/page/resetpassword.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -39,7 +40,9 @@ class Verifyemail extends StatelessWidget {
 
           Texts(text: '2.32',color: Colors.blue,),
           SizedBox(height: 20),
-          Primarybutten(title: 'Continue', onpress: () {}),
+          Primarybutten(title: 'Continue', onpress: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Resetpassword() ),);
+          }),
           SizedBox(height: 40),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
