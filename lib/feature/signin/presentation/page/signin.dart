@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'Signup.dart';
 import 'forgotpage.dart';
+import 'homepage.dart';
 
 class Signin extends StatelessWidget {
   const Signin({super.key});
@@ -57,7 +58,9 @@ class Signin extends StatelessWidget {
               title: 'Sign In',
               size: 16,
               bold: FontWeight.bold,
-              onpress: () {},
+              onpress: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomePage()));
+              },
             ),
 
             SizedBox(height: 32),
