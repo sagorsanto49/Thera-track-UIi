@@ -8,27 +8,27 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List <String> ttext = [
-      'Creat New Chat',
+      'Create New Chat',
       'Notification',
-      'Creat New Chat',
-      'Creat New Chat',
-      'Creat New Chat',
-      'Creat New Chat',
-      'Creat New Chat',
-      'Creat New Chat',
+      'Chart Archive',
+      'Contacts',
+      'Appointments',
+      'Offline Files',
+      'Invents',
+      'Travel',
     ];
     List <Icon> iicon = [
-      Icon(Icons.pages),
-      Icon(Icons.deblur),
-      Icon(Icons.pages),
-      Icon(Icons.eighteen_mp),
-      Icon(Icons.pages),
-      Icon(Icons.pages),
-      Icon(Icons.pages),
-      Icon(Icons.pages),
+      Icon(Icons.chat_bubble),
+      Icon(Icons.notification_add),
+      Icon(Icons.area_chart),
+      Icon(Icons.contact_page),
+      Icon(Icons.date_range),
+      Icon(Icons.offline_bolt),
+      Icon(Icons.inventory),
+      Icon(Icons.travel_explore),
     ];
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Container(
@@ -71,16 +71,20 @@ class HomePage extends StatelessWidget {
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 10,
-                mainAxisSpacing: 10,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
               ),
               itemBuilder: (context,index){
-                return Container(
-                  color: Colors.grey,
+                return Container(decoration: BoxDecoration(
+                  color: Color(0xffE9F5FE
+                  ),borderRadius: BorderRadius.all(Radius.circular(20))
+                ),
+                  
                   child:
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(ttext[index]),iicon[index],
+                     iicon[index], Text(ttext[index]),
                     ],
                   )
                   ,
