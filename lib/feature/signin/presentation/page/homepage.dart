@@ -1,13 +1,16 @@
 import 'package:doctor/core/widget/text.dart';
+import 'package:doctor/feature/signin/presentation/page/step1.dart';
+import 'package:doctor/feature/signin/presentation/page/step2.dart';
 import 'package:flutter/material.dart';
+
+import 'changepassword.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-
   @override
   Widget build(BuildContext context) {
-    List <String> ttext = [
+    List<String> ttext = [
       'Create New Chat',
       'Notification',
       'Chart Archive',
@@ -17,7 +20,7 @@ class HomePage extends StatelessWidget {
       'Invents',
       'Travel',
     ];
-    List <Icon> iicon = [
+    List<Icon> iicon = [
       Icon(Icons.chat_bubble),
       Icon(Icons.notification_add),
       Icon(Icons.area_chart),
@@ -27,6 +30,18 @@ class HomePage extends StatelessWidget {
       Icon(Icons.inventory),
       Icon(Icons.travel_explore),
     ];
+    List  page =[
+      Step1(),
+      Step1(),
+      Step1(),
+      Step1(),
+      Step1(),
+      Step1(),
+      Step1(),
+      Step1(),
+
+    ];
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
@@ -69,25 +84,31 @@ class HomePage extends StatelessWidget {
 
           Expanded(
             child: GridView.builder(
+
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                crossAxisSpacing: 15,
-                mainAxisSpacing: 15,
               ),
-              itemBuilder: (context,index){
-                return Container(decoration: BoxDecoration(
-                  color: Color(0xffE9F5FE
-                  ),borderRadius: BorderRadius.all(Radius.circular(20))
-                ),
-                  
-                  child:
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                     iicon[index], Text(ttext[index]),
-                    ],
-                  )
-                  ,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 10,
+                  ),
+                  child: InkWell( onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> page[index]));
+                  },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xffE9F5FE),
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                      ),
+
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [iicon[index], Text(ttext[index])],
+                      ),
+                    ),
+                  ),
                 );
               },
               itemCount: ttext.length,
