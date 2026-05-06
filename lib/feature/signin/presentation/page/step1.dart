@@ -6,13 +6,7 @@ class Step1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> textitem = [
-      'Roger',
-      'Walker',
-      'Turner',
-      'Turner',
-      'Turner',
-    ];
+    List<String> textitem = ['Roger', 'Walker', 'Turner', 'Turner', 'Turner'];
 
     List<String> ttextitem = [
       'Rogers',
@@ -39,20 +33,27 @@ class Step1 extends StatelessWidget {
             Container(
               decoration: BoxDecoration(color: Colors.indigoAccent),
               child: Column(
-                crossAxisAlignment:CrossAxisAlignment.start ,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Clients',style: TextStyle(color: Colors.white),),
+                        Text('Clients', style: TextStyle(color: Colors.white)),
                         SizedBox(width: 200),
                         InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Step2()));
-                            },
-                            child: Text('Add Clients',style: TextStyle(color: Colors.white))),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Step2()),
+                            );
+                          },
+                          child: Text(
+                            'Add Clients',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -62,21 +63,19 @@ class Step1 extends StatelessWidget {
                       width: 350,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(5),
-                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(5)),
                       ),
-                      child: SearchBar(
-                        leading: Icon(Icons.search),
-
-                      ),
+                      child: SearchBar(leading: Icon(Icons.search)),
                     ),
                   ), // searchbar
                   SizedBox(height: 5),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text('Recent Clients',style: TextStyle(color: Colors.white)),
-                  )
+                    child: Text(
+                      'Recent Clients',
+                      style: TextStyle(color: Colors.white),
+                    ), // Recent Clients
+                  ),
                 ],
               ),
             ),
@@ -95,13 +94,18 @@ class Step1 extends StatelessWidget {
                 itemCount: textitem.length,
               ),
             ),
+
+            // All Clients
             Container(
               height: 40,
               width: double.infinity,
               decoration: BoxDecoration(color: Colors.indigoAccent),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Text('All Clients',style: TextStyle(color: Colors.white),),
+                child: Text(
+                  'All Clients',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
             Expanded(
@@ -124,4 +128,3 @@ class Step1 extends StatelessWidget {
     );
   }
 }
-//ttextitem
