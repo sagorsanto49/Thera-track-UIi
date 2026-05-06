@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/step2.dart';
 import 'package:flutter/material.dart';
 
 class Step1 extends StatelessWidget {
@@ -47,7 +48,11 @@ class Step1 extends StatelessWidget {
                       children: [
                         Text('Clients',style: TextStyle(color: Colors.white),),
                         SizedBox(width: 200),
-                        Text('Clients',style: TextStyle(color: Colors.white)),
+                        InkWell(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=> Step2()));
+                            },
+                            child: Text('Add Clients',style: TextStyle(color: Colors.white))),
                       ],
                     ),
                   ),
