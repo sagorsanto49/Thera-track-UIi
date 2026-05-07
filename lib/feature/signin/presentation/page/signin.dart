@@ -70,7 +70,7 @@ class Signin extends StatelessWidget {
               children: [
                 Text('Dont have an account?'),
                 InkWell(onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Step3()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Step3()));//Signup
                 },
 
                     child: Text('Sign up',style: TextStyle(color: Colors.indigo),)),

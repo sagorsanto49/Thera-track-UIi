@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/step4.dart';
 import 'package:flutter/material.dart';
 
 class Step3 extends StatelessWidget {
@@ -37,9 +38,14 @@ class Step3 extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Text(
-                          'Add Horse',
-                          style: TextStyle(color: Colors.blue),
+                        InkWell( onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4()));
+                        },
+
+                          child: Text(
+                            'Add Horse',
+                            style: TextStyle(color: Colors.blue),
+                          ),
                         ),
                         SizedBox(width: 4),
                         Icon(Icons.add, color: Colors.blue, size: 18),
@@ -120,6 +126,14 @@ class HorseItem extends StatelessWidget {
             ],
           ),
           trailing: Icon(Icons.chevron_right),
+          // onTap: () {
+          //   Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => Step4(title: name),
+          //     ),
+          //   );
+          // },
         ),
         Divider(height: 1, color: Colors.blueGrey.shade100),
       ],
