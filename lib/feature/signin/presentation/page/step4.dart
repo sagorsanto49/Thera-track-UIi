@@ -1,5 +1,6 @@
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
+import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:flutter/material.dart';
 
@@ -9,88 +10,207 @@ class Step4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
+      backgroundColor: const Color(0xffF5F7FB),
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back, color: Colors.black),
-        title: Text(
+        leading: const Icon(Icons.arrow_back, color: Colors.black),
+        title: const Text(
           'Step 4',
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         centerTitle: true,
         backgroundColor: Colors.white,
-        elevation: 1,
+        elevation: 0,
       ),
-      body: Column(
-        children: [
-          Headertext(
-            title: 'Select the area of Concern',
-            subtitle:
-            'Select one or more areas. If unsure select Other',
-          ),
-          SizedBox(height: 10),
-
-          Container(
-            height: 200,
-            width: 320,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.black12),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Headertext(
+              title: 'Select the area of Concern',
+              subtitle:
+              'Select one or more areas. If unsure select Other',
             ),
-            child: Center(
-              child: Text(
-                'Click to browse or\n drag and drop your files',
-              ),
-            ),
-          ),
 
-          SizedBox(height: 10),
+            const SizedBox(height: 20),
 
-          Row(
-            children: [
-              Expanded(child: Xfield(text: 'Joints')),
-              SizedBox(width: 8),
-              Expanded(child: Xfield(text: 'Back')),
-              SizedBox(width: 8),
-              Expanded(child: Xfield(text: 'Paws')),
-            ],
-          ),
-
-          SizedBox(height: 10),
-
-          Row(
-            children: [
-              Expanded(child: Xfield(text: 'Muscles')),
-              SizedBox(width: 8),
-              Expanded(child: Xfield(text: 'Neck')),
-              SizedBox(width: 8),
-              Expanded(child: Xfield(text: 'Ears')),
-            ],
-          ),
-
-          SizedBox(height: 10),
-
-          Row(
-            children: [
-              Expanded(
-                child: Xfield(text: '------'),
-              ),
-              SizedBox(width: 8),
-
-              SizedBox(
-                height: 48, // same height as Xfield
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text('Add'),
+            /// Upload Box
+            Container(
+              height: 180,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(
+                  color: Colors.black12,
                 ),
               ),
-            ],
-          )
-        ],
+              child: const Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(
+                      Icons.cloud_upload_outlined,
+                      size: 40,
+                      color: Colors.indigo,
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Click to browse or\n drag and drop your files',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 15,
+                        color: Colors.black54,
+                        height: 1.5,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            /// Tags
+            Row(
+              children: [
+                Expanded(child: Xfield(text: 'Joints')),
+                const SizedBox(width: 10),
+                Expanded(child: Xfield(text: 'Back')),
+                const SizedBox(width: 10),
+                Expanded(child: Xfield(text: 'Paws')),
+              ],
+            ),
+
+            const SizedBox(height: 12),
+
+            Row(
+              children: [
+                Expanded(child: Xfield(text: 'Muscles')),
+                const SizedBox(width: 10),
+                Expanded(child: Xfield(text: 'Neck')),
+                const SizedBox(width: 10),
+                Expanded(child: Xfield(text: 'Ears')),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
+            /// Add Area
+            Row(
+              children: [
+                Expanded(
+                  child: Xfield(text: '------'),
+                ),
+                const SizedBox(width: 10),
+
+                SizedBox(
+                  height: 50,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.indigo,
+                      elevation: 0,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Add',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 20),
+
+            /// Description Card
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.03),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Texts(text: 'Description'),
+                      Icon(
+                        Icons.info_outline,
+                        color: Colors.indigo,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Xfield(text: 'text'),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
+            /// Additional Notes Card
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(.03),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment:
+                    MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Texts(text: 'Description'),
+                      Icon(
+                        Icons.add_box_outlined,
+                        color: Colors.indigo,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  Xfield(text: 'text'),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
+            Primarybutten(
+              title: 'Next',
+              onpress: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
