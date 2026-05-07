@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/texthome.dart';
 import 'package:flutter/material.dart';
 
 class Step4 extends StatelessWidget {
@@ -154,9 +155,14 @@ class Step4 extends StatelessWidget {
                   Row(
                     mainAxisAlignment:
                     MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Texts(text: 'Description'),
-                      Icon(
+                    children: [
+                      InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Texthome()));
+                          },
+                          child
+                          : const Texts(text: 'Description')),
+                      const Icon(
                         Icons.info_outline,
                         color: Colors.indigo,
                       ),
