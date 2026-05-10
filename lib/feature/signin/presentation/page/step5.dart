@@ -1,3 +1,4 @@
+import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:flutter/material.dart';
@@ -34,19 +35,22 @@ class Step5 extends StatelessWidget {
               onPressed: () {},
               icon: Icon(Icons.align_horizontal_right),
             ),),
-            SizedBox(height: 10,),  Xfield(text: 'Cryotherapy',suffixIcons: IconButton(
+            SizedBox(height: 10,),  Xfield(text: 'Hydrotherapy',suffixIcons: IconButton(
               onPressed: () {},
               icon: Icon(Icons.align_horizontal_right),
             ),),
-            SizedBox(height: 10,),  Xfield(text: 'Cryotherapy',suffixIcons: IconButton(
+            SizedBox(height: 10,),  Xfield(text: 'Laser Therapy',suffixIcons: IconButton(
               onPressed: () {},
               icon: Icon(Icons.align_horizontal_right),
             ),),
-            SizedBox(height: 10,),  Xfield(text: 'Cryotherapy',suffixIcons: IconButton(
+            SizedBox(height: 10,),  Xfield(text: 'Osteopathy',suffixIcons: IconButton(
               onPressed: () {},
               icon: Icon(Icons.align_horizontal_right),
             ),),
-            SizedBox(height: 10,),
+            SizedBox(height: 30,),
+            Primarybutten(title: 'Next', onpress: (){
+              // Navigator.push(context, MaterialPageRoute(builder: (context)=> ));
+            })
 
           ],
         ),
