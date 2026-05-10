@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/step4home.dart';
 import 'package:doctor/feature/signin/presentation/page/texthome.dart';
 import 'package:flutter/material.dart';
 
@@ -121,7 +122,9 @@ class Step4 extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4home()));
+                    },
                     child: const Text(
                       'Add',
                       style: TextStyle(
