@@ -18,12 +18,13 @@ class Step4 extends StatelessWidget {
         leading: const Icon(Icons.arrow_back, color: Colors.black),
         title: const Text(
           'Step 4',
-          style: TextStyle(
+          style: TextStyle(   
+
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
         ),
-        centerTitle: true,
+        // centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
