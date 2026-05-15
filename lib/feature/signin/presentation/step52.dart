@@ -135,7 +135,7 @@ class Step5Page extends StatelessWidget {
                   ),
                 ),
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context)=> Step6Page()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Step6Page()));
                 },
                 child: const Text(
                   'Next',
