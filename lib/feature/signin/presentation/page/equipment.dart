@@ -1,5 +1,6 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/step52.dart';
 import 'package:flutter/material.dart';
 
 class Equipment extends StatelessWidget {
@@ -92,7 +93,9 @@ class Equipment extends StatelessWidget {
                 },
               ),
             ),
-            Primarybutten(title: 'Next', onpress: () {}),
+            Primarybutten(title: 'Next', onpress: () {
+              Navigator .push(context, MaterialPageRoute(builder: (context)=> Step5Page()));
+            }),
             SizedBox(height: 400),
           ],
         ),
