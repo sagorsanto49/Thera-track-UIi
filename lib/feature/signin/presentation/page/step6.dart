@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/step62.dart';
 import 'package:flutter/material.dart';
 
 class Step6Page extends StatelessWidget {
@@ -7,11 +8,15 @@ class Step6Page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+
       appBar: AppBar(
-        elevation: 0,
         backgroundColor: Colors.white,
-        leading: const Icon(Icons.arrow_back_ios,
-            color: Colors.black, size: 18),
+        elevation: 0,
+        leading: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
+          size: 18,
+        ),
         centerTitle: true,
         title: const Text(
           "Step 6",
@@ -21,11 +26,14 @@ class Step6Page extends StatelessWidget {
           ),
         ),
       ),
+
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
+
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+
             /// LOGO
             Center(
               child: Column(
@@ -43,7 +51,9 @@ class Step6Page extends StatelessWidget {
                       color: Colors.blue,
                     ),
                   ),
+
                   const SizedBox(height: 8),
+
                   const Text(
                     "CHEEKY CHARTING",
                     style: TextStyle(
@@ -58,21 +68,58 @@ class Step6Page extends StatelessWidget {
             const SizedBox(height: 20),
 
             /// USER INFO
-            const InfoRow(title: "Name", value: "Name Here"),
             const InfoRow(
-                title: "Email", value: "someone@gmail.com"),
-            const InfoRow(title: "Mobile", value: "Number here"),
-            const InfoRow(title: "Address", value: "Some where"),
+              title: "Name",
+              value: "Name Here",
+            ),
+
+            const InfoRow(
+              title: "Email",
+              value: "someone@gmail.com",
+            ),
+
+            const InfoRow(
+              title: "Mobile",
+              value: "Number here",
+            ),
+
+            const InfoRow(
+              title: "Address",
+              value: "Some where",
+            ),
 
             const SizedBox(height: 20),
 
             /// PET INFO
-            const InfoRow(title: "Horse", value: "Horse Name"),
-            const InfoRow(title: "Age", value: "5 years"),
-            const InfoRow(title: "Breed", value: "Number here"),
-            const InfoRow(title: "Gender", value: "Male"),
-            const InfoRow(title: "Hight", value: "5"),
-            const InfoRow(title: "Color", value: "Black"),
+            const InfoRow(
+              title: "Horse",
+              value: "Horse Name",
+            ),
+
+            const InfoRow(
+              title: "Age",
+              value: "5 years",
+            ),
+
+            const InfoRow(
+              title: "Breed",
+              value: "Number here",
+            ),
+
+            const InfoRow(
+              title: "Gender",
+              value: "Male",
+            ),
+
+            const InfoRow(
+              title: "Height",
+              value: "5",
+            ),
+
+            const InfoRow(
+              title: "Color",
+              value: "Black",
+            ),
 
             const SizedBox(height: 20),
 
@@ -82,7 +129,9 @@ class Step6Page extends StatelessWidget {
                 height: 120,
                 width: 120,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300),
+                  border: Border.all(
+                    color: Colors.grey.shade300,
+                  ),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: const Icon(
@@ -99,30 +148,41 @@ class Step6Page extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(10),
+
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.blue.shade100),
+                border: Border.all(
+                  color: Colors.blue.shade100,
+                ),
                 borderRadius: BorderRadius.circular(4),
               ),
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
+
                   Text(
                     "Description",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   SizedBox(height: 10),
+
                   Text(
                     "1. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
                     style: TextStyle(fontSize: 12),
                   ),
+
                   SizedBox(height: 5),
+
                   Text(
                     "2. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
                     style: TextStyle(fontSize: 12),
                   ),
+
                   SizedBox(height: 5),
+
                   Text(
                     "3. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
                     style: TextStyle(fontSize: 12),
@@ -144,13 +204,18 @@ class Step6Page extends StatelessWidget {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(10),
+
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.blue.shade100),
+                border: Border.all(
+                  color: Colors.blue.shade100,
+                ),
                 borderRadius: BorderRadius.circular(4),
               ),
+
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   const Text(
                     "Add point",
                     style: TextStyle(
@@ -171,34 +236,64 @@ class Step6Page extends StatelessWidget {
             const SizedBox(height: 20),
 
             /// PRICE SECTION
-            const PriceRow(title: "Caps", price: "20\$"),
-            const PriceRow(title: "Cap Fragment", price: "30\$"),
-            const PriceRow(title: "Overbite", price: "25\$"),
-            const PriceRow(title: "Cap Fragment", price: "100\$"),
+            const PriceRow(
+              title: "Caps",
+              price: "20\$",
+            ),
+
+            const PriceRow(
+              title: "Cap Fragment",
+              price: "30\$",
+            ),
+
+            const PriceRow(
+              title: "Overbite",
+              price: "25\$",
+            ),
+
+            const PriceRow(
+              title: "Cap Fragment",
+              price: "100\$",
+            ),
 
             const Divider(),
 
-            const PriceRow(title: "Total", price: "175\$"),
-            const PriceRow(title: "Discount", price: "00\$"),
+            const PriceRow(
+              title: "Total",
+              price: "175\$",
+            ),
+
+            const PriceRow(
+              title: "Discount",
+              price: "00\$",
+            ),
 
             const Divider(),
 
-            const PriceRow(title: "Total", price: "225\$"),
+            const PriceRow(
+              title: "Grand Total",
+              price: "225\$",
+            ),
 
             const SizedBox(height: 20),
 
             /// BUTTONS
             Row(
               children: [
+
                 Expanded(
                   child: buildBlueButton(
+                    context: context,
                     icon: Icons.medical_services,
                     text: "Make Appointment",
                   ),
                 ),
+
                 const SizedBox(width: 8),
+
                 Expanded(
                   child: buildBlueButton(
+                    context: context,
                     icon: Icons.send,
                     text: "Send",
                   ),
@@ -210,15 +305,20 @@ class Step6Page extends StatelessWidget {
 
             Row(
               children: [
+
                 Expanded(
                   child: buildBlueButton(
+                    context: context,
                     icon: Icons.save,
                     text: "Save",
                   ),
                 ),
+
                 const SizedBox(width: 8),
+
                 Expanded(
                   child: buildBlueButton(
+                    context: context,
                     icon: Icons.print,
                     text: "Print",
                   ),
@@ -231,21 +331,26 @@ class Step6Page extends StatelessWidget {
             /// CHECKBOX
             Row(
               children: [
+
                 Checkbox(
                   value: false,
-                  onChanged: (v) {},
+                  onChanged: (value) {},
                 ),
+
                 const Text("Paid"),
 
                 const SizedBox(width: 20),
 
                 Checkbox(
                   value: false,
-                  onChanged: (v) {},
+                  onChanged: (value) {},
                 ),
+
                 const Text(
                   "Unpaid",
-                  style: TextStyle(color: Colors.red),
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
                 ),
               ],
             ),
@@ -256,14 +361,19 @@ class Step6Page extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 45,
+
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                 ),
+
                 onPressed: () {},
+
                 child: const Text(
                   "Finished",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -275,25 +385,35 @@ class Step6Page extends StatelessWidget {
     );
   }
 
-  Widget buildPoint(String text) {
+  /// POINT BOX
+  static Widget buildPoint(String text) {
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
+
       padding: const EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 12,
       ),
+
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.blue.shade100),
+        border: Border.all(
+          color: Colors.blue.shade100,
+        ),
         borderRadius: BorderRadius.circular(4),
       ),
+
       child: Row(
         children: [
+
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(fontSize: 12),
+              style: const TextStyle(
+                fontSize: 12,
+              ),
             ),
           ),
+
           const Icon(
             Icons.remove_red_eye_outlined,
             size: 18,
@@ -304,22 +424,35 @@ class Step6Page extends StatelessWidget {
     );
   }
 
+  /// BLUE BUTTON
   Widget buildBlueButton({
+    required BuildContext context,
     required IconData icon,
     required String text,
   }) {
     return SizedBox(
       height: 40,
+
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.blue,
         ),
-        onPressed: () {},
+
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Step62(),
+            ),
+          );
+        },
+
         icon: Icon(
           icon,
           size: 16,
           color: Colors.white,
         ),
+
         label: Text(
           text,
           style: const TextStyle(
@@ -347,21 +480,30 @@ class InfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
+
       child: Row(
         children: [
+
           SizedBox(
             width: 80,
             child: Text(
               title,
-              style: const TextStyle(fontSize: 13),
+              style: const TextStyle(
+                fontSize: 13,
+              ),
             ),
           ),
+
           const Text(":"),
+
           const SizedBox(width: 15),
+
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(fontSize: 13),
+              style: const TextStyle(
+                fontSize: 13,
+              ),
             ),
           ),
         ],
@@ -385,19 +527,28 @@ class PriceRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 10),
+
       child: Row(
         children: [
+
           Expanded(
             child: Text(
               title,
-              style: const TextStyle(fontSize: 13),
+              style: const TextStyle(
+                fontSize: 13,
+              ),
             ),
           ),
+
           const Text(":"),
+
           const SizedBox(width: 15),
+
           Text(
             price,
-            style: const TextStyle(fontSize: 13),
+            style: const TextStyle(
+              fontSize: 13,
+            ),
           ),
         ],
       ),
