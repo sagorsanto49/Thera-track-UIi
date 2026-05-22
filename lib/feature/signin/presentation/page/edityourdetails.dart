@@ -1,9 +1,9 @@
+import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
-import 'package:doctor/feature/signin/presentation/page/edityourdetails.dart';
 import 'package:flutter/material.dart';
 
-class Yourdetails extends StatelessWidget {
-  const Yourdetails({super.key});
+class EditYourDetails extends StatelessWidget {
+  const EditYourDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,52 +37,6 @@ class Yourdetails extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              Align(
-                alignment: Alignment.centerRight,
-
-                child: ElevatedButton.icon(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            const EditYourDetails(),
-                      ),
-                    );
-                  },
-
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        const Color(0xff1E88E5),
-
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 15,
-                      vertical: 10,
-                    ),
-
-                    shape: RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.circular(6),
-                    ),
-                  ),
-
-                  icon: const Icon(
-                    Icons.edit,
-                    size: 15,
-                    color: Colors.white,
-                  ),
-
-                  label: const Text(
-                    'Edit',
-
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                    ),
-                  ),
-                ),
-              ),
 
               const SizedBox(height: 20),
 
@@ -132,7 +86,7 @@ class Yourdetails extends StatelessWidget {
               const SizedBox(height: 20),
 
               const Text(
-                'Country',
+                'country',
 
                 style: TextStyle(
                   fontSize: 13,
@@ -175,6 +129,15 @@ class Yourdetails extends StatelessWidget {
               Xfield(text: 'someone@gmail.com'),
 
               const SizedBox(height: 30),
+
+              SizedBox(
+                width: double.infinity,
+
+                child: Primarybutten(
+                  title: 'Save',
+                  onpress: () {},
+                ),
+              ),
             ],
           ),
         ),
