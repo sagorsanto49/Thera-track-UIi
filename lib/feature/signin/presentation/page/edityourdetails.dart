@@ -1,5 +1,6 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/treatment.dart';
 import 'package:flutter/material.dart';
 
 class EditYourDetails extends StatelessWidget {
@@ -135,7 +136,9 @@ class EditYourDetails extends StatelessWidget {
 
                 child: Primarybutten(
                   title: 'Save',
-                  onpress: () {},
+                  onpress: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TreatmentScreen()));
+                  },
                 ),
               ),
             ],
