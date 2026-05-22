@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/yourdetails.dart';
 import 'package:flutter/material.dart';
 
 class InvoiceSetup extends StatelessWidget {
@@ -246,7 +247,9 @@ class InvoiceSetup extends StatelessWidget {
 
                 child: Primarybutten(
                   title: 'Save',
-                  onpress: () {},
+                  onpress: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Yourdetails()));
+                  },
                 ),
               ),
 
