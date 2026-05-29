@@ -1,5 +1,4 @@
 import 'package:doctor/core/widget/primarybutten.dart';
-import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/equipment.dart';
 import 'package:flutter/material.dart';

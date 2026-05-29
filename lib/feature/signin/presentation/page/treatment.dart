@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:doctor/core/widget/primarybutten.dart';
 
 class TreatmentScreen extends StatefulWidget {
   const TreatmentScreen({super.key});
@@ -8,7 +9,6 @@ class TreatmentScreen extends StatefulWidget {
 }
 
 class _TreatmentScreenState extends State<TreatmentScreen> {
-
   List<int> treatmentList = [0, 1, 2, 3, 4];
 
   @override
@@ -36,11 +36,9 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-
             /// Heading Row
-            Row(
-              children: const [
-
+            const Row(
+              children: [
                 Expanded(
                   flex: 3,
                   child: Text(
@@ -71,32 +69,28 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
 
             const SizedBox(height: 15),
 
-            /// List
+            /// Treatment List
             Expanded(
               child: ListView.builder(
                 itemCount: treatmentList.length + 1,
                 itemBuilder: (context, index) {
-
                   bool isLast = index == treatmentList.length;
 
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 15),
                     child: Row(
                       children: [
-
                         /// Treatment Name
                         Expanded(
                           flex: 3,
                           child: TextField(
                             decoration: InputDecoration(
                               hintText: "Ventral Curvature",
-
                               contentPadding:
                                   const EdgeInsets.symmetric(
                                 horizontal: 12,
                                 vertical: 14,
                               ),
-
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(4),
@@ -104,7 +98,6 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                   color: Colors.blue.shade200,
                                 ),
                               ),
-
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(4),
@@ -112,7 +105,6 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                   color: Colors.blue,
                                 ),
                               ),
-
                               filled: true,
                               fillColor: Colors.white,
                             ),
@@ -127,14 +119,12 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                           child: TextField(
                             keyboardType:
                                 TextInputType.number,
-
                             decoration: InputDecoration(
                               contentPadding:
                                   const EdgeInsets.symmetric(
                                 horizontal: 12,
                                 vertical: 14,
                               ),
-
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(4),
@@ -142,7 +132,6 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                   color: Colors.blue.shade200,
                                 ),
                               ),
-
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(4),
@@ -150,7 +139,6 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                   color: Colors.blue,
                                 ),
                               ),
-
                               filled: true,
                               fillColor: Colors.white,
                             ),
@@ -159,7 +147,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
 
                         const SizedBox(width: 10),
 
-                        /// Add or Delete Button
+                        /// Add / Delete Button
                         isLast
                             ? SizedBox(
                                 height: 48,
@@ -171,26 +159,22 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                       );
                                     });
                                   },
-
                                   style:
                                       ElevatedButton.styleFrom(
                                     backgroundColor:
                                         Colors.blue,
                                   ),
-
-                                  child: const Text(
-                                    "Add",
-                                  ),
+                                  child: const Text("Add"),
                                 ),
                               )
                             : IconButton(
                                 onPressed: () {
                                   setState(() {
                                     treatmentList.removeAt(
-                                        index);
+                                      index,
+                                    );
                                   });
                                 },
-
                                 icon: const Icon(
                                   Icons.close,
                                 ),
@@ -199,11 +183,25 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                     ),
                   );
                 },
-              
               ),
             ),
           ],
-          
+        ),
+      ),
+
+      /// Bottom Primary Button
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.fromLTRB(
+          16,
+          10,
+          16,
+          20,
+        ),
+        child: Primarybutten(
+          title: "Continue",
+          onpress: () {
+            // Next Page / Save Action
+          },
         ),
       ),
     );

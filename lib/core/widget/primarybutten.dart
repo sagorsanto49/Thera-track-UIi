@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Primarybutten extends StatelessWidget {
-  const Primarybutten({super.key, required this.title, required this.onpress ,  this.size, this.bold});
- final String title ;
- final VoidCallback onpress ;
- final double? size ;
+  const Primarybutten({super.key, required this.title, required this.onpress, this.size, this.bold});
+ final String title;
+ final VoidCallback onpress;
+ final double? size;
  final FontWeight? bold;
   @override
   Widget build(BuildContext context) {
