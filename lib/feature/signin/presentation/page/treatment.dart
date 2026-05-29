@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/advancesetting.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 
@@ -200,7 +201,8 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
         child: Primarybutten(
           title: "Continue",
           onpress: () {
-            // Next Page / Save Action
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>AdvanceSettingsPage()));
+            
           },
         ),
       ),
