@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/paid.dart';
 import 'package:flutter/material.dart';
 
 class AdvanceSettingsPage extends StatefulWidget {
@@ -71,7 +72,6 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        shadowColor: Colors.black12,
         title: const Text(
           'Advance Settings',
           style: TextStyle(
@@ -81,13 +81,8 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
           ),
         ),
         leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
+          onPressed: () => Navigator.pop(context),
+          icon: const Icon(Icons.arrow_back),
         ),
       ),
 
@@ -104,9 +99,7 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
                 });
               },
             ),
-
             const SizedBox(height: 12),
-
             buildOption(
               title: 'Human',
               isSelected: humanSelected,
@@ -117,6 +110,24 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
               },
             ),
           ],
+        ),
+      ),
+
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16),
+        child: SizedBox(
+          height: 50,
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const PaidScreen(),
+                ),
+              );
+            },
+            child: const Text("Continue"),
+          ),
         ),
       ),
     );
