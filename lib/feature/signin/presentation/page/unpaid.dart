@@ -1,11 +1,10 @@
-import 'package:doctor/feature/signin/presentation/page/unpaid.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/core/widget/text.dart';
 
-class PaidScreen extends StatelessWidget {
-  const PaidScreen({super.key});
+class UnPaidScreen extends StatelessWidget {
+  const UnPaidScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +81,7 @@ class PaidScreen extends StatelessWidget {
                               Texts(
                                 text:
                                     "${client["amount"]} \$",
-                                color: Colors.green,
+                                color: Colors.red,
                                 // fontSize: 18,
                               ),
                             ],
@@ -123,7 +122,7 @@ class PaidScreen extends StatelessWidget {
 
                         const Texts(
                           text: "750 \$",
-                          color: Colors.green,
+                          color: Colors.red,
                           // fontSize: 22,
                         ),
                       ],
@@ -164,9 +163,7 @@ class PaidScreen extends StatelessWidget {
                         SizedBox(
                           width: 140,
                           child: Primarybutten(
-                            title: "Send", onpress: () { 
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>UnPaidScreen()));
-                             },
+                            title: "Send", onpress: () {  },
                           ),
                         ),
                       ],
