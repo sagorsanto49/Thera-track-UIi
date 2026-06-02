@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/feadback.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
@@ -22,7 +23,7 @@ class UnPaidScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text("Paid"),
+        title: const Text("UnPaid"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back),
@@ -163,7 +164,9 @@ class UnPaidScreen extends StatelessWidget {
                         SizedBox(
                           width: 140,
                           child: Primarybutten(
-                            title: "Send", onpress: () {  },
+                            title: "Send", onpress: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>FeedbackPage()));
+                              },
                           ),
                         ),
                       ],
