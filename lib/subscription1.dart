@@ -1,4 +1,5 @@
 import 'package:doctor/core/widget/primarybutten.dart';
+import 'package:doctor/payment.dart';
 import 'package:flutter/material.dart';
 
 class Subscription1 extends StatelessWidget {
@@ -91,9 +92,11 @@ class Subscription1 extends StatelessWidget {
             ),
             SizedBox(height: 500,),
             Primarybutten(title: 'Suscribe Now', onpress: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment()));
 
             })
           ],
+
         ),
       ),
 
