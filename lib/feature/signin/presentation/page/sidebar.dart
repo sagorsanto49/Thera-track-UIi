@@ -1,4 +1,5 @@
 import 'package:doctor/feature/signin/presentation/page/invoice.dart';
+import 'package:doctor/subscription.dart';
 import 'package:flutter/material.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -35,7 +36,7 @@ class CustomDrawer extends StatelessWidget {
       {
         "icon": Icons.workspace_premium_outlined,
         "title": "Subscription",
-        // "page": const Step1(),
+        "page": const Subscription(),
       },
       {
         "icon": Icons.chat_bubble_outline,
