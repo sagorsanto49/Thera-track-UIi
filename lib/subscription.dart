@@ -1,4 +1,6 @@
+import 'package:doctor/subscription1.dart';
 import 'package:flutter/material.dart';
+
 
 class Subscription extends StatelessWidget {
   const Subscription({super.key});
@@ -19,7 +21,6 @@ class Subscription extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(12),
         children: [
-
           // Card 1
           Container(
             padding: const EdgeInsets.all(16),
@@ -35,25 +36,45 @@ class Subscription extends StatelessWidget {
                   children: [
                     const CircleAvatar(
                       backgroundColor: Colors.blue,
-                      child: Icon(Icons.workspace_premium,
-                          color: Colors.white),
+                      child: Icon(
+                        Icons.workspace_premium,
+                        color: Colors.white,
+                      ),
                     ),
                     const Spacer(),
-                    Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 15, vertical: 8),
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(20),
+
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Subscription1(),
+                          ),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 15,
+                          vertical: 10,
+                        ),
                       ),
                       child: const Text(
                         "Current Plan",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
+
                 const SizedBox(height: 15),
+
                 const Text(
                   "01 Month",
                   style: TextStyle(
@@ -61,7 +82,9 @@ class Subscription extends StatelessWidget {
                     fontSize: 22,
                   ),
                 ),
+
                 const Divider(),
+
                 const Row(
                   children: [
                     Icon(Icons.check, color: Colors.blue, size: 18),
@@ -69,7 +92,9 @@ class Subscription extends StatelessWidget {
                     Text("Unlimited Chart"),
                   ],
                 ),
+
                 const SizedBox(height: 15),
+
                 RichText(
                   text: const TextSpan(
                     children: [
@@ -83,7 +108,9 @@ class Subscription extends StatelessWidget {
                       ),
                       TextSpan(
                         text: " /Monthly",
-                        style: TextStyle(color: Colors.blueGrey),
+                        style: TextStyle(
+                          color: Colors.blueGrey,
+                        ),
                       ),
                     ],
                   ),
@@ -107,8 +134,10 @@ class Subscription extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundColor: Colors.blue,
-                  child: Icon(Icons.workspace_premium,
-                      color: Colors.white),
+                  child: Icon(
+                    Icons.workspace_premium,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(height: 15),
                 Text(
@@ -154,8 +183,10 @@ class Subscription extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundColor: Colors.blue,
-                  child: Icon(Icons.workspace_premium,
-                      color: Colors.white),
+                  child: Icon(
+                    Icons.workspace_premium,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(height: 15),
                 Text(
