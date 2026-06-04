@@ -43,15 +43,15 @@ class ChartArchivePage extends StatelessWidget {
 
             return InkWell(
               onTap: () {
-                // // 👉 শুধু প্রথম item click করলে navigate করবে
-                // if (index == 0) {
-                //   Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //       builder: (context) => const Cheekychariting(),
-                //     ),
-                //   );
-                // }
+                // 👉 শুধু প্রথম item click করলে navigate করবে
+                if (index == 0) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const Cheekychariting(),
+                    ),
+                  );
+                }
               },
               child: Container(
                 decoration: BoxDecoration(
