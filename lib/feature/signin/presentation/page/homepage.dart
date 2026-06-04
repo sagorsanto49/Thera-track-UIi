@@ -1,55 +1,62 @@
+import 'package:doctor/feature/signin/presentation/page/appointmentsPage.dart';
+import 'package:doctor/feature/signin/presentation/page/chart.dart';
+import 'package:doctor/feature/signin/presentation/page/contactsPage.dart';
+import 'package:doctor/feature/signin/presentation/page/inventoryPage.dart';
+import 'package:doctor/feature/signin/presentation/page/notificationPage.dart';
+import 'package:doctor/feature/signin/presentation/page/offlineFilesPage.dart';
+import 'package:doctor/feature/signin/presentation/page/travelPage.dart';
+import 'package:flutter/material.dart';
+
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/feature/signin/presentation/page/sidebar.dart';
+
 import 'package:doctor/feature/signin/presentation/page/step1.dart';
-import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<String> ttext = [
+    final List<String> ttext = [
       'Create New Chat',
       'Notification',
       'Chart Archive',
       'Contacts',
       'Appointments',
       'Offline Files',
-      'Invents',
+      'Inventory',
       'Travel',
     ];
 
-    List<Icon> iicon = [
-      const Icon(Icons.chat_bubble),
-      const Icon(Icons.notification_add),
-      const Icon(Icons.area_chart),
-      const Icon(Icons.contact_page),
-      const Icon(Icons.date_range),
-      const Icon(Icons.offline_bolt),
-      const Icon(Icons.inventory),
-      const Icon(Icons.travel_explore),
+    final List<IconData> iicon = [
+      Icons.chat_bubble,
+      Icons.notification_add,
+      Icons.area_chart,
+      Icons.contact_page,
+      Icons.date_range,
+      Icons.offline_bolt,
+      Icons.inventory,
+      Icons.travel_explore,
     ];
 
-    List page = [
-      const Step1(),
-      const Step1(),
-      const Step1(),
-      const Step1(),
-      const Step1(),
-      const Step1(),
-      const Step1(),
-      const Step1(),
-    ];
+    // প্রতিটি মেনুর জন্য আলাদা পেজ
+    final List<Widget> pages = [
+  Step1(),
+  NotificationPage(),
+  ChartArchivePage(),
+  ContactsPage(),
+  AppointmentsPage(),
+  OfflineFilesPage(),
+  InventoryPage(),
+  TravelPage(),
+];
 
     return Scaffold(
-      // DRAWER ADDED HERE
       drawer: const CustomDrawer(),
-
       backgroundColor: Colors.white,
 
       body: Column(
         children: [
-          // TOP HEADER
           Container(
             padding: const EdgeInsets.only(
               top: 70,
@@ -57,12 +64,10 @@ class HomePage extends StatelessWidget {
               left: 15,
               right: 10,
             ),
-
             width: double.infinity,
 
             decoration: const BoxDecoration(
               color: Color(0xFF1E88E5),
-
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10),
                 bottomRight: Radius.circular(10),
@@ -74,7 +79,6 @@ class HomePage extends StatelessWidget {
                 const CircleAvatar(
                   radius: 20,
                   backgroundColor: Colors.white,
-
                   child: Icon(
                     Icons.person,
                     color: Colors.grey,
@@ -87,11 +91,9 @@ class HomePage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment:
                         CrossAxisAlignment.start,
-
                     children: [
                       const Text(
                         "Hello, Good Evening",
-
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 14,
@@ -108,7 +110,6 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
 
-                // MENU BUTTON
                 Builder(
                   builder: (context) {
                     return IconButton(
@@ -116,7 +117,6 @@ class HomePage extends StatelessWidget {
                         Icons.menu,
                         color: Colors.white,
                       ),
-
                       onPressed: () {
                         Scaffold.of(context).openDrawer();
                       },
@@ -127,7 +127,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          // GRID VIEW
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.all(10),
@@ -143,12 +142,14 @@ class HomePage extends StatelessWidget {
 
               itemBuilder: (context, index) {
                 return InkWell(
+                  borderRadius: BorderRadius.circular(20),
+
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            page[index],
+                            pages[index],
                       ),
                     );
                   },
@@ -156,7 +157,6 @@ class HomePage extends StatelessWidget {
                   child: Container(
                     decoration: BoxDecoration(
                       color: const Color(0xffE9F5FE),
-
                       borderRadius:
                           BorderRadius.circular(20),
                     ),
@@ -166,11 +166,22 @@ class HomePage extends StatelessWidget {
                           MainAxisAlignment.center,
 
                       children: [
-                        iicon[index],
+                        Icon(
+                          iicon[index],
+                          size: 35,
+                          color: Colors.blue,
+                        ),
 
                         const SizedBox(height: 10),
 
-                        Text(ttext[index]),
+                        Text(
+                          ttext[index],
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                       ],
                     ),
                   ),

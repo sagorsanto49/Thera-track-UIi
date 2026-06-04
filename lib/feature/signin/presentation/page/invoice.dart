@@ -58,7 +58,7 @@ class Invoice extends StatelessWidget {
                     child: Primarybutten(
                       title: 'Edit',
                       onpress: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (Context)=> InvoiceSetup()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => InvoiceSetup()));
                       },
                     ),
                   ),

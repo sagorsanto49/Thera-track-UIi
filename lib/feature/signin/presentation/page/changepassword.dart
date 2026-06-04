@@ -6,7 +6,7 @@ class Changepassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black.withOpacity(0.2), // dim background
+      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.2), // dim background
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(

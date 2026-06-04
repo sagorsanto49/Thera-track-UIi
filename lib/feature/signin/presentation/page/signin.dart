@@ -1,7 +1,7 @@
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
-import 'package:doctor/feature/signin/presentation/page/step%203.dart';
+import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 
 import 'forgotpage.dart';

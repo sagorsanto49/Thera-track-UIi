@@ -1,5 +1,4 @@
 import 'package:doctor/colour/colour.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Xfield extends StatelessWidget {

@@ -17,7 +17,7 @@ class Congres extends StatelessWidget {
               width: 90,
               height: 90,
               decoration: BoxDecoration(
-                color: Colors.blue.withOpacity(.1),
+                color: const Color.fromRGBO(33, 150, 243, 0.1),
                 shape: BoxShape.circle,
               ),
               child: Center(
