@@ -1,5 +1,6 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/feature/signin/presentation/page/cheekychariting.dart';
+import 'package:doctor/feature/signin/presentation/page/offlinefiles.dart';
 import 'package:flutter/material.dart';
 
 class OfflineFilesPage extends StatelessWidget {
@@ -25,7 +26,7 @@ class OfflineFilesPage extends StatelessWidget {
         elevation: 1,
         leading: const BackButton(color: Colors.black),
         title: const Text(
-          "Chart Archive",
+          "Off Lines File",
           style: TextStyle(color: Colors.black),
         ),
       ),
@@ -124,7 +125,7 @@ class OfflineFilesPage extends StatelessWidget {
         child: Primarybutten(
           title: "Sync",
           onpress: () {
-            // Navigate to another page
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Offlinefiles()));
           },
         ),
       ),
