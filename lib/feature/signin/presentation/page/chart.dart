@@ -48,7 +48,7 @@ class ChartArchivePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Cheekychariting(),
+                      builder: (context) => const ChartDetailsPage(),
                     ),
                   );
                 }
