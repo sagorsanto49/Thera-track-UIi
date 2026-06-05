@@ -1,4 +1,4 @@
-import 'package:flutter/gestures.dart';
+import 'package:doctor/feature/signin/presentation/page/notifications1.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatelessWidget {
@@ -28,40 +28,58 @@ class NotificationPage extends StatelessWidget {
             time: "Just Now",
             blue: true,
           ),
-
           notificationCard(
             title: "Nur’s appointment rescheduled",
             time: "2 hours ago",
             blue: true,
           ),
-
           notificationCard(
             title: "Nur’s appointment rescheduled",
             time: "Just Now",
           ),
-
           notificationCard(
             title: "You have an appointments with (client’s name)",
             time: "date & time",
           ),
-
           notificationCard(
             title: "Nur’s appointment rescheduled",
             time: "12 hours ago",
             blue: true,
           ),
-
           notificationCard(
             title: "Nur’s appointment rescheduled",
             time: "1 day ago",
           ),
-
           notificationCard(
             title: "Nur’s appointment rescheduled",
             time: "2 days ago",
             blue: true,
           ),
-          
+
+          const SizedBox(height: 15),
+
+          // 🔵 Button at the end
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationPage1(),
+                ),
+              );
+            },
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 50),
+              backgroundColor: Colors.blue,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+            child: const Text(
+              "Go to Next Page",
+              style: TextStyle(fontSize: 16),
+            ),
+          ),
         ],
       ),
     );
@@ -73,11 +91,11 @@ class NotificationPage extends StatelessWidget {
     bool blue = false,
   }) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 4),
+      margin: const EdgeInsets.only(bottom: 6),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: blue ? Colors.blue.shade100 : Colors.transparent,
-        borderRadius: BorderRadius.circular(3),
+        borderRadius: BorderRadius.circular(5),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,12 +103,10 @@ class NotificationPage extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(
-              fontSize: 22,
+              fontSize: 18,
             ),
           ),
-
           const SizedBox(height: 6),
-
           Text(
             time,
             style: const TextStyle(
