@@ -25,28 +25,25 @@ class ChartDetailsPage extends StatelessWidget {
             Center(
               child: Column(
                 children: [
-                  Image.asset(
-                    "assets/logo.png",
-                    height: 90,
-                  ),
+                  Image.asset("assets/logo.png", height: 90),
                   const SizedBox(height: 10),
                 ],
               ),
             ),
 
             Xfield(text: "Name          :  Name Here"),
-const SizedBox(height: 5),
+            const SizedBox(height: 5),
 
-Xfield(text: "Email         :  someone@gmail.com"),
-const SizedBox(height: 5),
+            Xfield(text: "Email         :  someone@gmail.com"),
+            const SizedBox(height: 5),
 
-Xfield(text: "Mobile       :  Number here"),
-const SizedBox(height: 5),
+            Xfield(text: "Mobile       :  Number here"),
+            const SizedBox(height: 5),
 
-Xfield(text: "Address     :  Some where"),
-const SizedBox(height: 5),
+            Xfield(text: "Address     :  Some where"),
+            const SizedBox(height: 5),
 
-Xfield(text: "Date          :  January 5, 2025"),
+            Xfield(text: "Date          :  January 5, 2025"),
 
             const SizedBox(height: 12),
 
@@ -66,9 +63,7 @@ Xfield(text: "Date          :  January 5, 2025"),
               width: double.infinity,
               padding: const EdgeInsets.all(10),
               color: Colors.blue.shade100,
-              child: const Texts(
-                text: "Description",
-              ),
+              child: const Texts(text: "Description"),
             ),
 
             Container(
@@ -183,61 +178,42 @@ Xfield(text: "Date          :  January 5, 2025"),
                 Expanded(
                   child: Text(
                     "Final Cost",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
                 Text(":"),
                 SizedBox(width: 20),
-                Text(
-                  "170\$",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                Text("170\$", style: TextStyle(fontWeight: FontWeight.bold)),
               ],
             ),
 
             const SizedBox(height: 20),
 
-           Row(
-  children: [
-    Expanded(
-      child: Primarybutten(
-        title: 'Send',
-        onpress: () {},
-      ),
-    ),
-    const SizedBox(width: 10),
-    Expanded(
-      child: Primarybutten(
-        title: 'Sync',
-        onpress: () {},
-      ),
-    ),
-  ],
-),
+            Row(
+              children: [
+                Expanded(
+                  child: Primarybutten(title: 'Send', onpress: () {}),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Primarybutten(title: 'Sync', onpress: () {}),
+                ),
+              ],
+            ),
 
-const SizedBox(height: 10),
+            const SizedBox(height: 10),
 
-Row(
-  children: [
-    Expanded(
-      child: Primarybutten(
-        title: 'Print',
-        onpress: () {},
-      ),
-    ),
-    const SizedBox(width: 10),
-    Expanded(
-      child: Primarybutten(
-        title: 'Delete',
-        onpress: () {},
-      ),
-    ),
-  ],
-),
+            Row(
+              children: [
+                Expanded(
+                  child: Primarybutten(title: 'Print', onpress: () {}),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Primarybutten(title: 'Delete', onpress: () {}),
+                ),
+              ],
+            ),
             const SizedBox(height: 15),
 
             Row(
