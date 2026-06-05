@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class NotificationPage extends StatelessWidget {
@@ -5,6 +6,100 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      backgroundColor: Colors.grey.shade100,
+
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 1,
+        centerTitle: true,
+        leading: const BackButton(color: Colors.black),
+        title: const Text(
+          "Notifications",
+          style: TextStyle(color: Colors.black),
+        ),
+      ),
+
+      body: ListView(
+        padding: const EdgeInsets.all(10),
+        children: [
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "Just Now",
+            blue: true,
+          ),
+
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "2 hours ago",
+            blue: true,
+          ),
+
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "Just Now",
+          ),
+
+          notificationCard(
+            title: "You have an appointments with (client’s name)",
+            time: "date & time",
+          ),
+
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "12 hours ago",
+            blue: true,
+          ),
+
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "1 day ago",
+          ),
+
+          notificationCard(
+            title: "Nur’s appointment rescheduled",
+            time: "2 days ago",
+            blue: true,
+          ),
+          
+        ],
+      ),
+    );
+  }
+
+  Widget notificationCard({
+    required String title,
+    required String time,
+    bool blue = false,
+  }) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 4),
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: blue ? Colors.blue.shade100 : Colors.transparent,
+        borderRadius: BorderRadius.circular(3),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title,
+            style: const TextStyle(
+              fontSize: 22,
+            ),
+          ),
+
+          const SizedBox(height: 6),
+
+          Text(
+            time,
+            style: const TextStyle(
+              color: Colors.black54,
+              fontSize: 14,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
