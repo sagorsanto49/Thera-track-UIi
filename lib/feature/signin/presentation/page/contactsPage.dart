@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/clientspage.dart';
 import 'package:flutter/material.dart';
 
 class ContactsPage extends StatelessWidget {
@@ -5,30 +6,24 @@ class ContactsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final contacts = [
-      "Clients",
-      "Horse",
-      "Dog",
-    ];
+    List<String> contacts = ["Clients", "Horse", "Dog"];
 
     return Scaffold(
       appBar: AppBar(
         title: const Text("Contacts"),
-        centerTitle: true,
       ),
-      body: ListView.separated(
+      body: ListView.builder(
         itemCount: contacts.length,
-        separatorBuilder: (_, __) => const Divider(height: 1),
         itemBuilder: (context, index) {
           return ListTile(
-            leading: const Icon(Icons.account_circle_outlined),
+            leading: const Icon(Icons.person_outline),
             title: Text(contacts[index]),
             onTap: () {
               if (contacts[index] == "Clients") {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) =>ContactsPage() ,
+                    builder: (context) => const ClientsPage(),
                   ),
                 );
               }
