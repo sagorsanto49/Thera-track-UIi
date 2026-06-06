@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/clientsdetailspage.dart';
 import 'package:flutter/material.dart';
 
 class ClientsPage extends StatelessWidget {
@@ -37,12 +38,12 @@ class ClientsPage extends StatelessWidget {
     foregroundColor: Colors.white, // text color
   ),
   onPressed: () {
-    // Navigator.push(
-    //   context,
-    //   MaterialPageRoute(
-    //     builder: (context) => const AddClientPage(),
-    //   ),
-    // );
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const AddClientPage(),
+      ),
+    );
   },
   child: const Text("Add Client"),
 ),
