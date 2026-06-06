@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
   AppointmentsPage(),
   OfflineFilesPage(),
   InventoryPage(),
-  TravelPage(),
+  CostPage(),
 ];
 
     return Scaffold(
