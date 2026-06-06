@@ -1,4 +1,5 @@
 import 'package:doctor/core/widget/primarybutten.dart';
+import 'package:doctor/feature/signin/presentation/page/cost.dart';
 import 'package:flutter/material.dart';
 
 class AddCostPage extends StatelessWidget {
@@ -46,7 +47,9 @@ class AddCostPage extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               height: 50,
-              child: Primarybutten(title: 'Save', onpress: (){})
+              child: Primarybutten(title: 'Save', onpress: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Cost()));
+              })
             )
           ],
         ),
