@@ -1,4 +1,5 @@
 import 'package:doctor/feature/signin/presentation/page/clientsdetailspage.dart';
+import 'package:doctor/feature/signin/presentation/page/horse1.dart';
 import 'package:flutter/material.dart';
 
 class Horse extends StatelessWidget {
@@ -70,7 +71,16 @@ class Horse extends StatelessWidget {
                     title: Text(clients[index]),
                     trailing:
                         const Icon(Icons.arrow_forward_ios, size: 16),
-                    onTap: () {},
+                    onTap: () {
+  if (clients[index] == "Richard Turner") {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const Horse1(),
+      ),
+    );
+  }
+},
                   );
                 },
               ),
