@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/human1.dart';
 import 'package:doctor/feature/signin/presentation/page/paid.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,6 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F8F8),
-
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
@@ -85,7 +85,6 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
           icon: const Icon(Icons.arrow_back),
         ),
       ),
-
       body: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -104,15 +103,19 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
               title: 'Human',
               isSelected: humanSelected,
               onTap: () {
-                setState(() {
-                  humanSelected = !humanSelected;
-                });
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Human1(),
+                  ),
+                );
               },
             ),
           ],
         ),
       ),
 
+      // চাইলে Continue button রাখতে পারেন
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(16),
         child: SizedBox(
@@ -122,7 +125,7 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => const PaidScreen(),
+                  builder: (context) => const PaidScreen(),
                 ),
               );
             },
