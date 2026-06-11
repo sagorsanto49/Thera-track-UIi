@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/home5.dart';
 import 'package:flutter/material.dart';
 
 class Step3Page extends StatelessWidget {
@@ -169,7 +170,10 @@ class Step3Page extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xff3399FF),
                 ),
-                onPressed: () {},
+                onPressed: () {
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Home5()));
+                },
                 child: const Text(
                   "Next",
                   style: TextStyle(fontSize: 15),
