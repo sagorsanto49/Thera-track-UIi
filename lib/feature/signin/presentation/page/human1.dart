@@ -1,5 +1,6 @@
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/home3.dart';
 import 'package:flutter/material.dart';
 
 class Human1 extends StatelessWidget {
@@ -15,7 +16,7 @@ class Human1 extends StatelessWidget {
           backgroundColor: Colors.white,
           centerTitle: true,
           title: const Text(
-            'Step 3 of 3',
+            'Step @ 3',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w600,
@@ -122,7 +123,9 @@ class Human1 extends StatelessWidget {
                   width: double.infinity,
                   height: 55,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home3()));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
