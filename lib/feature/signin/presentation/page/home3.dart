@@ -1,3 +1,4 @@
+import 'package:doctor/feature/signin/presentation/page/hume31.dart';
 import 'package:flutter/material.dart';
 
 import 'package:doctor/core/widget/headertext.dart';
@@ -114,12 +115,7 @@ class Home3 extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const Step4home(),
-                        ),
-                      );
+        
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.indigo,
@@ -209,7 +205,7 @@ class Home3 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const Step5(),
+                    builder: (_) => const Step3Page(),
                   ),
                 );
               },
