@@ -1,4 +1,4 @@
-import 'package:doctor/feature/signin/presentation/page/step2.dart';
+import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 
 class Step1 extends StatelessWidget {
@@ -6,50 +6,51 @@ class Step1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> textitem = ['Roger', 'Walker', 'Turner', 'Turner', 'Turner'];
+    List<String> textitem = ['Roger', 'Walker', 'Turner', 'sep', 'differ'];
 
     List<String> ttextitem = [
       'Rogers',
       'Walker',
       'Lee',
       'Reed',
-      'Turner',
-      'Turner',
-      'Turner',
-      'Turner',
-      'Turner',
-      'Turner',
+      'sadeq',
+      'tt',
+      'rr',
+      'gg',
+      'hh',
     ];
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Center(child: Text('Step 1')),
+        centerTitle: true,
+        title: const Text('Step 1'),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(color: Colors.indigoAccent),
+              decoration: const BoxDecoration(
+                color: Colors.indigoAccent,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Clients', style: TextStyle(color: Colors.white)),
-                        SizedBox(width: 200),
+                        const Text(
+                          'Clients',
+                          style: TextStyle(color: Colors.white),
+                        ),
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Step2()),
-                            );
+                            // Add Client page navigation
                           },
-                          child: Text(
+                          child: const Text(
                             'Add Clients',
                             style: TextStyle(color: Colors.white),
                           ),
@@ -57,69 +58,89 @@ class Step1 extends StatelessWidget {
                       ],
                     ),
                   ),
+
                   Center(
                     child: Container(
-                      height: 30,
+                      height: 40,
                       width: 350,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.circular(5),
                       ),
-                      child: SearchBar(leading: Icon(Icons.search)),
+                      child: const SearchBar(
+                        leading: Icon(Icons.search),
+                        hintText: 'Search',
+                      ),
                     ),
-                  ), // searchbar
-                  SizedBox(height: 5),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  ),
+
+                  const SizedBox(height: 5),
+
+                  const Padding(
+                    padding: EdgeInsets.all(8),
                     child: Text(
                       'Recent Clients',
                       style: TextStyle(color: Colors.white),
-                    ), // Recent Clients
+                    ),
                   ),
                 ],
               ),
             ),
 
+            /// Recent Clients
             Expanded(
               child: ListView.separated(
+                itemCount: textitem.length,
+                separatorBuilder: (context, index) =>
+                    const Divider(height: 1, thickness: 1),
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(textitem[index]),
-                    trailing: Icon(Icons.arrow_forward_ios_sharp),
+                    trailing: const Icon(
+                      Icons.arrow_forward_ios_sharp,
+                    ),
+
+                    onTap: () {
+                      if (textitem[index] == 'Turner') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Step3(),
+                          ),
+                        );
+                      }
+                    },
                   );
                 },
-                separatorBuilder: (context, index) {
-                  return Divider(height: 10, thickness: 2);
-                },
-                itemCount: textitem.length,
               ),
             ),
 
-            // All Clients
             Container(
               height: 40,
               width: double.infinity,
-              decoration: BoxDecoration(color: Colors.indigoAccent),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  'All Clients',
-                  style: TextStyle(color: Colors.white),
-                ),
+              color: Colors.indigoAccent,
+              alignment: Alignment.centerLeft,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: const Text(
+                'All Clients',
+                style: TextStyle(color: Colors.white),
               ),
             ),
+
+            /// All Clients
             Expanded(
               child: ListView.separated(
+                itemCount: ttextitem.length,
+                separatorBuilder: (context, index) =>
+                    const Divider(height: 1, thickness: 1),
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(ttextitem[index]),
-                    trailing: Icon(Icons.arrow_forward_ios_sharp),
+                    trailing: const Icon(
+                      Icons.arrow_forward_ios_sharp,
+                    ),
                   );
                 },
-                separatorBuilder: (context, index) {
-                  return Divider(height: 10, thickness: 2);
-                },
-                itemCount: ttextitem.length,
               ),
             ),
           ],

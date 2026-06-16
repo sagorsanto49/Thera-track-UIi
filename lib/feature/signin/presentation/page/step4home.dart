@@ -45,7 +45,7 @@ class Step4home extends StatelessWidget {
                         ),
                         onPressed: () {},
                         child: Text(
-                          'Add',
+                          'Horse',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
@@ -61,7 +61,7 @@ class Step4home extends StatelessWidget {
                     child: SizedBox(
                       height: 55,
                       child: Xfield(
-                        text: 'kudfrhg',
+                        text: 'Dog',
                       ),
                     ),
                   ),

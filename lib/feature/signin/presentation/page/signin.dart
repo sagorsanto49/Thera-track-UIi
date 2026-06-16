@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/page/signup.dart';
 import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,7 @@ class Signin extends StatelessWidget {
               children: [
                 Text('Dont have an account?'),
                 InkWell(onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Step3()));//Signup
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> Signup()));  
                 },
 
                     child: Text('Sign up',style: TextStyle(color: Colors.indigo),)),
