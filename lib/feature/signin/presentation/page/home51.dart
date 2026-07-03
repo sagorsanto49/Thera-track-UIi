@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/step6.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home51 extends StatelessWidget {
   const Home51({super.key});
@@ -12,12 +13,12 @@ class Home51 extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back_ios,
           color: Colors.black,
-          size: 18,
+          size: 18.r,
         ),
-        title: const Text(
+        title: Text(
           'Step 5',
           style: TextStyle(
             color: Colors.black,
@@ -28,126 +29,122 @@ class Home51 extends StatelessWidget {
      
      
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           children: [
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             // Therapy List
-            const ServiceRow(
+            ServiceRow(
               title: 'Cryotherapy',
               price: '20\$',
             ),
-            const SizedBox(height: 18),
+            SizedBox(height: 18.h),
 
-            const ServiceRow(
+            ServiceRow(
               title: 'Massage Therapy',
               price: '30\$',
             ),
-            const SizedBox(height: 18),
+            SizedBox(height: 18.h),
 
-            const ServiceRow(
+            ServiceRow(
               title: 'Acupuncture',
               price: '25\$',
             ),
-            const SizedBox(height: 18),
+            SizedBox(height: 18.h),
 
-            const ServiceRow(
+            ServiceRow(
               title: 'Heat and Cold Therapy',
               price: '100\$',
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
-            const Divider(
+            Divider(
               color: Colors.black54,
               thickness: 1,
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
-            const ServiceRow(
+            ServiceRow(
               title: 'Full Cost',
               price: '175\$',
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             // Discount Box
             Container(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 12,
                 vertical: 14,
               ),
               decoration: BoxDecoration(
-                color: const Color(0xffF1F8FF),
+                color: Color(0xffF1F8FF),
                 border: Border.all(
                   color: Colors.blue,
                 ),
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
-              child: const Row(
+              child: Row(
                 children: [
                   Expanded(
                     child: Text(
                       'Discount',
-                      style: TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(fontSize: 1.6.sp,
                         color: Colors.black87,
                       ),
                     ),
                   ),
                   Text(
                     ':',
-                    style: TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(fontSize: 1.6.sp,
                     ),
                   ),
-                  SizedBox(width: 20),
+                  SizedBox(width: 20.w),
                   Text(
                     '5\$',
-                    style: TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(fontSize: 1.6.sp,
                     ),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
-            const ServiceRow(
+            ServiceRow(
               title: 'Final Cost',
               price: '170\$',
             ),
 
-            const Spacer(),
+            Spacer(),
 
             // Button
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(4.r),
                   ),
                 ),
                 onPressed: () {
                   // Navigator.push(context, MaterialPageRoute(builder: (context)=> Step6Page()));
                 },
-                child: const Text(
+                child: Text(
                   'Next',
-                  style: TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(fontSize: 1.6.sp,
                     color: Colors.white,
                   ),
                 ),
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
@@ -172,24 +169,21 @@ class ServiceRow extends StatelessWidget {
         Expanded(
           child: Text(
             title,
-            style: const TextStyle(
-              fontSize: 16,
+            style: TextStyle(fontSize: 1.6.sp,
               color: Colors.black87,
             ),
           ),
         ),
-        const Text(
+        Text(
           ':',
-          style: TextStyle(
-            fontSize: 16,
+          style: TextStyle(fontSize: 1.6.sp,
             color: Colors.black87,
           ),
         ),
-        const SizedBox(width: 20),
+        SizedBox(width: 20.w),
         Text(
           price,
-          style: const TextStyle(
-            fontSize: 16,
+          style: TextStyle(fontSize: 1.6.sp,
             color: Colors.black87,
           ),
         ),

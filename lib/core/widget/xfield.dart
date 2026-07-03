@@ -2,10 +2,10 @@ import 'package:doctor/colour/colour.dart';
 import 'package:flutter/material.dart';
 
 class Xfield extends StatelessWidget {
-  const Xfield({super.key, this.text, this.prefixIcons, this.suffixIcons});
-  final String? text;
-  final Icon? prefixIcons;
-  final IconButton? suffixIcons;
+  const Xfield({super.key, this.text, this.prefixIcons,this.suffixIcons});
+final String? text;
+final Icon? prefixIcons;
+final IconButton? suffixIcons;
 
   @override
   Widget build(BuildContext context) {

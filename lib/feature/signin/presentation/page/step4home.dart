@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/step4.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step4home extends StatelessWidget {
   const Step4home({super.key});
@@ -12,35 +13,35 @@ class Step4home extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0.r),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               Xfield(text: 'Name       : Boss'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Xfield(text: 'Age          : 5 year'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Xfield(text: 'Breed       : Thomas'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Xfield(text: 'Gender     : M'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Xfield(text: 'Hight        : 5'),
-              SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Xfield(text: 'Color        : Blsck'),
-              SizedBox(height: 20,),
+              SizedBox(height: 20.h,),
               Texts(text: 'Select Animal'),
-              SizedBox(height: 18,),
+              SizedBox(height: 18.h,),
               Row(
                 children: [
                   Expanded(
                     child: SizedBox(
-                      height: 55,
+                      height: 55.h,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.indigoAccent,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(12.r),
                           ),
                         ),
                         onPressed: () {},
@@ -55,11 +56,11 @@ class Step4home extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(width: 10),
+                  SizedBox(width: 10.w),
 
                   Expanded(
                     child: SizedBox(
-                      height: 55,
+                      height: 55.h,
                       child: Xfield(
                         text: 'Dog',
                       ),
@@ -67,30 +68,30 @@ class Step4home extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10,),Row(
+              SizedBox(height: 10.h,),Row(
                 children: [
                   Expanded(
                     child: Xfield(text: '------'),
                   ),
-                  const SizedBox(width: 10),
+                  SizedBox(width: 10.w),
 
                   SizedBox(
-                    height: 50,
+                    height: 50.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.indigo,
                         elevation: 0,
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 24,
                         ),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(12.r),
                         ),
                       ),
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4home()));
                       },
-                      child: const Text(
+                      child: Text(
                         'Add',
                         style: TextStyle(
                           color: Colors.white,
@@ -101,7 +102,7 @@ class Step4home extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10.h,),
               Primarybutten(title: 'Done', onpress: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4()));
               })

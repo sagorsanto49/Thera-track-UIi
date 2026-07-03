@@ -1,5 +1,6 @@
 import 'package:doctor/subscription1.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 class Subscription extends StatelessWidget {
@@ -12,43 +13,43 @@ class Subscription extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Subscription",
           style: TextStyle(color: Colors.black),
         ),
-        leading: const Icon(Icons.arrow_back, color: Colors.black),
+        leading: Icon(Icons.arrow_back, color: Colors.black),
       ),
       body: ListView(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.r),
         children: [
           // Card 1
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [
-                    const CircleAvatar(
+                    CircleAvatar(
                       backgroundColor: Colors.blue,
                       child: Icon(
                         Icons.workspace_premium,
                         color: Colors.white,
                       ),
                     ),
-                    const Spacer(),
+                    Spacer(),
 
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Subscription1(),
+                            builder: (context) => Subscription1(),
                           ),
                         );
                       },
@@ -56,14 +57,14 @@ class Subscription extends StatelessWidget {
                         backgroundColor: Colors.blue,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(20.r),
                         ),
-                        padding: const EdgeInsets.symmetric(
+                        padding: EdgeInsets.symmetric(
                           horizontal: 15,
                           vertical: 10,
                         ),
                       ),
-                      child: const Text(
+                      child: Text(
                         "Current Plan",
                         style: TextStyle(
                           color: Colors.white,
@@ -73,36 +74,36 @@ class Subscription extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 15),
+                SizedBox(height: 15.h),
 
-                const Text(
+                Text(
                   "01 Month",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 22,
+                    fontSize: 22.sp,
                   ),
                 ),
 
-                const Divider(),
+                Divider(),
 
-                const Row(
+                Row(
                   children: [
-                    Icon(Icons.check, color: Colors.blue, size: 18),
-                    SizedBox(width: 5),
+                    Icon(Icons.check, color: Colors.blue, size: 18.r),
+                    SizedBox(width: 5.w),
                     Text("Unlimited Chart"),
                   ],
                 ),
 
-                const SizedBox(height: 15),
+                SizedBox(height: 15.h),
 
                 RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     children: [
                       TextSpan(
                         text: "\$99.00",
                         style: TextStyle(
                           color: Colors.blue,
-                          fontSize: 28,
+                          fontSize: 28.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -119,17 +120,17 @@ class Subscription extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           // Card 2
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
@@ -139,28 +140,28 @@ class Subscription extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
                 Text(
                   "06 Month",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 22,
+                    fontSize: 22.sp,
                   ),
                 ),
                 Divider(),
                 Row(
                   children: [
-                    Icon(Icons.check, color: Colors.blue, size: 18),
-                    SizedBox(width: 5),
+                    Icon(Icons.check, color: Colors.blue, size: 18.r),
+                    SizedBox(width: 5.w),
                     Text("Unlimited Chart"),
                   ],
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
                 Text(
                   "\$99.00 /Monthly",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 28,
+                    fontSize: 28.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -168,17 +169,17 @@ class Subscription extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           // Card 3
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
             ),
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
@@ -188,28 +189,28 @@ class Subscription extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
                 Text(
                   "12 Month",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 22,
+                    fontSize: 22.sp,
                   ),
                 ),
                 Divider(),
                 Row(
                   children: [
-                    Icon(Icons.check, color: Colors.blue, size: 18),
-                    SizedBox(width: 5),
+                    Icon(Icons.check, color: Colors.blue, size: 18.r),
+                    SizedBox(width: 5.w),
                     Text("Unlimited Chart"),
                   ],
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
                 Text(
                   "\$99.00 /Monthly",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 28,
+                    fontSize: 28.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

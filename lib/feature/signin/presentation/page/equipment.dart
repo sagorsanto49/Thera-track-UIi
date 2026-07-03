@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/feature/signin/presentation/step52.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Equipment extends StatelessWidget {
   Equipment({super.key});
@@ -24,7 +25,7 @@ class Equipment extends StatelessWidget {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           children: [
             Row(
@@ -32,34 +33,33 @@ class Equipment extends StatelessWidget {
               children: [
                 Text(
                   'Product name',
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(right: 35),
+                  padding: EdgeInsets.only(right: 35.w),
                   child: Text(
                     'Quantity',
-                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.sp),
                   ),
                 ),
               ],
             ),
 
-            SizedBox(height: 25),
+            SizedBox(height: 25.h),
 
             Expanded(
               child: ListView.builder(
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
+                    padding: EdgeInsets.only(bottom: 20.h),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           items[index],
-                          style: TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(fontSize: 1.6.sp,
                             color: Colors.grey.shade700,
                           ),
                         ),
@@ -68,20 +68,20 @@ class Equipment extends StatelessWidget {
                           children: [
                             quantityButton(Icons.remove),
 
-                            SizedBox(width: 10),
+                            SizedBox(width: 10.w),
 
                             Container(
-                              height: 42,
-                              width: 70,
+                              height: 42.h,
+                              width: 70.w,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.grey.shade400),
-                                borderRadius: BorderRadius.circular(4),
+                                borderRadius: BorderRadius.circular(4.r),
                               ),
-                              child: Text('1', style: TextStyle(fontSize: 18)),
+                              child: Text('1', style: TextStyle(fontSize: 1.8.sp)),
                             ),
 
-                            SizedBox(width: 10),
+                            SizedBox(width: 10.w),
 
                             quantityButton(Icons.add),
                           ],
@@ -95,7 +95,7 @@ class Equipment extends StatelessWidget {
             Primarybutten(title: 'Next', onpress: () {
               Navigator .push(context, MaterialPageRoute(builder: (context)=> Step5Page()));
             }),
-            SizedBox(height: 400),
+            SizedBox(height: 400.h),
           ],
         ),
       ),
@@ -105,13 +105,13 @@ class Equipment extends StatelessWidget {
   //custome
   Widget quantityButton(IconData icon) {
     return Container(
-      height: 32,
-      width: 32,
+      height: 32.h,
+      width: 32.w,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(color: Colors.grey.shade400),
       ),
-      child: Icon(icon, size: 18, color: Colors.grey),
+      child: Icon(icon, size: 18.r, color: Colors.grey),
     );
   }
 }

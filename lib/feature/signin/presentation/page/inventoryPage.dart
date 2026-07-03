@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InventoryPage extends StatefulWidget {
   const InventoryPage({super.key});
@@ -20,17 +21,17 @@ class _InventoryPageState extends State<InventoryPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(
-        title: const Text("Inventory"),
+        title: Text("Inventory"),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.r),
         child: Column(
           children: [
             // Header
-            const Row(
+            Row(
               children: [
                 Expanded(
                   flex: 3,
@@ -53,11 +54,11 @@ class _InventoryPageState extends State<InventoryPage> {
                     style: TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
-                SizedBox(width: 40),
+                SizedBox(width: 40.w),
               ],
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             // List
             Expanded(
@@ -65,50 +66,50 @@ class _InventoryPageState extends State<InventoryPage> {
                 itemCount: items.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
+                    padding: EdgeInsets.only(bottom: 8.h),
                     child: Row(
                       children: [
                         Expanded(
                           flex: 3,
                           child: Container(
-                            height: 40,
+                            height: 40.h,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(items[index]["name"]!),
                           ),
                         ),
 
-                        const SizedBox(width: 6),
+                        SizedBox(width: 6.w),
 
                         Expanded(
                           flex: 2,
                           child: Container(
-                            height: 40,
+                            height: 40.h,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(items[index]["price"]!),
                           ),
                         ),
 
-                        const SizedBox(width: 6),
+                        SizedBox(width: 6.w),
 
                         Expanded(
                           flex: 2,
                           child: Container(
-                            height: 40,
+                            height: 40.h,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               color: Colors.white,
                               border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6),
+                              borderRadius: BorderRadius.circular(6.r),
                             ),
                             child: Text(items[index]["qty"]!),
                           ),
@@ -120,7 +121,7 @@ class _InventoryPageState extends State<InventoryPage> {
                               items.removeAt(index);
                             });
                           },
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.close,
                             color: Colors.grey,
                           ),
@@ -145,11 +146,10 @@ class _InventoryPageState extends State<InventoryPage> {
                     });
                   });
                 },
-                icon: const Icon(Icons.add),
-                label: const Text(
+                icon: Icon(Icons.add),
+                label: Text(
                   "Add New",
-                  style: TextStyle(
-                    fontSize: 15,
+                  style: TextStyle(fontSize: 1.5.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
@@ -157,12 +157,12 @@ class _InventoryPageState extends State<InventoryPage> {
                   backgroundColor: Colors.green,
                   foregroundColor: Colors.white,
                   elevation: 3,
-                  padding: const EdgeInsets.symmetric(
+                  padding: EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 14,
                   ),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                 ),
               ),

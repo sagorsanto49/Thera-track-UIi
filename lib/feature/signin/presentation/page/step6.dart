@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/step62.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step6Page extends StatelessWidget {
   const Step6Page({super.key});
@@ -12,13 +13,13 @@ class Step6Page extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back_ios,
           color: Colors.black,
-          size: 18,
+          size: 18.r,
         ),
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Step 6",
           style: TextStyle(
             color: Colors.black,
@@ -28,7 +29,7 @@ class Step6Page extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.r),
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -39,22 +40,22 @@ class Step6Page extends StatelessWidget {
               child: Column(
                 children: [
                   Container(
-                    height: 90,
-                    width: 90,
+                    height: 90.h,
+                    width: 90.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       border: Border.all(color: Colors.blue),
                     ),
-                    child: const Icon(
+                    child: Icon(
                       Icons.pets,
-                      size: 50,
+                      size: 50.r,
                       color: Colors.blue,
                     ),
                   ),
 
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
 
-                  const Text(
+                  Text(
                     "CHEEKY CHARTING",
                     style: TextStyle(
                       letterSpacing: 2,
@@ -65,100 +66,100 @@ class Step6Page extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// USER INFO
-            const InfoRow(
+            InfoRow(
               title: "Name",
               value: "Name Here",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Email",
               value: "someone@gmail.com",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Mobile",
               value: "Number here",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Address",
               value: "Some where",
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// PET INFO
-            const InfoRow(
+            InfoRow(
               title: "Horse",
               value: "Horse Name",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Age",
               value: "5 years",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Breed",
               value: "Number here",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Gender",
               value: "Male",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Height",
               value: "5",
             ),
 
-            const InfoRow(
+            InfoRow(
               title: "Color",
               value: "Black",
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// IMAGE
             Center(
               child: Container(
-                height: 120,
-                width: 120,
+                height: 120.h,
+                width: 120.w,
                 decoration: BoxDecoration(
                   border: Border.all(
                     color: Colors.grey.shade300,
                   ),
-                  borderRadius: BorderRadius.circular(4),
+                  borderRadius: BorderRadius.circular(4.r),
                 ),
-                child: const Icon(
+                child: Icon(
                   Icons.pets,
-                  size: 70,
+                  size: 70.r,
                   color: Colors.brown,
                 ),
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// DESCRIPTION
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10.r),
 
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.blue.shade100,
                 ),
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
+                children: [
 
                   Text(
                     "Description",
@@ -167,63 +168,63 @@ class Step6Page extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
 
                   Text(
                     "1. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(fontSize: 1.2.sp),
                   ),
 
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
 
                   Text(
                     "2. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(fontSize: 1.2.sp),
                   ),
 
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
 
                   Text(
                     "3. Lorem ipsum is simply dummy text of the printing and typesetting industry.",
-                    style: TextStyle(fontSize: 12),
+                    style: TextStyle(fontSize: 1.2.sp),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
-            const Text(
+            Text(
               "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-              style: TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: 1.2.sp),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// ADD POINT
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10.r),
 
               decoration: BoxDecoration(
                 border: Border.all(
                   color: Colors.blue.shade100,
                 ),
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  const Text(
+                  Text(
                     "Add point",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
 
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
 
                   buildPoint("01. Text"),
                   buildPoint("02. Text"),
@@ -233,49 +234,49 @@ class Step6Page extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// PRICE SECTION
-            const PriceRow(
+            PriceRow(
               title: "Caps",
               price: "20\$",
             ),
 
-            const PriceRow(
+            PriceRow(
               title: "Cap Fragment",
               price: "30\$",
             ),
 
-            const PriceRow(
+            PriceRow(
               title: "Overbite",
               price: "25\$",
             ),
 
-            const PriceRow(
+            PriceRow(
               title: "Cap Fragment",
               price: "100\$",
             ),
 
-            const Divider(),
+            Divider(),
 
-            const PriceRow(
+            PriceRow(
               title: "Total",
               price: "175\$",
             ),
 
-            const PriceRow(
+            PriceRow(
               title: "Discount",
               price: "00\$",
             ),
 
-            const Divider(),
+            Divider(),
 
-            const PriceRow(
+            PriceRow(
               title: "Grand Total",
               price: "225\$",
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// BUTTONS
             Row(
@@ -289,7 +290,7 @@ class Step6Page extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(width: 8),
+                SizedBox(width: 8.w),
 
                 Expanded(
                   child: buildBlueButton(
@@ -301,7 +302,7 @@ class Step6Page extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
 
             Row(
               children: [
@@ -314,7 +315,7 @@ class Step6Page extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(width: 8),
+                SizedBox(width: 8.w),
 
                 Expanded(
                   child: buildBlueButton(
@@ -326,7 +327,7 @@ class Step6Page extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// CHECKBOX
             Row(
@@ -337,16 +338,16 @@ class Step6Page extends StatelessWidget {
                   onChanged: (value) {},
                 ),
 
-                const Text("Paid"),
+                Text("Paid"),
 
-                const SizedBox(width: 20),
+                SizedBox(width: 20.w),
 
                 Checkbox(
                   value: false,
                   onChanged: (value) {},
                 ),
 
-                const Text(
+                Text(
                   "Unpaid",
                   style: TextStyle(
                     color: Colors.red,
@@ -355,12 +356,12 @@ class Step6Page extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// FINISHED BUTTON
             SizedBox(
               width: double.infinity,
-              height: 45,
+              height: 45.h,
 
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -369,7 +370,7 @@ class Step6Page extends StatelessWidget {
 
                 onPressed: () {},
 
-                child: const Text(
+                child: Text(
                   "Finished",
                   style: TextStyle(
                     color: Colors.white,
@@ -378,7 +379,7 @@ class Step6Page extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
           ],
         ),
       ),
@@ -388,9 +389,9 @@ class Step6Page extends StatelessWidget {
   /// POINT BOX
   static Widget buildPoint(String text) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: EdgeInsets.only(bottom: 8.h),
 
-      padding: const EdgeInsets.symmetric(
+      padding: EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 12,
       ),
@@ -399,7 +400,7 @@ class Step6Page extends StatelessWidget {
         border: Border.all(
           color: Colors.blue.shade100,
         ),
-        borderRadius: BorderRadius.circular(4),
+        borderRadius: BorderRadius.circular(4.r),
       ),
 
       child: Row(
@@ -408,15 +409,14 @@ class Step6Page extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
-                fontSize: 12,
+              style: TextStyle(fontSize: 1.2.sp,
               ),
             ),
           ),
 
-          const Icon(
+          Icon(
             Icons.remove_red_eye_outlined,
-            size: 18,
+            size: 18.r,
             color: Colors.grey,
           ),
         ],
@@ -431,7 +431,7 @@ class Step6Page extends StatelessWidget {
     required String text,
   }) {
     return SizedBox(
-      height: 40,
+      height: 40.h,
 
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
@@ -442,21 +442,20 @@ class Step6Page extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Step62(),
+              builder: (context) => Step62(),
             ),
           );
         },
 
         icon: Icon(
           icon,
-          size: 16,
+          size: 16.r,
           color: Colors.white,
         ),
 
         label: Text(
           text,
-          style: const TextStyle(
-            fontSize: 11,
+          style: TextStyle(fontSize: 1.1.sp,
             color: Colors.white,
           ),
         ),
@@ -479,30 +478,28 @@ class InfoRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 10.h),
 
       child: Row(
         children: [
 
           SizedBox(
-            width: 80,
+            width: 80.w,
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 13,
+              style: TextStyle(fontSize: 1.3.sp,
               ),
             ),
           ),
 
-          const Text(":"),
+          Text(":"),
 
-          const SizedBox(width: 15),
+          SizedBox(width: 15.w),
 
           Expanded(
             child: Text(
               value,
-              style: const TextStyle(
-                fontSize: 13,
+              style: TextStyle(fontSize: 1.3.sp,
               ),
             ),
           ),
@@ -526,7 +523,7 @@ class PriceRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 10),
+      padding: EdgeInsets.only(bottom: 10.h),
 
       child: Row(
         children: [
@@ -534,20 +531,18 @@ class PriceRow extends StatelessWidget {
           Expanded(
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 13,
+              style: TextStyle(fontSize: 1.3.sp,
               ),
             ),
           ),
 
-          const Text(":"),
+          Text(":"),
 
-          const SizedBox(width: 15),
+          SizedBox(width: 15.w),
 
           Text(
             price,
-            style: const TextStyle(
-              fontSize: 13,
+            style: TextStyle(fontSize: 1.3.sp,
             ),
           ),
         ],

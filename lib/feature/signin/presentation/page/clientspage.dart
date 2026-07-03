@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/clientsdetailspage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ClientsPage extends StatelessWidget {
   const ClientsPage({super.key});
@@ -14,19 +15,18 @@ class ClientsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Clients"),
+        title: Text("Clients"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
+                Text(
                   "Clients",
-                  style: TextStyle(
-                    fontSize: 18,
+                  style: TextStyle(fontSize: 1.8.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -41,18 +41,18 @@ class ClientsPage extends StatelessWidget {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => const AddClientPage(),
+        builder: (context) => AddClientPage(),
       ),
     );
   },
-  child: const Text("Add Client"),
+  child: Text("Add Client"),
 ),
               ],
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
-            const TextField(
+            TextField(
               decoration: InputDecoration(
                 hintText: "Search",
                 prefixIcon: Icon(Icons.search),
@@ -60,7 +60,7 @@ class ClientsPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 10),
+            SizedBox(height: 10.h),
 
             Expanded(
               child: ListView.builder(
@@ -69,7 +69,7 @@ class ClientsPage extends StatelessWidget {
                   return ListTile(
                     title: Text(clients[index]),
                     trailing:
-                        const Icon(Icons.arrow_forward_ios, size: 16),
+                        Icon(Icons.arrow_forward_ios, size: 16.r),
                     onTap: () {},
                   );
                 },

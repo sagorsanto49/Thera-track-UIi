@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/human1.dart';
 import 'package:doctor/feature/signin/presentation/page/paid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AdvanceSettingsPage extends StatefulWidget {
   const AdvanceSettingsPage({super.key});
@@ -20,15 +21,15 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
   }) {
     return InkWell(
       onTap: onTap,
-      borderRadius: BorderRadius.circular(4),
+      borderRadius: BorderRadius.circular(4.r),
       child: Container(
-        height: 56,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        height: 56.h,
+        padding: EdgeInsets.symmetric(horizontal: 12.w),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(4),
+          borderRadius: BorderRadius.circular(4.r),
           border: Border.all(
-            color: const Color(0xFFA8CCFF),
+            color: Color(0xFFA8CCFF),
           ),
         ),
         child: Row(
@@ -36,25 +37,24 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
             Expanded(
               child: Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 14,
+                style: TextStyle(fontSize: 1.4.sp,
                   color: Colors.black87,
                 ),
               ),
             ),
             Container(
-              width: 22,
-              height: 22,
+              width: 22.w,
+              height: 22.h,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
                 border: Border.all(
-                  color: const Color(0xFF4A90FF),
+                  color: Color(0xFF4A90FF),
                 ),
               ),
               child: isSelected
-                  ? const Icon(
+                  ? Icon(
                       Icons.check,
-                      size: 16,
+                      size: 16.r,
                       color: Color(0xFF4A90FF),
                     )
                   : null,
@@ -68,25 +68,25 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF8F8F8),
+      backgroundColor: Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'Advance Settings',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w500,
           ),
         ),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.r),
         child: Column(
           children: [
             buildOption(
@@ -98,7 +98,7 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
                 });
               },
             ),
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
             buildOption(
               title: 'Human',
               isSelected: humanSelected,
@@ -106,7 +106,7 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Human1(),
+                    builder: (context) => Human1(),
                   ),
                 );
               },
@@ -117,19 +117,19 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
 
       // চাইলে Continue button রাখতে পারেন
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: SizedBox(
-          height: 50,
+          height: 50.h,
           child: ElevatedButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const PaidScreen(),
+                  builder: (context) => PaidScreen(),
                 ),
               );
             },
-            child: const Text("Continue"),
+            child: Text("Continue"),
           ),
         ),
       ),

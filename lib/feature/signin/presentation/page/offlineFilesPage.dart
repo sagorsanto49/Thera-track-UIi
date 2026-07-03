@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/feature/signin/presentation/page/cheekychariting.dart';
 import 'package:doctor/feature/signin/presentation/page/offlinefiles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OfflineFilesPage extends StatelessWidget {
   const OfflineFilesPage({super.key});
@@ -24,18 +25,18 @@ class OfflineFilesPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         elevation: 1,
-        leading: const BackButton(color: Colors.black),
-        title: const Text(
+        leading: BackButton(color: Colors.black),
+        title: Text(
           "Off Lines File",
           style: TextStyle(color: Colors.black),
         ),
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         child: GridView.builder(
           itemCount: charts.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
@@ -51,7 +52,7 @@ class OfflineFilesPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ChartDetailsPage(),
+                      builder: (context) => ChartDetailsPage(),
                     ),
                   );
                 }
@@ -61,7 +62,7 @@ class OfflineFilesPage extends StatelessWidget {
                   border: Border.all(
                     color: isRed ? Colors.red : Colors.blue,
                   ),
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
                 child: Column(
                   children: [
@@ -69,29 +70,28 @@ class OfflineFilesPage extends StatelessWidget {
                       flex: 3,
                       child: Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.r),
                         color: Colors.blue.shade200,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               chart["id"].toString(),
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                                fontSize: 18.sp,
                               ),
                             ),
                             Text(
                               chart["date"].toString(),
-                              style: const TextStyle(
-                                fontSize: 12,
+                              style: TextStyle(fontSize: 1.2.sp,
                                 color: Colors.black54,
                               ),
                             ),
-                            const SizedBox(height: 6),
-                            const Text(
+                            SizedBox(height: 6.h),
+                            Text(
                               "Nur",
-                              style: TextStyle(fontSize: 24),
+                              style: TextStyle(fontSize: 2.4.sp),
                             ),
                           ],
                         ),
@@ -100,14 +100,14 @@ class OfflineFilesPage extends StatelessWidget {
                     Expanded(
                       child: Container(
                         width: double.infinity,
-                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        padding: EdgeInsets.symmetric(horizontal: 8.w),
                         alignment: Alignment.centerLeft,
                         color: Colors.blue.shade100,
                         child: Text(
                           chart["price"].toString(),
                           style: TextStyle(
                             color: isRed ? Colors.red : Colors.black87,
-                            fontSize: 24,
+                            fontSize: 24.sp,
                           ),
                         ),
                       ),
@@ -121,7 +121,7 @@ class OfflineFilesPage extends StatelessWidget {
       ),
 
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         child: Primarybutten(
           title: "Sync",
           onpress: () {

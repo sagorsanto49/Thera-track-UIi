@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/yourdetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class InvoiceSetup extends StatelessWidget {
   const InvoiceSetup({super.key});
@@ -17,23 +18,23 @@ class InvoiceSetup extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
 
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.black,
         ),
 
-        title: const Text(
+        title: Text(
           'Invoice Setup',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
       ),
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: EdgeInsets.all(15.r),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,14 +42,14 @@ class InvoiceSetup extends StatelessWidget {
             children: [
               // LOGO
               Container(
-                height: 90,
-                width: 90,
+                height: 90.h,
+                width: 90.w,
 
                 decoration: BoxDecoration(
                   color: Colors.white,
 
                   borderRadius:
-                      BorderRadius.circular(10),
+                      BorderRadius.circular(10.r),
 
                   border: Border.all(
                     color: Colors.blue.shade200,
@@ -56,7 +57,7 @@ class InvoiceSetup extends StatelessWidget {
                 ),
 
                 child: Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8.r),
 
                   child: Image.network(
                     "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
@@ -64,11 +65,11 @@ class InvoiceSetup extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               // ADD LOGO BUTTON
               SizedBox(
-                width: 120,
+                width: 120.w,
 
                 child: OutlinedButton.icon(
                   onPressed: () {},
@@ -80,166 +81,159 @@ class InvoiceSetup extends StatelessWidget {
 
                     shape: RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(8),
+                          BorderRadius.circular(8.r),
                     ),
                   ),
 
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.image_outlined,
-                    size: 18,
+                    size: 18.r,
                     color: Colors.grey,
                   ),
 
-                  label: const Text(
+                  label: Text(
                     "Add your logo",
 
                     style: TextStyle(
                       color: Colors.grey,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                     ),
                   ),
                 ),
               ),
 
-              const SizedBox(height: 25),
+              SizedBox(height: 25.h),
 
               // INSTITUTION NAME
               Texts(text: 'Institution Name'),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(
                 text: 'Inner Peace Therapy Institute',
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // ADDRESS
-              const Text(
+              Text(
                 'Address',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 5),
+              SizedBox(height: 5.h),
 
-              const Text(
+              Text(
                 'Street',
 
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 13,
+                  fontSize: 13.sp,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(text: '221B Baker Street'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // CITY
-              const Text(
+              Text(
                 'City',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(text: 'London'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // TOWN
-              const Text(
+              Text(
                 'Town',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(text: 'Westminster'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // ZIP CODE
-              const Text(
+              Text(
                 'Zip Code',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(text: 'NW1 6XE'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // PHONE
-              const Text(
+              Text(
                 'Phone',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(text: '+44 20 xxxx xxxx'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // EMAIL
-              const Text(
+              Text(
                 'Email Address',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(
                 text: 'innerpeacetherapy@gmail.com',
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               // WEBSITE
-              const Text(
+              Text(
                 'Website',
 
-                style: TextStyle(
-                  fontSize: 16,
+                style: TextStyle(fontSize: 1.6.sp,
                   fontWeight: FontWeight.w500,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
               Xfield(
                 text: 'innerpeacetherapy.com',
               ),
 
-              const SizedBox(height: 35),
+              SizedBox(height: 35.h),
 
               // SAVE BUTTON
               SizedBox(
@@ -253,7 +247,7 @@ class InvoiceSetup extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
             ],
           ),
         ),

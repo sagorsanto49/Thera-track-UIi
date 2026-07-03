@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditHorsePage extends StatelessWidget {
   const EditHorsePage({super.key});
@@ -7,10 +8,10 @@ class EditHorsePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Edit Horse"),
+        title: Text("Edit Horse"),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           children: [
             TextField(
@@ -21,7 +22,7 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             TextField(
               decoration: InputDecoration(
@@ -31,7 +32,7 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             TextField(
               decoration: InputDecoration(
@@ -41,7 +42,7 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             TextField(
               decoration: InputDecoration(
@@ -51,7 +52,7 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             TextField(
               decoration: InputDecoration(
@@ -61,7 +62,7 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             TextField(
               decoration: InputDecoration(
@@ -71,16 +72,16 @@ class EditHorsePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: const Text("Done"),
+                child: Text("Done"),
               ),
             ),
           ],

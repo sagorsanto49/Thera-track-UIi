@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/step4.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step3 extends StatelessWidget {
   const Step3({super.key});
@@ -24,7 +25,7 @@ class Step3 extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            padding: EdgeInsets.all(12),
+            padding: EdgeInsets.all(12.r),
             color: Colors.blueGrey.shade200,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +35,7 @@ class Step3 extends StatelessWidget {
                   children: [
                     Text(
                       'Horse',
-                      style: TextStyle(fontSize: 16),
+                      style: TextStyle(fontSize: 1.6.sp),
                     ),
                     Row(
                       children: [
@@ -47,23 +48,23 @@ class Step3 extends StatelessWidget {
                             style: TextStyle(color: Colors.blue),
                           ),
                         ),
-                        SizedBox(width: 4),
-                        Icon(Icons.add, color: Colors.blue, size: 18),
+                        SizedBox(width: 4.w),
+                        Icon(Icons.add, color: Colors.blue, size: 18.r),
                       ],
                     )
                   ],
                 ),
-                SizedBox(height: 10),
+                SizedBox(height: 10.h),
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  padding: EdgeInsets.symmetric(horizontal: 10.w),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.circular(6),
+                    borderRadius: BorderRadius.circular(6.r),
                   ),
                   child: Row(
                     children: [
                       Icon(Icons.search, color: Colors.grey),
-                      SizedBox(width: 8),
+                      SizedBox(width: 8.w),
                       Expanded(
                         child: TextField(
                           decoration: InputDecoration(
@@ -113,7 +114,7 @@ class HorseItem extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          contentPadding: EdgeInsets.symmetric(horizontal: 16),
+          contentPadding: EdgeInsets.symmetric(horizontal: 16.w),
           title: Text(name),
           subtitle: Row(
             children: [
@@ -135,7 +136,7 @@ class HorseItem extends StatelessWidget {
           //   );
           // },
         ),
-        Divider(height: 1, color: Colors.blueGrey.shade100),
+        Divider(height: 1.h, color: Colors.blueGrey.shade100),
       ],
     );
   }

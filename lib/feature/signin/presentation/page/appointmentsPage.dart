@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/appoinment%20cheeky.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppointmentsPage extends StatelessWidget {
   const AppointmentsPage({super.key});
@@ -21,17 +22,17 @@ class AppointmentsPage extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         elevation: 1,
-        leading: const BackButton(color: Colors.black),
-        title: const Text(
+        leading: BackButton(color: Colors.black),
+        title: Text(
           "Appointment",
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         child: GridView.builder(
           itemCount: charts.length,
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
@@ -47,7 +48,7 @@ class AppointmentsPage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const Appoinmentcheeky(),
+                      builder: (context) => Appoinmentcheeky(),
                     ),
                   );
                 }
@@ -57,34 +58,32 @@ class AppointmentsPage extends StatelessWidget {
                   border: Border.all(
                     color: isRed ? Colors.red : Colors.blue,
                   ),
-                  borderRadius: BorderRadius.circular(3),
+                  borderRadius: BorderRadius.circular(3.r),
                 ),
                 child: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.all(8),
+                  padding: EdgeInsets.all(8.r),
                   color: Colors.blue.shade200,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         chart["id"].toString(),
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                          fontSize: 18.sp,
                         ),
                       ),
                       Text(
                         chart["date"].toString(),
-                        style: const TextStyle(
-                          fontSize: 12,
+                        style: TextStyle(fontSize: 1.2.sp,
                           color: Colors.black54,
                         ),
                       ),
-                      const Spacer(),
-                      const Text(
+                      Spacer(),
+                      Text(
                         "Nur",
-                        style: TextStyle(
-                          fontSize: 24,
+                        style: TextStyle(fontSize: 2.4.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

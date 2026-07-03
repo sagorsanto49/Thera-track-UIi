@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationPage1 extends StatelessWidget {
   const NotificationPage1({super.key});
@@ -49,14 +50,14 @@ class NotificationPage1 extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
-        leading: const BackButton(color: Colors.black),
-        title: const Text(
+        leading: BackButton(color: Colors.black),
+        title: Text(
           "Notifications",
           style: TextStyle(color: Colors.black),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 15),
+            padding: EdgeInsets.only(right: 15.w),
             child: Icon(
               Icons.delete_outline,
               color: Colors.black54,
@@ -65,38 +66,38 @@ class NotificationPage1 extends StatelessWidget {
         ],
       ),
       body: ListView.builder(
-        padding: const EdgeInsets.all(15),
+        padding: EdgeInsets.all(15.r),
         itemCount: notifications.length,
         itemBuilder: (context, index) {
           final item = notifications[index];
 
           return Padding(
-            padding: const EdgeInsets.only(bottom: 25),
+            padding: EdgeInsets.only(bottom: 25.h),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                  height: 18,
-                  width: 18,
+                  height: 18.h,
+                  width: 18.w,
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Colors.blue,
                     ),
-                    borderRadius: BorderRadius.circular(3),
+                    borderRadius: BorderRadius.circular(3.r),
                     color: item["checked"] as bool
                         ? Colors.blue.shade50
                         : Colors.transparent,
                   ),
                   child: item["checked"] as bool
-                      ? const Icon(
+                      ? Icon(
                           Icons.check,
-                          size: 15,
+                          size: 15.r,
                           color: Colors.red,
                         )
                       : null,
                 ),
 
-                const SizedBox(width: 10),
+                SizedBox(width: 10.w),
 
                 Expanded(
                   child: Column(
@@ -105,18 +106,16 @@ class NotificationPage1 extends StatelessWidget {
                     children: [
                       Text(
                         item["title"].toString(),
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style: TextStyle(fontSize: 1.6.sp,
                           color: Colors.black87,
                         ),
                       ),
 
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4.h),
 
                       Text(
                         item["time"].toString(),
-                        style: const TextStyle(
-                          fontSize: 12,
+                        style: TextStyle(fontSize: 1.2.sp,
                           color: Colors.black54,
                         ),
                       ),

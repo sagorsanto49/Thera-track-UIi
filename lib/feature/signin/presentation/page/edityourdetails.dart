@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/treatment.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class EditYourDetails extends StatelessWidget {
   const EditYourDetails({super.key});
@@ -16,120 +17,114 @@ class EditYourDetails extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
 
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.black,
         ),
 
-        title: const Text(
+        title: Text(
           'Your Details',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
       ),
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: EdgeInsets.all(15.r),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Name',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'Darlene Robertson'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Town / City',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'St Albans'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Postcode',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: '5656'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'country',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'USA'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Mobile',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: '01700000000'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Main Email Address',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'someone@gmail.com'),
 
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
 
               SizedBox(
                 width: double.infinity,

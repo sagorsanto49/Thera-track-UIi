@@ -1,28 +1,29 @@
 import 'package:doctor/feature/signin/presentation/page/horseedit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Horse2 extends StatelessWidget {
   const Horse2({super.key});
 
   Widget buildRow(String title, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: EdgeInsets.symmetric(vertical: 12.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.blue,
-              fontSize: 12,
+              fontSize: 12.sp,
             ),
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5.h),
           Text(
             value,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 1.6.sp),
           ),
-          const Divider(),
+          Divider(),
         ],
       ),
     );
@@ -32,10 +33,10 @@ class Horse2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Horse"),
+        title: Text("Horse"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           children: [
             buildRow("Name", "Boss"),
@@ -52,17 +53,17 @@ class Horse2 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const EditHorsePage(),
+                    builder: (_) => EditHorsePage(),
                   ),
                 );
               },
-              child: const Align(
+              child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
                   "Edit",
                   style: TextStyle(
                     color: Colors.blue,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                   ),
                 ),
               ),

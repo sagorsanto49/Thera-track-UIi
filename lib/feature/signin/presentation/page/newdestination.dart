@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/feature/signin/presentation/page/cost.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddCostPage extends StatelessWidget {
   const AddCostPage({super.key});
@@ -9,11 +10,11 @@ class AddCostPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Cost"),
+        title: Text("Cost"),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20.r),
         child: Column(
           children: [
             buildRow("Departure", "Starting place name"),
@@ -23,10 +24,10 @@ class AddCostPage extends StatelessWidget {
             buildRow("Gas", "00\$"),
             buildRow("Other", "00\$"),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             Container(
-              height: 160,
+              height: 160.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 border: Border.all(
@@ -34,7 +35,7 @@ class AddCostPage extends StatelessWidget {
                   style: BorderStyle.solid,
                 ),
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
                   "Click to browse or\nDrag and Drop your files",
                   textAlign: TextAlign.center,
@@ -42,11 +43,11 @@ class AddCostPage extends StatelessWidget {
               ),
             ),
 
-            const Spacer(),
+            Spacer(),
 
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
               child: Primarybutten(title: 'Save', onpress: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Cost()));
               })
@@ -59,8 +60,8 @@ class AddCostPage extends StatelessWidget {
 
   Widget buildRow(String title, String hint) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      padding: const EdgeInsets.symmetric(
+      margin: EdgeInsets.only(bottom: 8.h),
+      padding: EdgeInsets.symmetric(
         horizontal: 12,
         vertical: 10,
       ),
@@ -71,16 +72,16 @@ class AddCostPage extends StatelessWidget {
             child: Text(title),
           ),
           SizedBox(
-            width: 150,
+            width: 150.w,
             child: TextField(
               decoration: InputDecoration(
                 hintText: hint,
                 filled: true,
                 fillColor: Colors.white,
                 contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 10),
+                    EdgeInsets.symmetric(horizontal: 10.w),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(5.r),
                 ),
               ),
             ),

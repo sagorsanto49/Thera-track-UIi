@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/congres.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Payment extends StatelessWidget {
   const Payment({super.key});
@@ -12,18 +13,17 @@ class Payment extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Payment",
           style: TextStyle(color: Colors.black),
         ),
-        leading: const BackButton(color: Colors.black),
+        leading: BackButton(color: Colors.black),
       ),
 
-      body: const Center(
+      body: Center(
         child: Text(
           "Stripe Payment Method",
-          style: TextStyle(
-            fontSize: 18,
+          style: TextStyle(fontSize: 1.8.sp,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -31,30 +31,30 @@ class Payment extends StatelessWidget {
 
       bottomNavigationBar: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16.r),
           child: SizedBox(
-            height: 55,
+            height: 55.h,
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Congres(),
+                    builder: (context) => Congres(),
                   ),
                 );
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
               ),
-              child: const Text(
+              child: Text(
                 "Pay Now",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                 ),
               ),
             ),

@@ -1,7 +1,8 @@
 // import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // class Step62 extends StatelessWidget {
-//   const Step62({super.key});
+//   Step62({super.key});
 
 //   @override
 //   Widget build(BuildContext context) {
@@ -28,20 +29,20 @@ class Step62State extends State<Step62> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xfff5f5f5),
+      backgroundColor: Color(0xfff5f5f5),
 
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
 
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back_ios,
-          size: 18,
+          size: 18.r,
           color: Colors.black,
         ),
 
-        title: const Text(
+        title: Text(
           "Step 6",
           style: TextStyle(
             color: Colors.black,
@@ -51,7 +52,7 @@ class Step62State extends State<Step62> {
       ),
 
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.all(8.r),
 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,39 +62,38 @@ class Step62State extends State<Step62> {
             Row(
               children: [
 
-                const Text(
+                Text(
                   "January 24, 2025",
-                  style: TextStyle(
-                    fontSize: 16,
+                  style: TextStyle(fontSize: 1.6.sp,
                   ),
                 ),
 
-                const SizedBox(width: 10),
+                SizedBox(width: 10.w),
 
                 Container(
-                  padding: const EdgeInsets.all(4),
+                  padding: EdgeInsets.all(4.r),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(4),
+                    borderRadius: BorderRadius.circular(4.r),
                   ),
-                  child: const Icon(
+                  child: Icon(
                     Icons.calendar_today,
-                    size: 18,
+                    size: 18.r,
                     color: Colors.blue,
                   ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             /// CALENDAR
             Container(
-              padding: const EdgeInsets.all(12),
+              padding: EdgeInsets.all(12.r),
 
               decoration: BoxDecoration(
-                color: const Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2),
+                color: Color(0xffdfe9f2),
+                borderRadius: BorderRadius.circular(2.r),
               ),
 
               child: Column(
@@ -104,7 +104,7 @@ class Step62State extends State<Step62> {
                     mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,
 
-                    children: const [
+                    children: [
 
                       Icon(Icons.chevron_left),
 
@@ -119,16 +119,16 @@ class Step62State extends State<Step62> {
                     ],
                   ),
 
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
 
-                  const Divider(),
+                  Divider(),
 
                   /// DAYS NAME
                   Row(
                     mainAxisAlignment:
                         MainAxisAlignment.spaceAround,
 
-                    children: const [
+                    children: [
                       DayName("DAY"),
                       DayName("DAY"),
                       DayName("DAY"),
@@ -139,7 +139,7 @@ class Step62State extends State<Step62> {
                     ],
                   ),
 
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15.h),
 
                   /// DATES
                   buildDateRow([
@@ -195,18 +195,18 @@ class Step62State extends State<Step62> {
               ),
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             /// TIME PICKER
             Container(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 vertical: 15,
                 horizontal: 10,
               ),
 
               decoration: BoxDecoration(
-                color: const Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2),
+                color: Color(0xffdfe9f2),
+                borderRadius: BorderRadius.circular(2.r),
               ),
 
               child: Row(
@@ -217,57 +217,54 @@ class Step62State extends State<Step62> {
 
                   /// AM PM
                   Column(
-                    children: const [
+                    children: [
 
                       Text(
                         "AM",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 2.4.sp),
                       ),
 
-                      SizedBox(height: 15),
+                      SizedBox(height: 15.h),
 
                       Text(
                         "PM",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 2.4.sp),
                       ),
                     ],
                   ),
 
                   Container(
-                    height: 90,
-                    width: 1,
+                    height: 90.h,
+                    width: 1.w,
                     color: Colors.blue.shade200,
                   ),
 
                   /// HOURS
                   Column(
-                    children: const [
+                    children: [
 
                       Text(
                         "11",
-                        style: TextStyle(
-                          fontSize: 22,
+                        style: TextStyle(fontSize: 2.2.sp,
                           color: Colors.grey,
                         ),
                       ),
 
-                      SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       Text(
                         "12",
-                        style: TextStyle(
-                          fontSize: 26,
+                        style: TextStyle(fontSize: 2.6.sp,
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
 
-                      SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       Text(
                         "01",
-                        style: TextStyle(
-                          fontSize: 22,
+                        style: TextStyle(fontSize: 2.2.sp,
                           color: Colors.grey,
                         ),
                       ),
@@ -275,40 +272,37 @@ class Step62State extends State<Step62> {
                   ),
 
                   Container(
-                    height: 90,
-                    width: 1,
+                    height: 90.h,
+                    width: 1.w,
                     color: Colors.blue.shade200,
                   ),
 
                   /// MINUTES
                   Column(
-                    children: const [
+                    children: [
 
                       Text(
                         "59",
-                        style: TextStyle(
-                          fontSize: 22,
+                        style: TextStyle(fontSize: 2.2.sp,
                           color: Colors.grey,
                         ),
                       ),
 
-                      SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       Text(
                         "00",
-                        style: TextStyle(
-                          fontSize: 26,
+                        style: TextStyle(fontSize: 2.6.sp,
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
 
-                      SizedBox(height: 10),
+                      SizedBox(height: 10.h),
 
                       Text(
                         "01",
-                        style: TextStyle(
-                          fontSize: 22,
+                        style: TextStyle(fontSize: 2.2.sp,
                           color: Colors.grey,
                         ),
                       ),
@@ -318,7 +312,7 @@ class Step62State extends State<Step62> {
               ),
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             /// EVENT BOX
             Container(
@@ -333,7 +327,7 @@ class Step62State extends State<Step62> {
 
                   /// ALL DAY
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: EdgeInsets.all(8.r),
 
                     child: Row(
                       mainAxisAlignment:
@@ -341,20 +335,20 @@ class Step62State extends State<Step62> {
 
                       children: [
 
-                        const Text(
+                        Text(
                           "All-Day",
-                          style: TextStyle(fontSize: 18),
+                          style: TextStyle(fontSize: 1.8.sp),
                         ),
 
                         Container(
-                          height: 20,
-                          width: 20,
+                          height: 20.h,
+                          width: 20.w,
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.blue,
                             ),
                             borderRadius:
-                                BorderRadius.circular(4),
+                                BorderRadius.circular(4.r),
                           ),
                         ),
                       ],
@@ -362,7 +356,7 @@ class Step62State extends State<Step62> {
                   ),
 
                   Divider(
-                    height: 1,
+                    height: 1.h,
                     color: Colors.grey.shade400,
                   ),
 
@@ -372,7 +366,7 @@ class Step62State extends State<Step62> {
                   ),
 
                   Divider(
-                    height: 1,
+                    height: 1.h,
                     color: Colors.grey.shade400,
                   ),
 
@@ -384,30 +378,29 @@ class Step62State extends State<Step62> {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             /// REMINDER
             Container(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 10,
                 vertical: 14,
               ),
 
               decoration: BoxDecoration(
-                color: const Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2),
+                color: Color(0xffdfe9f2),
+                borderRadius: BorderRadius.circular(2.r),
               ),
 
               child: Row(
                 mainAxisAlignment:
                     MainAxisAlignment.spaceBetween,
 
-                children: const [
+                children: [
 
                   Text(
                     "Reminder",
-                    style: TextStyle(
-                      fontSize: 18,
+                    style: TextStyle(fontSize: 1.8.sp,
                     ),
                   ),
 
@@ -416,12 +409,12 @@ class Step62State extends State<Step62> {
               ),
             ),
 
-            const SizedBox(height: 40),
+            SizedBox(height: 40.h),
 
             /// DONE BUTTON
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height: 50.h,
 
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -430,11 +423,11 @@ class Step62State extends State<Step62> {
 
                 onPressed: () {},
 
-                child: const Text(
+                child: Text(
                   "Done",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16,
+                    fontSize: 16.sp,
                   ),
                 ),
               ),
@@ -451,7 +444,7 @@ class Step62State extends State<Step62> {
     int selectedIndex = -1,
   }) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 15),
+      padding: EdgeInsets.only(bottom: 15.h),
 
       child: Row(
         mainAxisAlignment:
@@ -464,8 +457,8 @@ class Step62State extends State<Step62> {
                 index == selectedIndex;
 
             return Container(
-              height: 35,
-              width: 35,
+              height: 35.h,
+              width: 35.w,
               alignment: Alignment.center,
 
               decoration: BoxDecoration(
@@ -483,7 +476,7 @@ class Step62State extends State<Step62> {
                       ? Colors.white
                       : Colors.black87,
 
-                  fontSize: 16,
+                  fontSize: 16.sp,
                 ),
               ),
             );
@@ -498,55 +491,54 @@ class Step62State extends State<Step62> {
     required String title,
   }) {
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: EdgeInsets.all(8.r),
 
       child: Row(
         children: [
 
           SizedBox(
-            width: 80,
+            width: 80.w,
             child: Text(
               title,
-              style: const TextStyle(
-                fontSize: 18,
+              style: TextStyle(fontSize: 1.8.sp,
               ),
             ),
           ),
 
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 8,
                 vertical: 10,
               ),
 
               decoration: BoxDecoration(
                 color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(2.r),
               ),
 
-              child: const Text(
+              child: Text(
                 "24 Jan, 2025",
                 textAlign: TextAlign.center,
               ),
             ),
           ),
 
-          const SizedBox(width: 8),
+          SizedBox(width: 8.w),
 
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(
+              padding: EdgeInsets.symmetric(
                 horizontal: 8,
                 vertical: 10,
               ),
 
               decoration: BoxDecoration(
                 color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(2),
+                borderRadius: BorderRadius.circular(2.r),
               ),
 
-              child: const Text(
+              child: Text(
                 "12:00AM",
                 textAlign: TextAlign.center,
               ),
@@ -568,8 +560,7 @@ class DayName extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: const TextStyle(
-        fontSize: 10,
+      style: TextStyle(fontSize: 1.0.sp,
         color: Colors.grey,
       ),
     );

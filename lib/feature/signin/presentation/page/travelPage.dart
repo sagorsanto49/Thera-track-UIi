@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/newdestination.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CostPage extends StatelessWidget {
   const CostPage({super.key});
@@ -11,18 +12,18 @@ class CostPage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           "Cost",
           style: TextStyle(color: Colors.black),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: EdgeInsets.only(right: 10.w),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>AddCostPage()));
               },
-              child: const Text("Add New"),
+              child: Text("Add New"),
             ),
           )
         ],
@@ -30,12 +31,12 @@ class CostPage extends StatelessWidget {
       
       
       body: Padding(
-        padding: const EdgeInsets.all(18),
+        padding: EdgeInsets.all(18.r),
         child: Column(
           children: [
             Table(
               border: TableBorder.all(color: Colors.black),
-              children: const [
+              children: [
                 TableRow(
                   decoration: BoxDecoration(
                     color: Color(0xffeaf4ff),
@@ -82,14 +83,14 @@ class CostPage extends StatelessWidget {
               ],
             ),
 
-            const Spacer(),
+            Spacer(),
 
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(15),
+              padding: EdgeInsets.all(15.r),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 133, 126, 171),
-                borderRadius: BorderRadius.circular(8),
+                color: Color.fromARGB(255, 133, 126, 171),
+                borderRadius: BorderRadius.circular(8.r),
               ),
               child: Column(
                 children: [
@@ -99,24 +100,24 @@ class CostPage extends StatelessWidget {
                       filled: true,
                       fillColor: Colors.white,
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(6),
+                        borderRadius: BorderRadius.circular(6.r),
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  const Align(
+                  SizedBox(height: 10.h),
+                  Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       "Data will be sent to the email above.",
                     ),
                   ),
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15.h),
                   SizedBox(
-                    width: 130,
+                    width: 130.w,
                     child: ElevatedButton.icon(
                       onPressed: () {},
-                      icon: const Icon(Icons.send),
-                      label: const Text("Send"),
+                      icon: Icon(Icons.send),
+                      label: Text("Send"),
                     ),
                   )
                 ],
@@ -138,11 +139,11 @@ class tableCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
+      padding: EdgeInsets.all(10.r),
       child: Center(
         child: Text(
           text,
-          style: const TextStyle(fontSize: 12),
+          style: TextStyle(fontSize: 1.2.sp),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 
 class Calender extends StatefulWidget {
@@ -13,7 +14,6 @@ class _CalenderState extends State<Calender> {
   DateTime currentmonth = DateTime(2025, 1);
 
   List<DateTime> givedate(DateTime month) {
-    final firstDay = DateTime(month.year, month.month, 1);
     final lastDay = DateTime(month.year, month.month + 1, 0);
 
     return List.generate(
@@ -33,15 +33,15 @@ class _CalenderState extends State<Calender> {
         title: Text("Calender"),
         backgroundColor: Colors.white,
         elevation: 1,
-        leading: const BackButton(color: Colors.black),
+        leading: BackButton(color: Colors.black),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(DateFormat("MMMM dd, yyyy").format(selectdate)),
-            SizedBox(height: 15),
+            SizedBox(height: 15.h),
             Container(
               color: Colors.lightBlue.shade200,
               child: Column(
@@ -77,9 +77,9 @@ class _CalenderState extends State<Calender> {
                     ],
                   ),
                   Divider(color: Colors.white),
-                  SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   SizedBox(
-                    height: 300,
+                    height: 300.h,
                     width: double.infinity,
                     child: Expanded(
                       child: GridView.builder(
@@ -99,8 +99,8 @@ class _CalenderState extends State<Calender> {
                             selectdate=day;
                           });},
                             child: Container(
-                              // height: 2,
-                              // width: 2,
+                              // height: 2.h,
+                              // width: 2.w,
                               decoration: BoxDecoration(
                               color: isselected? Colors.blue:Colors.transparent,shape: BoxShape.circle,
                             ),

@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/edityourdetails.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Yourdetails extends StatelessWidget {
   const Yourdetails({super.key});
@@ -15,23 +16,23 @@ class Yourdetails extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
 
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.black,
         ),
 
-        title: const Text(
+        title: Text(
           'Your Details',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 18,
+            fontSize: 18.sp,
           ),
         ),
       ),
 
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(15),
+          padding: EdgeInsets.all(15.r),
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,134 +48,128 @@ class Yourdetails extends StatelessWidget {
 
                       MaterialPageRoute(
                         builder: (context) =>
-                            const EditYourDetails(),
+                            EditYourDetails(),
                       ),
                     );
                   },
 
                   style: ElevatedButton.styleFrom(
                     backgroundColor:
-                        const Color(0xff1E88E5),
+                        Color(0xff1E88E5),
 
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 15,
                       vertical: 10,
                     ),
 
                     shape: RoundedRectangleBorder(
                       borderRadius:
-                          BorderRadius.circular(6),
+                          BorderRadius.circular(6.r),
                     ),
                   ),
 
-                  icon: const Icon(
+                  icon: Icon(
                     Icons.edit,
-                    size: 15,
+                    size: 15.r,
                     color: Colors.white,
                   ),
 
-                  label: const Text(
+                  label: Text(
                     'Edit',
 
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                     ),
                   ),
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Name',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'Darlene Robertson'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Town / City',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'St Albans'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Postcode',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: '5656'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Country',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'USA'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Mobile',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: '01700000000'),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
-              const Text(
+              Text(
                 'Main Email Address',
 
-                style: TextStyle(
-                  fontSize: 13,
+                style: TextStyle(fontSize: 1.3.sp,
                   color: Colors.grey,
                 ),
               ),
 
-              const SizedBox(height: 8),
+              SizedBox(height: 8.h),
 
               Xfield(text: 'someone@gmail.com'),
 
-              const SizedBox(height: 30),
+              SizedBox(height: 30.h),
             ],
           ),
         ),

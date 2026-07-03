@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cost extends StatelessWidget {
   const Cost({super.key});
@@ -11,13 +12,13 @@ class Cost extends StatelessWidget {
         backgroundColor: Colors.white,
         centerTitle: true,
         elevation: 1,
-        title: const Text(
+        title: Text(
           "Cost",
           style: TextStyle(color: Colors.black),
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20.r),
         child: Column(
           children: [
 
@@ -36,28 +37,28 @@ class Cost extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 25),
+            SizedBox(height: 25.h),
 
             /// Image
             ClipRRect(
-              borderRadius: BorderRadius.circular(4),
+              borderRadius: BorderRadius.circular(4.r),
               child: Image.network(
                 "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d",
-                height: 170,
+                height: 170.h,
                 width: double.infinity,
                 fit: BoxFit.cover,
               ),
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 30.h),
 
             /// Email Box
             Container(
               width: double.infinity,
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(16.r),
               decoration: BoxDecoration(
                 color: Colors.lightBlue,
-                borderRadius: BorderRadius.circular(4),
+                borderRadius: BorderRadius.circular(4.r),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -68,27 +69,27 @@ class Cost extends StatelessWidget {
                       fillColor: Colors.white,
                       hintText: "someone@gmail.com",
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(4),
+                        borderRadius: BorderRadius.circular(4.r),
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 15),
+                  SizedBox(height: 15.h),
 
-                  const Text(
+                  Text(
                     "Data will be sent to the email above.",
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   Center(
                     child: SizedBox(
-                      width: 160,
-                      height: 45,
+                      width: 160.w,
+                      height: 45.h,
                       child: ElevatedButton.icon(
                         onPressed: () {},
-                        icon: const Icon(Icons.send),
-                        label: const Text("Send"),
+                        icon: Icon(Icons.send),
+                        label: Text("Send"),
                       ),
                     ),
                   )
@@ -103,7 +104,7 @@ class Cost extends StatelessWidget {
 
   Widget buildItem(String title, String value) {
     return Container(
-      padding: const EdgeInsets.symmetric(
+      padding: EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 18,
       ),
@@ -111,13 +112,13 @@ class Cost extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 120,
-            child: Text(title,style: TextStyle(fontSize: 17)),),
+            width: 120.w,
+            child: Text(title,style: TextStyle(fontSize: 1.7.sp)),),
           
-          const Text(":",style: TextStyle(fontSize: 17)),
-          const SizedBox(width: 30),
+          Text(":",style: TextStyle(fontSize: 1.7.sp)),
+          SizedBox(width: 30.w),
           Expanded(
-            child: Text(value,style: TextStyle(fontSize: 17)),
+            child: Text(value,style: TextStyle(fontSize: 1.7.sp)),
           ),
         ],
       ),

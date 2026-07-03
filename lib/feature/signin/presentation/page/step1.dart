@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step1 extends StatelessWidget {
   const Step1({super.key});
@@ -24,25 +25,25 @@ class Step1 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text('Step 1'),
+        title: Text('Step 1'),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
+        padding: EdgeInsets.symmetric(horizontal: 15.w),
         child: Column(
           children: [
             Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.indigoAccent,
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8),
+                    padding: EdgeInsets.all(8.r),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
+                        Text(
                           'Clients',
                           style: TextStyle(color: Colors.white),
                         ),
@@ -50,7 +51,7 @@ class Step1 extends StatelessWidget {
                           onTap: () {
                             // Add Client page navigation
                           },
-                          child: const Text(
+                          child: Text(
                             'Add Clients',
                             style: TextStyle(color: Colors.white),
                           ),
@@ -61,23 +62,23 @@ class Step1 extends StatelessWidget {
 
                   Center(
                     child: Container(
-                      height: 40,
-                      width: 350,
+                      height: 40.h,
+                      width: 350.w,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(5.r),
                       ),
-                      child: const SearchBar(
+                      child: SearchBar(
                         leading: Icon(Icons.search),
                         hintText: 'Search',
                       ),
                     ),
                   ),
 
-                  const SizedBox(height: 5),
+                  SizedBox(height: 5.h),
 
-                  const Padding(
-                    padding: EdgeInsets.all(8),
+                  Padding(
+                    padding: EdgeInsets.all(8.r),
                     child: Text(
                       'Recent Clients',
                       style: TextStyle(color: Colors.white),
@@ -92,11 +93,11 @@ class Step1 extends StatelessWidget {
               child: ListView.separated(
                 itemCount: textitem.length,
                 separatorBuilder: (context, index) =>
-                    const Divider(height: 1, thickness: 1),
+                    Divider(height: 1.h, thickness: 1),
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(textitem[index]),
-                    trailing: const Icon(
+                    trailing: Icon(
                       Icons.arrow_forward_ios_sharp,
                     ),
 
@@ -105,7 +106,7 @@ class Step1 extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Step3(),
+                            builder: (context) => Step3(),
                           ),
                         );
                       }
@@ -116,12 +117,12 @@ class Step1 extends StatelessWidget {
             ),
 
             Container(
-              height: 40,
+              height: 40.h,
               width: double.infinity,
               color: Colors.indigoAccent,
               alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: const Text(
+              padding: EdgeInsets.symmetric(horizontal: 8.w),
+              child: Text(
                 'All Clients',
                 style: TextStyle(color: Colors.white),
               ),
@@ -132,11 +133,11 @@ class Step1 extends StatelessWidget {
               child: ListView.separated(
                 itemCount: ttextitem.length,
                 separatorBuilder: (context, index) =>
-                    const Divider(height: 1, thickness: 1),
+                    Divider(height: 1.h, thickness: 1),
                 itemBuilder: (context, index) {
                   return ListTile(
                     title: Text(ttextitem[index]),
-                    trailing: const Icon(
+                    trailing: Icon(
                       Icons.arrow_forward_ios_sharp,
                     ),
                   );

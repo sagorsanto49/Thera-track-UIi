@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/home3.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Human1 extends StatelessWidget {
   const Human1({super.key});
@@ -15,61 +16,60 @@ class Human1 extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: const Text(
+          title: Text(
             'Step @ 3',
             style: TextStyle(
               color: Colors.black,
               fontWeight: FontWeight.w600,
-              fontSize: 18,
+              fontSize: 18.sp,
             ),
           ),
-          iconTheme: const IconThemeData(color: Colors.black),
+          iconTheme: IconThemeData(color: Colors.black),
         ),
         body: SingleChildScrollView(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16.r),
           child: Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20.r),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(.05),
+                  color: Colors.black.withValues(alpha: .05),
                   blurRadius: 10,
-                  offset: const Offset(0, 4),
+                  offset: Offset(0, 4),
                 ),
               ],
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Personal Information",
-                  style: TextStyle(
-                    fontSize: 20,
+                  style: TextStyle(fontSize: 2.0.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 Texts(text: 'Name'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Enter name'),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Texts(text: 'Address'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Enter address'),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Texts(text: 'City'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Enter city'),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Row(
                   children: [
@@ -78,20 +78,20 @@ class Human1 extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Texts(text: 'State'),
-                          const SizedBox(height: 8),
+                          SizedBox(height: 8.h),
                           Xfield(text: 'Enter state'),
                         ],
                       ),
                     ),
 
-                    const SizedBox(width: 16),
+                    SizedBox(width: 16.w),
 
                     Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Texts(text: 'Zip Code'),
-                          const SizedBox(height: 8),
+                          SizedBox(height: 8.h),
                           Xfield(text: 'Enter zip code'),
                         ],
                       ),
@@ -99,29 +99,29 @@ class Human1 extends StatelessWidget {
                   ],
                 ),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Texts(text: 'Phone Number'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Enter phone number'),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Texts(text: 'Email'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Enter email'),
 
-                const SizedBox(height: 16),
+                SizedBox(height: 16.h),
 
                 Texts(text: 'Other Information'),
-                const SizedBox(height: 8),
+                SizedBox(height: 8.h),
                 Xfield(text: 'Write something'),
 
-                const SizedBox(height: 30),
+                SizedBox(height: 30.h),
 
                 SizedBox(
                   width: double.infinity,
-                  height: 55,
+                  height: 55.h,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>Home3()));
@@ -129,13 +129,12 @@ class Human1 extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14),
+                        borderRadius: BorderRadius.circular(14.r),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       "Continue",
-                      style: TextStyle(
-                        fontSize: 16,
+                      style: TextStyle(fontSize: 1.6.sp,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),

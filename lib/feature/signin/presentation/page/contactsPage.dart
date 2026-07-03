@@ -25,7 +25,7 @@ class ContactsPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ClientsPage(),
+                    builder: (context) => ClientsPage(),
                   ),
                 );
               }
@@ -33,7 +33,7 @@ class ContactsPage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const Horse(),
+                    builder: (context) => Horse(),
                   ),
                 );
               }

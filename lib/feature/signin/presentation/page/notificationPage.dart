@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/notifications1.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationPage extends StatelessWidget {
   const NotificationPage({super.key});
@@ -13,15 +14,15 @@ class NotificationPage extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
-        leading: const BackButton(color: Colors.black),
-        title: const Text(
+        leading: BackButton(color: Colors.black),
+        title: Text(
           "Notifications",
           style: TextStyle(color: Colors.black),
         ),
       ),
 
       body: ListView(
-        padding: const EdgeInsets.all(10),
+        padding: EdgeInsets.all(10.r),
         children: [
           notificationCard(
             title: "Nur’s appointment rescheduled",
@@ -56,7 +57,7 @@ class NotificationPage extends StatelessWidget {
             blue: true,
           ),
 
-          const SizedBox(height: 15),
+          SizedBox(height: 15.h),
 
           // 🔵 Button at the end
           ElevatedButton(
@@ -64,20 +65,20 @@ class NotificationPage extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const NotificationPage1(),
+                  builder: (context) => NotificationPage1(),
                 ),
               );
             },
             style: ElevatedButton.styleFrom(
-              minimumSize: const Size(double.infinity, 50),
+              minimumSize: Size(double.infinity, 50),
               backgroundColor: Colors.blue,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(8.r),
               ),
             ),
-            child: const Text(
+            child: Text(
               "Go to Next Page",
-              style: TextStyle(fontSize: 16),
+              style: TextStyle(fontSize: 1.6.sp),
             ),
           ),
         ],
@@ -91,27 +92,26 @@ class NotificationPage extends StatelessWidget {
     bool blue = false,
   }) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 6),
-      padding: const EdgeInsets.all(12),
+      margin: EdgeInsets.only(bottom: 6.h),
+      padding: EdgeInsets.all(12.r),
       decoration: BoxDecoration(
         color: blue ? Colors.blue.shade100 : Colors.transparent,
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadius.circular(5.r),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 18,
+            style: TextStyle(fontSize: 1.8.sp,
             ),
           ),
-          const SizedBox(height: 6),
+          SizedBox(height: 6.h),
           Text(
             time,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.black54,
-              fontSize: 14,
+              fontSize: 14.sp,
             ),
           ),
         ],

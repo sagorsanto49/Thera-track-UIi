@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/unpaid.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/core/widget/text.dart';
@@ -18,20 +19,20 @@ class PaidScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
+      backgroundColor: Color(0xffF5F5F5),
 
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
-        title: const Text("Paid"),
+        title: Text("Paid"),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(Icons.arrow_back),
         ),
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: EdgeInsets.all(12.r),
         child: Column(
           children: [
             /// Client List
@@ -47,7 +48,7 @@ class PaidScreen extends StatelessWidget {
                     child: Column(
                       children: clients.map((client) {
                         return Container(
-                          padding: const EdgeInsets.all(10),
+                          padding: EdgeInsets.all(10.r),
                           decoration: BoxDecoration(
                             border: Border(
                               bottom: BorderSide(
@@ -68,11 +69,11 @@ class PaidScreen extends StatelessWidget {
                                       text: client["name"],
                                     ),
 
-                                    const SizedBox(height: 6),
+                                    SizedBox(height: 6.h),
 
                                     Texts(
                                       text: "14 jan 2025",
-                                      // fontSize: 12,
+                                      // fontSize: 12.sp,
                                       color: Colors.grey,
                                     ),
                                   ],
@@ -83,7 +84,7 @@ class PaidScreen extends StatelessWidget {
                                 text:
                                     "${client["amount"]} \$",
                                 color: Colors.green,
-                                // fontSize: 18,
+                                // fontSize: 18.sp,
                               ),
                             ],
                           ),
@@ -92,11 +93,11 @@ class PaidScreen extends StatelessWidget {
                     ),
                   ),
 
-                  const SizedBox(height: 20),
+                  SizedBox(height: 20.h),
 
                   /// Total
                   Padding(
-                    padding: const EdgeInsets.symmetric(
+                    padding: EdgeInsets.symmetric(
                       horizontal: 10,
                     ),
                     child: Row(
@@ -105,64 +106,64 @@ class PaidScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment:
                                 CrossAxisAlignment.start,
-                            children: const [
+                            children: [
                               Texts(
                                 text: "Total",
                               ),
 
-                              SizedBox(height: 6),
+                              SizedBox(height: 6.h),
 
                               Texts(
                                 text: "14 jan 2025",
-                                // fontSize: 12,
+                                // fontSize: 12.sp,
                                 color: Colors.grey,
                               ),
                             ],
                           ),
                         ),
 
-                        const Texts(
+                        Texts(
                           text: "750 \$",
                           color: Colors.green,
-                          // fontSize: 22,
+                          // fontSize: 22.sp,
                         ),
                       ],
                     ),
                   ),
 
-                  const SizedBox(height: 50),
+                  SizedBox(height: 50.h),
 
                   /// Email Section
                   Container(
-                    padding: const EdgeInsets.all(12),
+                    padding: EdgeInsets.all(12.r),
                     decoration: BoxDecoration(
-                      color: const Color(0xffB8D7F0),
+                      color: Color(0xffB8D7F0),
                       borderRadius:
-                          BorderRadius.circular(4),
+                          BorderRadius.circular(4.r),
                     ),
                     child: Column(
                       children: [
-                        const Xfield(
+                        Xfield(
                           text:
                               "someone@gmail.com",
                         ),
 
-                        const SizedBox(height: 18),
+                        SizedBox(height: 18.h),
 
-                        const Align(
+                        Align(
                           alignment:
                               Alignment.centerLeft,
                           child: Texts(
                             text:
                                 "Data will be sent to the email above.",
-                            // fontSize: 13,
+                            // fontSize: 13.sp,
                           ),
                         ),
 
-                        const SizedBox(height: 20),
+                        SizedBox(height: 20.h),
 
                         SizedBox(
-                          width: 140,
+                          width: 140.w,
                           child: Primarybutten(
                             title: "Send", onpress: () { 
                               Navigator.push(context, MaterialPageRoute(builder: (context)=>UnPaidScreen()));

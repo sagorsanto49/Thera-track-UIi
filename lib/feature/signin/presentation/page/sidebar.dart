@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/invoice.dart';
 import 'package:doctor/subscription.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -11,50 +12,50 @@ class CustomDrawer extends StatelessWidget {
       {
         "icon": Icons.medical_services_outlined,
         "title": "Invoice Setup",
-        "page": const Invoice(),
+        "page": Invoice(),
       },
       {
         "icon": Icons.person_outline,
         "title": "Your Details",
-        // "page": const Step2(),
+        // "page": Step2(),
       },
       {
         "icon": Icons.format_list_bulleted,
         "title": "Treatments",
-        // "page": const ChangePassword(),
+        // "page": ChangePassword(),
       },
       {
         "icon": Icons.payments_outlined,
         "title": "Paid",
-        // "page": const Step1(),
+        // "page": Step1(),
       },
       {
         "icon": Icons.money_off_csred_outlined,
         "title": "Unpaid",
-        // "page": const Step1(),
+        // "page": Step1(),
       },
       {
         "icon": Icons.workspace_premium_outlined,
         "title": "Subscription",
-        "page": const Subscription(),
+        "page": Subscription(),
       },
       {
         "icon": Icons.chat_bubble_outline,
         "title": "Feed back",
-        // "page": const Step1(),
+        // "page": Step1(),
       },
       {
         "icon": Icons.settings_outlined,
         "title": "Advance Setting",
-        // "page": const Step1(),
+        // "page": Step1(),
       },
     ];
 
     return Drawer(
-      width: 270,
+      width: 270.w,
 
       child: Container(
-        color: const Color(0xff2492EA),
+        color: Color(0xff2492EA),
 
         child: Column(
           children: [
@@ -62,12 +63,12 @@ class CustomDrawer extends StatelessWidget {
             Container(
               width: double.infinity,
 
-              padding: const EdgeInsets.only(
-                top: 50,
-                bottom: 20,
+              padding: EdgeInsets.only(
+                top: 50.h,
+                bottom: 20.h,
               ),
 
-              color: const Color(0xffBFD6EA),
+              color: Color(0xffBFD6EA),
 
               child: Column(
                 children: [
@@ -90,7 +91,7 @@ class CustomDrawer extends StatelessWidget {
             // MENU ITEMS
             Expanded(
               child: ListView.builder(
-                padding: const EdgeInsets.only(top: 15),
+                padding: EdgeInsets.only(top: 15.h),
 
                 itemCount: menuItems.length,
 
@@ -104,9 +105,9 @@ class CustomDrawer extends StatelessWidget {
                     title: Text(
                       menuItems[index]["title"],
 
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 17,
+                        fontSize: 17.sp,
                       ),
                     ),
 
@@ -128,20 +129,20 @@ class CustomDrawer extends StatelessWidget {
 
             // LOGOUT BUTTON
             Padding(
-              padding: const EdgeInsets.only(bottom: 40),
+              padding: EdgeInsets.only(bottom: 40.h),
 
               child: ListTile(
-                leading: const Icon(
+                leading: Icon(
                   Icons.logout,
                   color: Colors.white,
                 ),
 
-                title: const Text(
+                title: Text(
                   "Log Out",
 
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 17,
+                    fontSize: 17.sp,
                   ),
                 ),
 

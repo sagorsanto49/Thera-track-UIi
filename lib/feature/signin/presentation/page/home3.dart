@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/hume31.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
@@ -16,15 +17,15 @@ class Home3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF5F7FB),
+      backgroundColor: Color(0xffF5F7FB),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.black,
         ),
-        title: const Text(
+        title: Text(
           'Step 4',
           style: TextStyle(
             color: Colors.black,
@@ -33,44 +34,43 @@ class Home3 extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Headertext(
+            Headertext(
               title: 'Select the area of Concern',
               subtitle:
                   'Select one or more areas. If unsure select Other',
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // Upload Section
             Container(
-              height: 180,
+              height: 180.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.r),
                 border: Border.all(color: Colors.black12),
               ),
-              child: const Center(
+              child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Icons.cloud_upload_outlined,
-                      size: 40,
+                      size: 40.r,
                       color: Colors.indigo,
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 10.h),
                     Text(
                       'Click to browse or\n drag and drop your files',
                       textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 15,
+                      style: TextStyle(fontSize: 1.5.sp,
                         color: Colors.black54,
-                        height: 1.5,
+                        height: 1.5.h,
                       ),
                     ),
                   ],
@@ -78,41 +78,41 @@ class Home3 extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             Row(
-              children: const [
+              children: [
                 Expanded(child: Xfield(text: 'Joints')),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(child: Xfield(text: 'Back')),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(child: Xfield(text: 'Paws')),
               ],
             ),
 
-            const SizedBox(height: 12),
+            SizedBox(height: 12.h),
 
             Row(
-              children: const [
+              children: [
                 Expanded(child: Xfield(text: 'Muscles')),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(child: Xfield(text: 'Neck')),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 Expanded(child: Xfield(text: 'Ears')),
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // Add Area
             Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: Xfield(text: '------'),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                   child: ElevatedButton(
                     onPressed: () {
         
@@ -120,14 +120,14 @@ class Home3 extends StatelessWidget {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.indigo,
                       elevation: 0,
-                      padding: const EdgeInsets.symmetric(
+                      padding: EdgeInsets.symmetric(
                         horizontal: 24,
                       ),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(12.r),
                       ),
                     ),
-                    child: const Text(
+                    child: Text(
                       'Add',
                       style: TextStyle(
                         color: Colors.white,
@@ -139,7 +139,7 @@ class Home3 extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             // Description Card
             _buildCard(
@@ -154,32 +154,32 @@ class Home3 extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (_) => const Texthome(),
+                              builder: (_) => Texthome(),
                             ),
                           );
                         },
-                        child: const Texts(
+                        child: Texts(
                           text: 'Description',
                         ),
                       ),
-                      const Icon(
+                      Icon(
                         Icons.info_outline,
                         color: Colors.indigo,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 12),
-                  const Xfield(text: 'text'),
+                  SizedBox(height: 12.h),
+                  Xfield(text: 'text'),
                 ],
               ),
             ),
 
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
 
             // Additional Notes Card
             _buildCard(
               child: Column(
-                children: const [
+                children: [
                   Row(
                     mainAxisAlignment:
                         MainAxisAlignment.spaceBetween,
@@ -191,13 +191,13 @@ class Home3 extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 12),
+                  SizedBox(height: 12.h),
                   Xfield(text: 'text'),
                 ],
               ),
             ),
 
-            const SizedBox(height: 24),
+            SizedBox(height: 24.h),
 
             Primarybutten(
               title: 'Next',
@@ -205,7 +205,7 @@ class Home3 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const Step3Page(),
+                    builder: (_) => Step3Page(),
                   ),
                 );
               },
@@ -220,11 +220,11 @@ class Home3 extends StatelessWidget {
     required Widget child,
   }) {
     return Container(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.all(16.r),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: const [
+        borderRadius: BorderRadius.circular(16.r),
+        boxShadow: [
           BoxShadow(
             color: Color.fromRGBO(0, 0, 0, 0.03),
             blurRadius: 10,

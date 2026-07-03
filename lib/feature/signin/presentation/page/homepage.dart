@@ -6,6 +6,7 @@ import 'package:doctor/feature/signin/presentation/page/notificationPage.dart';
 import 'package:doctor/feature/signin/presentation/page/offlineFilesPage.dart';
 import 'package:doctor/feature/signin/presentation/page/travelPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/feature/signin/presentation/page/sidebar.dart';
@@ -52,31 +53,31 @@ class HomePage extends StatelessWidget {
 ];
 
     return Scaffold(
-      drawer: const CustomDrawer(),
+      drawer: CustomDrawer(),
       backgroundColor: Colors.white,
 
       body: Column(
         children: [
           Container(
-            padding: const EdgeInsets.only(
-              top: 70,
-              bottom: 30,
-              left: 15,
-              right: 10,
+            padding: EdgeInsets.only(
+              top: 70.h,
+              bottom: 30.h,
+              left: 15.w,
+              right: 10.w,
             ),
             width: double.infinity,
 
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               color: Color(0xFF1E88E5),
               borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(10),
-                bottomRight: Radius.circular(10),
+                bottomLeft: Radius.circular(10.r),
+                bottomRight: Radius.circular(10.r),
               ),
             ),
 
             child: Row(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 20,
                   backgroundColor: Colors.white,
                   child: Icon(
@@ -85,22 +86,22 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(width: 20),
+                SizedBox(width: 20.w),
 
                 Expanded(
                   child: Column(
                     crossAxisAlignment:
                         CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         "Hello, Good Evening",
                         style: TextStyle(
                           color: Colors.white70,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
 
-                      const SizedBox(height: 4),
+                      SizedBox(height: 4.h),
 
                       Texts(
                         text: 'Setup Your Account',
@@ -113,7 +114,7 @@ class HomePage extends StatelessWidget {
                 Builder(
                   builder: (context) {
                     return IconButton(
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.menu,
                         color: Colors.white,
                       ),
@@ -129,10 +130,10 @@ class HomePage extends StatelessWidget {
 
           Expanded(
             child: GridView.builder(
-              padding: const EdgeInsets.all(10),
+              padding: EdgeInsets.all(10.r),
 
               gridDelegate:
-                  const SliverGridDelegateWithFixedCrossAxisCount(
+                  SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -142,7 +143,7 @@ class HomePage extends StatelessWidget {
 
               itemBuilder: (context, index) {
                 return InkWell(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20.r),
 
                   onTap: () {
                     Navigator.push(
@@ -156,9 +157,9 @@ class HomePage extends StatelessWidget {
 
                   child: Container(
                     decoration: BoxDecoration(
-                      color: const Color(0xffE9F5FE),
+                      color: Color(0xffE9F5FE),
                       borderRadius:
-                          BorderRadius.circular(20),
+                          BorderRadius.circular(20.r),
                     ),
 
                     child: Column(
@@ -168,17 +169,16 @@ class HomePage extends StatelessWidget {
                       children: [
                         Icon(
                           iicon[index],
-                          size: 35,
+                          size: 35.r,
                           color: Colors.blue,
                         ),
 
-                        const SizedBox(height: 10),
+                        SizedBox(height: 10.h),
 
                         Text(
                           ttext[index],
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 15,
+                          style: TextStyle(fontSize: 1.5.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),

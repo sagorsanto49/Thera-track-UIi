@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FeedbackPage extends StatelessWidget {
   const FeedbackPage({super.key});
@@ -7,37 +8,36 @@ class FeedbackPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Feedback"),
+        title: Text("Feedback"),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Container(
-          padding: const EdgeInsets.all(16),
+          padding: EdgeInsets.all(16.r),
           color: Colors.lightBlue.shade100,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
+              Text(
                 "Give Feedback",
-                style: TextStyle(
-                  fontSize: 24,
+                style: TextStyle(fontSize: 2.4.sp,
                   fontWeight: FontWeight.bold,
                 ),
               ),
 
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
 
-              const Text("What do you think of the app?"),
+              Text("What do you think of the app?"),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               /// Emoji Row
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Icon(Icons.sentiment_very_satisfied,
-                      color: Colors.amber, size: 40),
+                      color: Colors.amber, size: 40.r),
                   Icon(Icons.sentiment_satisfied),
                   Icon(Icons.sentiment_neutral),
                   Icon(Icons.sentiment_dissatisfied),
@@ -45,7 +45,7 @@ class FeedbackPage extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               /// Feedback Box
               TextField(
@@ -58,16 +58,16 @@ class FeedbackPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20.h),
 
               /// Send Button
               Center(
                 child: ElevatedButton.icon(
                   onPressed: () {},
-                  icon: const Icon(Icons.send),
-                  label: const Text("Send"),
+                  icon: Icon(Icons.send),
+                  label: Text("Send"),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: const Size(150, 50),
+                    minimumSize: Size(150, 50),
                   ),
                 ),
               ),

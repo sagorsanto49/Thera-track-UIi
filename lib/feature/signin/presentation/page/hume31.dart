@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/home5.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step3Page extends StatelessWidget {
   const Step3Page({super.key});
@@ -7,13 +8,13 @@ class Step3Page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF4F4F4),
+      backgroundColor: Color(0xffF4F4F4),
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
         centerTitle: true,
-        leading: const Icon(Icons.arrow_back, color: Colors.black),
-        title: const Text(
+        leading: Icon(Icons.arrow_back, color: Colors.black),
+        title: Text(
           "Step 3",
           style: TextStyle(
             color: Colors.black,
@@ -22,35 +23,33 @@ class Step3Page extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(8),
+        padding: EdgeInsets.all(8.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
+            Text(
               "Select the Area of Concern",
-              style: TextStyle(
-                fontSize: 16,
+              style: TextStyle(fontSize: 1.6.sp,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            const SizedBox(height: 5),
-            const Text(
+            SizedBox(height: 5.h),
+            Text(
               "Select one or more areas. If unsure select Other.",
-              style: TextStyle(
-                fontSize: 11,
+              style: TextStyle(fontSize: 1.1.sp,
                 color: Colors.grey,
               ),
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             // IMAGE
             Center(
               child: Column(
                 children: [
                   Container(
-                    width: 145,
-                    height: 130,
+                    width: 145.w,
+                    height: 130.h,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: Colors.grey.shade300,
@@ -62,20 +61,20 @@ class Step3Page extends StatelessWidget {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  SizedBox(height: 8.h),
                   SizedBox(
-                    height: 25,
+                    height: 25.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff3399FF),
-                        padding: const EdgeInsets.symmetric(
+                        backgroundColor: Color(0xff3399FF),
+                        padding: EdgeInsets.symmetric(
                           horizontal: 15,
                         ),
                       ),
                       onPressed: () {},
-                      child: const Text(
+                      child: Text(
                         "Change Image",
-                        style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: 1.0.sp),
                       ),
                     ),
                   ),
@@ -83,69 +82,68 @@ class Step3Page extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             Row(
               children: [
                 areaButton("Head"),
-                const SizedBox(width: 5),
+                SizedBox(width: 5.w),
                 selectedAreaButton("Neck"),
-                const SizedBox(width: 5),
+                SizedBox(width: 5.w),
                 selectedAreaButton("Back"),
               ],
             ),
 
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
 
             Row(
               children: [
                 areaButton("Shoulders"),
-                const SizedBox(width: 5),
+                SizedBox(width: 5.w),
                 areaButton("Buttocks"),
-                const SizedBox(width: 5),
+                SizedBox(width: 5.w),
                 areaButton("Thighs"),
               ],
             ),
 
-            const SizedBox(height: 8),
+            SizedBox(height: 8.h),
 
             Row(
               children: [
-                const Expanded(child: SizedBox()),
+                Expanded(child: SizedBox()),
                 Expanded(
                   child: SizedBox(
-                    height: 35,
+                    height: 35.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff3399FF),
+                        backgroundColor: Color(0xff3399FF),
                       ),
                       onPressed: () {},
-                      child: const Text("Add"),
+                      child: Text("Add"),
                     ),
                   ),
                 ),
               ],
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             // DESCRIPTION
             buildCard(
               title: "Description",
               icon: Icons.check,
-              child: const Text(
+              child: Text(
                 "1. Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n\n"
                 "2. Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n\n"
                 "3. Lorem Ipsum is simply dummy text of the printing and typesetting industry.\n\n"
                 "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-                style: TextStyle(
-                  fontSize: 12,
-                  height: 1.5,
+                style: TextStyle(fontSize: 1.2.sp,
+                  height: 1.5.h,
                 ),
               ),
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             // ADD POINT
             buildCard(
@@ -161,22 +159,22 @@ class Step3Page extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 18),
+            SizedBox(height: 18.h),
 
             SizedBox(
               width: double.infinity,
-              height: 42,
+              height: 42.h,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff3399FF),
+                  backgroundColor: Color(0xff3399FF),
                 ),
                 onPressed: () {
 
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Home5()));
                 },
-                child: const Text(
+                child: Text(
                   "Next",
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 1.5.sp),
                 ),
               ),
             ),
@@ -194,39 +192,39 @@ class Step3Page extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         border: Border.all(
-          color: const Color(0xffA9D1F5),
+          color: Color(0xffA9D1F5),
         ),
         color: Colors.white,
       ),
       child: Column(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 8,
             ),
-            color: const Color(0xffD8ECFF),
+            color: Color(0xffD8ECFF),
             child: Row(
               mainAxisAlignment:
                   MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   title,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 Icon(
                   icon,
-                  size: 18,
+                  size: 18.r,
                   color: Colors.grey,
                 ),
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding: EdgeInsets.all(10.r),
             child: child,
           ),
         ],
@@ -236,16 +234,16 @@ class Step3Page extends StatelessWidget {
 
   static Widget pointTile(String text) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
-      padding: const EdgeInsets.symmetric(
+      margin: EdgeInsets.only(bottom: 8.h),
+      padding: EdgeInsets.symmetric(
         horizontal: 10,
         vertical: 10,
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          color: const Color(0xffA9D1F5),
+          color: Color(0xffA9D1F5),
         ),
-        color: const Color(0xffF7FBFF),
+        color: Color(0xffF7FBFF),
       ),
       child: Row(
         mainAxisAlignment:
@@ -253,11 +251,11 @@ class Step3Page extends StatelessWidget {
         children: [
           Text(
             text,
-            style: const TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 1.2.sp),
           ),
-          const Icon(
+          Icon(
             Icons.cancel_outlined,
-            size: 16,
+            size: 16.r,
             color: Colors.grey,
           ),
         ],
@@ -268,7 +266,7 @@ class Step3Page extends StatelessWidget {
   static Widget areaButton(String text) {
     return Expanded(
       child: Container(
-        height: 38,
+        height: 38.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -278,9 +276,9 @@ class Step3Page extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.grey,
-            fontSize: 11,
+            fontSize: 11.sp,
           ),
         ),
       ),
@@ -290,17 +288,17 @@ class Step3Page extends StatelessWidget {
   static Widget selectedAreaButton(String text) {
     return Expanded(
       child: Container(
-        height: 38,
+        height: 38.h,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: const Color(0xff3399FF),
-          borderRadius: BorderRadius.circular(3),
+          color: Color(0xff3399FF),
+          borderRadius: BorderRadius.circular(3.r),
         ),
         child: Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             color: Colors.white,
-            fontSize: 11,
+            fontSize: 11.sp,
           ),
         ),
       ),

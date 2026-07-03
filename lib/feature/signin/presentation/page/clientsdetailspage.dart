@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddClientPage extends StatelessWidget {
   final Map<String, String> client;
@@ -10,23 +11,23 @@ class AddClientPage extends StatelessWidget {
 
   Widget infoTile(String title, String value) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 10.h),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.blue,
-              fontSize: 12,
+              fontSize: 12.sp,
             ),
           ),
-          const SizedBox(height: 5),
+          SizedBox(height: 5.h),
           Text(
             value,
-            style: const TextStyle(fontSize: 16),
+            style: TextStyle(fontSize: 1.6.sp),
           ),
-          const Divider(),
+          Divider(),
         ],
       ),
     );
@@ -36,22 +37,21 @@ class AddClientPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Clients"),
+        title: Text("Clients"),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: ListView(
           children: [
             Text(
               client["name"] ?? "",
-              style: const TextStyle(
-                fontSize: 22,
+              style: TextStyle(fontSize: 2.2.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
 
-            const SizedBox(height: 20),
+            SizedBox(height: 20.h),
 
             infoTile("Address", client["address"] ?? ""),
             infoTile("Postcode", client["postcode"] ?? ""),
@@ -62,7 +62,7 @@ class AddClientPage extends StatelessWidget {
 
             TextButton(
               onPressed: () {},
-              child: const Text("Edit"),
+              child: Text("Edit"),
             ),
           ],
         ),

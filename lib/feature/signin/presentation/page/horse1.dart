@@ -26,7 +26,7 @@ class Horse1 extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => const Horse2(),
+                    builder: (_) => Horse2(),
                   ),
                 );
               }

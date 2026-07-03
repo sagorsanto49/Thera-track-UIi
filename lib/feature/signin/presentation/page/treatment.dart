@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/advancesetting.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 
 class TreatmentScreen extends StatefulWidget {
@@ -21,11 +22,11 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
-        leading: const Icon(
+        leading: Icon(
           Icons.arrow_back,
           color: Colors.black,
         ),
-        title: const Text(
+        title: Text(
           "Treatment",
           style: TextStyle(
             color: Colors.black,
@@ -34,41 +35,39 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         child: Column(
           children: [
             /// Heading Row
-            const Row(
+            Row(
               children: [
                 Expanded(
                   flex: 3,
                   child: Text(
                     "Treatment Name",
-                    style: TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(fontSize: 1.6.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
 
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
 
                 Expanded(
                   flex: 2,
                   child: Text(
                     "Price",
-                    style: TextStyle(
-                      fontSize: 16,
+                    style: TextStyle(fontSize: 1.6.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
 
-                SizedBox(width: 40),
+                SizedBox(width: 40.w),
               ],
             ),
 
-            const SizedBox(height: 15),
+            SizedBox(height: 15.h),
 
             /// Treatment List
             Expanded(
@@ -78,7 +77,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                   bool isLast = index == treatmentList.length;
 
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
+                    padding: EdgeInsets.only(bottom: 15.h),
                     child: Row(
                       children: [
                         /// Treatment Name
@@ -88,21 +87,21 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                             decoration: InputDecoration(
                               hintText: "Ventral Curvature",
                               contentPadding:
-                                  const EdgeInsets.symmetric(
+                                  EdgeInsets.symmetric(
                                 horizontal: 12,
                                 vertical: 14,
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
-                                    BorderRadius.circular(4),
+                                    BorderRadius.circular(4.r),
                                 borderSide: BorderSide(
                                   color: Colors.blue.shade200,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
-                                    BorderRadius.circular(4),
-                                borderSide: const BorderSide(
+                                    BorderRadius.circular(4.r),
+                                borderSide: BorderSide(
                                   color: Colors.blue,
                                 ),
                               ),
@@ -112,7 +111,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                           ),
                         ),
 
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10.w),
 
                         /// Price
                         Expanded(
@@ -122,21 +121,21 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                 TextInputType.number,
                             decoration: InputDecoration(
                               contentPadding:
-                                  const EdgeInsets.symmetric(
+                                  EdgeInsets.symmetric(
                                 horizontal: 12,
                                 vertical: 14,
                               ),
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
-                                    BorderRadius.circular(4),
+                                    BorderRadius.circular(4.r),
                                 borderSide: BorderSide(
                                   color: Colors.blue.shade200,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
-                                    BorderRadius.circular(4),
-                                borderSide: const BorderSide(
+                                    BorderRadius.circular(4.r),
+                                borderSide: BorderSide(
                                   color: Colors.blue,
                                 ),
                               ),
@@ -146,12 +145,12 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                           ),
                         ),
 
-                        const SizedBox(width: 10),
+                        SizedBox(width: 10.w),
 
                         /// Add / Delete Button
                         isLast
                             ? SizedBox(
-                                height: 48,
+                                height: 48.h,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     setState(() {
@@ -165,7 +164,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                     backgroundColor:
                                         Colors.blue,
                                   ),
-                                  child: const Text("Add"),
+                                  child: Text("Add"),
                                 ),
                               )
                             : IconButton(
@@ -176,7 +175,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
                                     );
                                   });
                                 },
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.close,
                                 ),
                               ),
@@ -192,7 +191,7 @@ class _TreatmentScreenState extends State<TreatmentScreen> {
 
       /// Bottom Primary Button
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.fromLTRB(
+        padding: EdgeInsets.fromLTRB(
           16,
           10,
           16,

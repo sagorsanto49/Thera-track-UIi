@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
@@ -18,24 +19,24 @@ class UnPaidScreen extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xffF5F5F5),
+      backgroundColor: Color(0xffF5F5F5),
 
       appBar: AppBar(
         backgroundColor: Colors.white,
         centerTitle: true,
         elevation: 1,
-        title: const Text(
+        title: Text(
           "UnPaid",
           style: TextStyle(color: Colors.black),
         ),
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.black),
         ),
       ),
 
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16.r),
         children: [
           /// Client List
           Container(
@@ -44,14 +45,14 @@ class UnPaidScreen extends StatelessWidget {
               border: Border.all(
                 color: Colors.green.shade100,
               ),
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: ListView.separated(
               shrinkWrap: true,
-              physics: const NeverScrollableScrollPhysics(),
+              physics: NeverScrollableScrollPhysics(),
               itemCount: clients.length,
               separatorBuilder: (context, index) => Divider(
-                height: 1,
+                height: 1.h,
                 color: Colors.green.shade100,
               ),
               itemBuilder: (context, index) {
@@ -61,7 +62,7 @@ class UnPaidScreen extends StatelessWidget {
                   title: Texts(
                     text: client["name"].toString(),
                   ),
-                  subtitle: const Texts(
+                  subtitle: Texts(
                     text: "14 Jan 2025",
                     color: Colors.grey,
                   ),
@@ -74,21 +75,21 @@ class UnPaidScreen extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 20),
+          SizedBox(height: 20.h),
 
           /// Total Section
           Container(
-            padding: const EdgeInsets.symmetric(
+            padding: EdgeInsets.symmetric(
               horizontal: 10,
               vertical: 8,
             ),
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: Row(
               children: [
-                const Expanded(
+                Expanded(
                   child: Column(
                     crossAxisAlignment:
                         CrossAxisAlignment.start,
@@ -96,7 +97,7 @@ class UnPaidScreen extends StatelessWidget {
                       Texts(
                         text: "Total",
                       ),
-                      SizedBox(height: 5),
+                      SizedBox(height: 5.h),
                       Texts(
                         text: "14 Jan 2025",
                         color: Colors.grey,
@@ -105,7 +106,7 @@ class UnPaidScreen extends StatelessWidget {
                   ),
                 ),
 
-                const Texts(
+                Texts(
                   text: "750 \$",
                   color: Colors.red,
                 ),
@@ -113,24 +114,24 @@ class UnPaidScreen extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 30),
+          SizedBox(height: 30.h),
 
           /// Email Section
           Container(
-            padding: const EdgeInsets.all(16),
+            padding: EdgeInsets.all(16.r),
             decoration: BoxDecoration(
-              color: const Color(0xffB8D7F0),
-              borderRadius: BorderRadius.circular(8),
+              color: Color(0xffB8D7F0),
+              borderRadius: BorderRadius.circular(8.r),
             ),
             child: Column(
               children: [
-                const Xfield(
+                Xfield(
                   text: "someone@gmail.com",
                 ),
 
-                const SizedBox(height: 15),
+                SizedBox(height: 15.h),
 
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Texts(
                     text:
@@ -138,10 +139,10 @@ class UnPaidScreen extends StatelessWidget {
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                SizedBox(height: 20.h),
 
                 SizedBox(
-                  width: 150,
+                  width: 150.w,
                   child: Primarybutten(
                     title: "Send",
                     onpress: () {
@@ -149,7 +150,7 @@ class UnPaidScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (_) =>
-                              const FeedbackPage(),
+                              FeedbackPage(),
                         ),
                       );
                     },

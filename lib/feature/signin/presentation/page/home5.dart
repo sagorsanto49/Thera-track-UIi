@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/equipment.dart';
 import 'package:doctor/feature/signin/presentation/page/home51.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Home5 extends StatelessWidget {
   const Home5({super.key});
@@ -18,17 +19,17 @@ class Home5 extends StatelessWidget {
         elevation: 1,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(8.0.r),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Treatment's", style: TextStyle(fontSize: 20)),
+                Text("Treatment's", style: TextStyle(fontSize: 2.0.sp)),
                 Icon(Icons.eight_k_plus),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Xfield(
               text: 'Cryotherapy',
               suffixIcons: IconButton(
@@ -36,7 +37,7 @@ class Home5 extends StatelessWidget {
                 icon: Icon(Icons.align_horizontal_right),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Xfield(
               text: 'Hydrotherapy',
               suffixIcons: IconButton(
@@ -44,7 +45,7 @@ class Home5 extends StatelessWidget {
                 icon: Icon(Icons.align_horizontal_right),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Xfield(
               text: 'Laser Therapy',
               suffixIcons: IconButton(
@@ -52,7 +53,7 @@ class Home5 extends StatelessWidget {
                 icon: Icon(Icons.align_horizontal_right),
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             Xfield(
               text: 'Osteopathy',
               suffixIcons: IconButton(
@@ -60,7 +61,7 @@ class Home5 extends StatelessWidget {
                 icon: Icon(Icons.align_horizontal_right),
               ),
             ),
-            SizedBox(height: 30),
+            SizedBox(height: 30.h),
             Primarybutten(
               title: 'Next',
               onpress: () {
