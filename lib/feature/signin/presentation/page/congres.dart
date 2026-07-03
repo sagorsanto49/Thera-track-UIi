@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Congres extends StatelessWidget {
   const Congres({super.key});
@@ -14,16 +15,16 @@ class Congres extends StatelessWidget {
           // Success Icon
           Center(
             child: Container(
-              width: 90,
-              height: 90,
+              width: 90.w,
+              height: 90.h,
               decoration: BoxDecoration(
                 color: const Color.fromRGBO(33, 150, 243, 0.1),
                 shape: BoxShape.circle,
               ),
               child: Center(
                 child: Container(
-                  width: 62,
-                  height: 62,
+                  width: 62.w,
+                  height: 62.h,
                   decoration: const BoxDecoration(
                     color: Colors.blue,
                     shape: BoxShape.circle,
@@ -42,7 +43,7 @@ class Congres extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 285,
+              height: 285.h,
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               decoration: const BoxDecoration(
@@ -60,8 +61,8 @@ class Congres extends StatelessWidget {
                 children: [
                   // Drag Handle
                   Container(
-                    width: 40,
-                    height: 5,
+                    width: 40.w,
+                    height: 5.h,
                     decoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10),
@@ -94,7 +95,7 @@ class Congres extends StatelessWidget {
 
                   SizedBox(
                     width: double.infinity,
-                    height: 50,
+                    height: 50.h,
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
