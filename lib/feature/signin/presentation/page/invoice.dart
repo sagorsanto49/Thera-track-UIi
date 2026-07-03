@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/invoicesetup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Invoice extends StatelessWidget {
   const Invoice({super.key});
@@ -53,7 +54,7 @@ class Invoice extends StatelessWidget {
                   ),
 
                   SizedBox(
-                    width: 80,
+                    width: 80.w,
 
                     child: Primarybutten(
                       title: 'Edit',

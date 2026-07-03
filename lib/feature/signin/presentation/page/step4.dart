@@ -6,6 +6,7 @@ import 'package:doctor/feature/signin/presentation/page/step4home.dart';
 import 'package:doctor/feature/signin/presentation/page/step5.dart';
 import 'package:doctor/feature/signin/presentation/page/texthome.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Step4 extends StatelessWidget {
   const Step4({super.key});
@@ -44,7 +45,7 @@ class Step4 extends StatelessWidget {
 
             /// Upload Box
             Container(
-              height: 180,
+              height: 180.h,
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -113,7 +114,7 @@ class Step4 extends StatelessWidget {
                 const SizedBox(width: 10),
 
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.indigo,
@@ -147,7 +148,7 @@ class Step4 extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.r),
                 boxShadow: const [
                   BoxShadow(
                     color: Color.fromRGBO(0, 0, 0, 0.03),
@@ -187,7 +188,7 @@ class Step4 extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(16.r),
                 boxShadow: const [
                   BoxShadow(
                     color: Color.fromRGBO(0, 0, 0, 0.03),

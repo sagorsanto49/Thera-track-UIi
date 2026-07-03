@@ -4,6 +4,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/signin.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Resetpassword extends StatelessWidget {
   const Resetpassword({super.key});
@@ -59,15 +60,15 @@ class Resetpassword extends StatelessWidget {
                   onpress: () {
                     showModalBottomSheet(context: context, builder: (context){
                       return SizedBox(
-                        height: 423,width: 440,
+                        height: 423.h,width: 440.w,
                         child:
                         Center(
                           child: Column(
                             // crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Container(
-                                width: 50,
-                                height: 5,
+                                width: 50.w,
+                                height: 5.h,
                                 margin: const EdgeInsets.only(bottom: 20),
                                 decoration: BoxDecoration(
                                   color: Colors.blue,
@@ -77,8 +78,8 @@ class Resetpassword extends StatelessWidget {
 
                               // Circle icon
                                   Container(
-                                    height: 60,
-                                    width: 60,
+                                    height: 60.h,
+                                    width: 60.w,
                                     decoration: const BoxDecoration(
                                       shape: BoxShape.circle,
                                       color: Colors.blue,
