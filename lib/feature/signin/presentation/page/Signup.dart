@@ -3,7 +3,6 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Signup extends StatelessWidget {
   const Signup({super.key});
@@ -77,7 +76,7 @@ class Signup extends StatelessWidget {
                 SizedBox(height: 16),
                 Primarybutten(
                   title: 'Sign Up',
-                  size: 15.sp,
+                  size: 15,
                   bold: FontWeight.bold,
                   onpress: () {},
                 ),

@@ -11,20 +11,17 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:doctor/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
+  testWidgets('sign in screen renders and supports password visibility toggle',
+      (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    expect(find.textContaining('Sign in to'), findsOneWidget);
+    expect(find.text('Forgot Password?'), findsOneWidget);
+    expect(find.text('Sign up'), findsOneWidget);
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    expect(find.byIcon(Icons.visibility_off), findsOneWidget);
+    await tester.tap(find.byIcon(Icons.visibility_off));
     await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.byIcon(Icons.visibility), findsOneWidget);
   });
 }

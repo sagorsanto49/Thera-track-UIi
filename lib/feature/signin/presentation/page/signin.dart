@@ -1,100 +1,128 @@
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/controller/signin_controller.dart';
 import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'forgotpage.dart';
 import 'homepage.dart';
 
 class Signin extends StatelessWidget {
-  const Signin({super.key});
+  Signin({super.key});
+
+  final SigninController controller = Get.put(SigninController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 228.h),
-            Headertext(
-              title: 'Sign in to\nyour account',
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 120.h),
 
-              subtitle: 'Welcome back! Please enter your account',
-            ),
+              Headertext(
+                title: 'Sign in to\nyour account',
+                subtitle: 'Welcome back! Please enter your account',
+              ),
 
             SizedBox(height: 32.h),
+
             Text(
               'Your email',
-              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 14.h),
-
-            Xfield(text: 'Thomas Anree', prefixIcons: Icon(Icons.email_sharp)),
-
-            SizedBox(height: 16.h),
-            Text(
-              'Password',
-              style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 14.h),
-            Xfield(
-              text: 'Enter password',
-              prefixIcons: Icon(Icons.lock),
-              suffixIcons: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.visibility_off),
+              style: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16.h, width: 50.w),
+
+            SizedBox(height: 14.h),
+
+            Xfield(
+              controller: controller.emailController,
+              text: 'Thomas Anree',
+              prefixIcons: const Icon(Icons.email_sharp),
+            ),
+
+            SizedBox(height: 16.h),
+
+            Text(
+              'Password',
+              style: TextStyle(
+                fontSize: 15.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+
+            SizedBox(height: 14.h),
+
+            Obx(
+              () => Xfield(
+                controller: controller.passwordController,
+                text: 'Enter password',
+                prefixIcons: const Icon(Icons.lock),
+                obscureText: controller.isPasswordHidden.value,
+                suffixIcons: IconButton(
+                  onPressed: controller.togglePasswordVisibility,
+                  icon: Icon(
+                    controller.isPasswordHidden.value
+                        ? Icons.visibility_off
+                        : Icons.visibility,
+                  ),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 16.h),
+
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Forgotpage()),
-                );
+                Get.to(() => Forgotpage());
               },
-              child: Text('Forgot Password?'),
+              child: const Text('Forgot Password?'),
             ),
+
             SizedBox(height: 32.h),
+
             Primarybutten(
               title: 'Sign In',
               size: 16.sp,
               bold: FontWeight.bold,
               onpress: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
+                Get.to(() => const HomePage());
               },
             ),
 
             SizedBox(height: 32.h),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Dont have an account?'),
+                const Text('Dont have an account?'),
+
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Step3()),
-                    ); //Signup
+                    Get.to(() => Step3());
                   },
-
-                  child: Text(
+                  child: const Text(
                     'Sign up',
-                    style: TextStyle(color: Colors.indigo),
+                    style: TextStyle(
+                      color: Colors.indigo,
+                    ),
                   ),
                 ),
               ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+

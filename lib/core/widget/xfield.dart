@@ -2,32 +2,37 @@ import 'package:doctor/colour/colour.dart';
 import 'package:flutter/material.dart';
 
 class Xfield extends StatelessWidget {
-  const Xfield({super.key, this.text, this.prefixIcons,this.suffixIcons});
-final String? text;
-final Icon? prefixIcons;
-final IconButton? suffixIcons;
+  const Xfield({
+    super.key,
+    this.text,
+    this.prefixIcons,
+    this.suffixIcons,
+    this.controller,
+    this.obscureText = false,
+  });
+
+  final String? text;
+  final Icon? prefixIcons;
+  final IconButton? suffixIcons;
+  final TextEditingController? controller;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
+      obscureText: obscureText,
       decoration: InputDecoration(
-        // icon:Icon(icon as IconData?),
         prefixIcon: prefixIcons,
-       suffixIcon: suffixIcons,
-
-
+        suffixIcon: suffixIcons,
         hintText: text,
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: CustomColor.buttonColor),
-
-
         ),
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: CustomColor.buttonColor),
-        )
-
+        ),
       ),
-
     );
   }
 }
