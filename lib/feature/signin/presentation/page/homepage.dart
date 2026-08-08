@@ -7,12 +7,11 @@ import 'package:doctor/feature/signin/presentation/page/offlineFilesPage.dart';
 import 'package:doctor/feature/signin/presentation/page/travelPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/feature/signin/presentation/page/sidebar.dart';
-
 import 'package:doctor/feature/signin/presentation/page/step1.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -41,17 +40,16 @@ class HomePage extends StatelessWidget {
       Icons.travel_explore,
     ];
 
-    // প্রতিটি মেনুর জন্য আলাদা পেজ
     final List<Widget> pages = [
-  Step1(),
-  NotificationPage(),
-  ChartArchivePage(),
-  ContactsPage(),
-  AppointmentsPage(),
-  OfflineFilesPage(),
-  InventoryPage(),
-  CostPage(),
-];
+      Step1(),
+      NotificationPage(),
+      ChartArchivePage(),
+      ContactsPage(),
+      AppointmentsPage(),
+      OfflineFilesPage(),
+      InventoryPage(),
+      CostPage(),
+    ];
 
     return Scaffold(
       drawer: CustomDrawer(),
@@ -69,7 +67,7 @@ class HomePage extends StatelessWidget {
             width: double.infinity,
 
             decoration: BoxDecoration(
-              color: Color(0xFF1E88E5),
+              color: const Color(0xFF1E88E5),
               borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(10.r),
                 bottomRight: Radius.circular(10.r),
@@ -78,7 +76,7 @@ class HomePage extends StatelessWidget {
 
             child: Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   radius: 20,
                   backgroundColor: Colors.white,
                   child: Icon(
@@ -95,7 +93,7 @@ class HomePage extends StatelessWidget {
                         CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Hello, Good Evening",
+                        'Hello, Good Evening',
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 14.sp,
@@ -104,7 +102,7 @@ class HomePage extends StatelessWidget {
 
                       SizedBox(height: 4.h),
 
-                      Texts(
+                      const Texts(
                         text: 'Setup Your Account',
                         color: Colors.white,
                       ),
@@ -115,7 +113,7 @@ class HomePage extends StatelessWidget {
                 Builder(
                   builder: (context) {
                     return IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.menu,
                         color: Colors.white,
                       ),
@@ -134,7 +132,7 @@ class HomePage extends StatelessWidget {
               padding: EdgeInsets.all(10.r),
 
               gridDelegate:
-                  SliverGridDelegateWithFixedCrossAxisCount(
+                  const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
@@ -147,12 +145,14 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
 
                   onTap: () {
-                    Get.to(() => pages[index]);
+                    Get.to(
+                      () => pages[index],
+                    );
                   },
 
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Color(0xffE9F5FE),
+                      color: const Color(0xffE9F5FE),
                       borderRadius:
                           BorderRadius.circular(20.r),
                     ),
@@ -173,7 +173,8 @@ class HomePage extends StatelessWidget {
                         Text(
                           ttext[index],
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 1.5.sp,
+                          style: TextStyle(
+                            fontSize: 1.5.sp,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
