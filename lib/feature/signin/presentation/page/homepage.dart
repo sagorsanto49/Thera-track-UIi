@@ -12,6 +12,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/feature/signin/presentation/page/sidebar.dart';
 
 import 'package:doctor/feature/signin/presentation/page/step1.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -146,13 +147,7 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20.r),
 
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            pages[index],
-                      ),
-                    );
+                    Get.to(() => pages[index]);
                   },
 
                   child: Container(

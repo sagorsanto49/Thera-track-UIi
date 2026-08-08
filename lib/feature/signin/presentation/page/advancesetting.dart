@@ -1,18 +1,12 @@
-import 'package:doctor/feature/signin/presentation/page/human1.dart';
-import 'package:doctor/feature/signin/presentation/page/paid.dart';
+import 'package:doctor/feature/signin/presentation/controller/advance_settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class AdvanceSettingsPage extends StatefulWidget {
-  const AdvanceSettingsPage({super.key});
+class AdvanceSettingsPage extends StatelessWidget {
+  AdvanceSettingsPage({super.key});
 
-  @override
-  State<AdvanceSettingsPage> createState() => _AdvanceSettingsPageState();
-}
-
-class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
-  bool animalSelected = false;
-  bool humanSelected = true;
+  final AdvanceSettingsController controller = Get.put(AdvanceSettingsController());
 
   Widget buildOption({
     required String title,
@@ -37,7 +31,8 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
             Expanded(
               child: Text(
                 title,
-                style: TextStyle(fontSize: 1.4.sp,
+                style: TextStyle(
+                  fontSize: 1.4.sp,
                   color: Colors.black87,
                 ),
               ),
@@ -81,54 +76,36 @@ class _AdvanceSettingsPageState extends State<AdvanceSettingsPage> {
           ),
         ),
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: Get.back,
           icon: Icon(Icons.arrow_back),
         ),
       ),
       body: Padding(
         padding: EdgeInsets.all(12.r),
-        child: Column(
-          children: [
-            buildOption(
-              title: 'Animal',
-              isSelected: animalSelected,
-              onTap: () {
-                setState(() {
-                  animalSelected = !animalSelected;
-                });
-              },
-            ),
-            SizedBox(height: 12.h),
-            buildOption(
-              title: 'Human',
-              isSelected: humanSelected,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Human1(),
-                  ),
-                );
-              },
-            ),
-          ],
+        child: Obx(
+          () => Column(
+            children: [
+              buildOption(
+                title: 'Animal',
+                isSelected: controller.animalSelected.value,
+                onTap: controller.toggleAnimalSelection,
+              ),
+              SizedBox(height: 12.h),
+              buildOption(
+                title: 'Human',
+                isSelected: controller.humanSelected.value,
+                onTap: controller.goToHuman,
+              ),
+            ],
+          ),
         ),
       ),
-
-      // চাইলে Continue button রাখতে পারেন
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(16.r),
         child: SizedBox(
           height: 50.h,
           child: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => PaidScreen(),
-                ),
-              );
-            },
+            onPressed: controller.continueToPaid,
             child: Text("Continue"),
           ),
         ),

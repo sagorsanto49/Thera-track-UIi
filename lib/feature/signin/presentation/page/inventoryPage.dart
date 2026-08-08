@@ -1,20 +1,12 @@
+import 'package:doctor/feature/signin/presentation/controller/inventory_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class InventoryPage extends StatefulWidget {
-  const InventoryPage({super.key});
+class InventoryPage extends StatelessWidget {
+  InventoryPage({super.key});
 
-  @override
-  State<InventoryPage> createState() => _InventoryPageState();
-}
-
-class _InventoryPageState extends State<InventoryPage> {
-  List<Map<String, String>> items = [
-    {"name": "Horse Shoes", "price": "20\$", "qty": "200"},
-    {"name": "Lead", "price": "40\$", "qty": "150"},
-    {"name": "Ear Net", "price": "30\$", "qty": "180"},
-    {"name": "Hoof Pick", "price": "40\$", "qty": "50"},
-  ];
+  final InventoryController controller = Get.put(InventoryController());
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +22,6 @@ class _InventoryPageState extends State<InventoryPage> {
         padding: EdgeInsets.all(12.r),
         child: Column(
           children: [
-            // Header
             Row(
               children: [
                 Expanded(
@@ -60,96 +51,86 @@ class _InventoryPageState extends State<InventoryPage> {
 
             SizedBox(height: 12.h),
 
-            // List
             Expanded(
-              child: ListView.builder(
-                itemCount: items.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(bottom: 8.h),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 3,
-                          child: Container(
-                            height: 40.h,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6.r),
+              child: Obx(
+                () => ListView.builder(
+                  itemCount: controller.items.length,
+                  itemBuilder: (context, index) {
+                    final item = controller.items[index];
+                    return Padding(
+                      padding: EdgeInsets.only(bottom: 8.h),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Container(
+                              height: 40.h,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey.shade300),
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Text(item['name'] ?? ''),
                             ),
-                            child: Text(items[index]["name"]!),
                           ),
-                        ),
 
-                        SizedBox(width: 6.w),
+                          SizedBox(width: 6.w),
 
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            height: 40.h,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6.r),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              height: 40.h,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey.shade300),
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Text(item['price'] ?? ''),
                             ),
-                            child: Text(items[index]["price"]!),
                           ),
-                        ),
 
-                        SizedBox(width: 6.w),
+                          SizedBox(width: 6.w),
 
-                        Expanded(
-                          flex: 2,
-                          child: Container(
-                            height: 40.h,
-                            alignment: Alignment.center,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(color: Colors.grey.shade300),
-                              borderRadius: BorderRadius.circular(6.r),
+                          Expanded(
+                            flex: 2,
+                            child: Container(
+                              height: 40.h,
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(color: Colors.grey.shade300),
+                                borderRadius: BorderRadius.circular(6.r),
+                              ),
+                              child: Text(item['qty'] ?? ''),
                             ),
-                            child: Text(items[index]["qty"]!),
                           ),
-                        ),
 
-                        IconButton(
-                          onPressed: () {
-                            setState(() {
-                              items.removeAt(index);
-                            });
-                          },
-                          icon: Icon(
-                            Icons.close,
-                            color: Colors.grey,
+                          IconButton(
+                            onPressed: () => controller.removeItem(index),
+                            icon: Icon(
+                              Icons.close,
+                              color: Colors.grey,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  );
-                },
+                        ],
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
 
-            // Add New Button
             Align(
               alignment: Alignment.centerLeft,
               child: ElevatedButton.icon(
-                onPressed: () {
-                  setState(() {
-                    items.add({
-                      "name": "New Product",
-                      "price": "0\$",
-                      "qty": "0",
-                    });
-                  });
-                },
+                onPressed: controller.addItem,
                 icon: Icon(Icons.add),
                 label: Text(
                   "Add New",
-                  style: TextStyle(fontSize: 1.5.sp,
+                  style: TextStyle(
+                    fontSize: 1.5.sp,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
