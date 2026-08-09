@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/home5.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Step3Page extends StatelessWidget {
   const Step3Page({super.key});
@@ -169,8 +170,7 @@ class Step3Page extends StatelessWidget {
                   backgroundColor: Color(0xff3399FF),
                 ),
                 onPressed: () {
-
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Home5()));
+                  Get.to(() => const Home5());
                 },
                 child: Text(
                   "Next",

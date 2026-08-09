@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/feature/signin/presentation/step52.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Equipment extends StatelessWidget {
   Equipment({super.key});
@@ -93,7 +94,7 @@ class Equipment extends StatelessWidget {
               ),
             ),
             Primarybutten(title: 'Next', onpress: () {
-              Navigator .push(context, MaterialPageRoute(builder: (context)=> Step5Page()));
+              Get.to(() => const Step5Page());
             }),
             SizedBox(height: 400.h),
           ],

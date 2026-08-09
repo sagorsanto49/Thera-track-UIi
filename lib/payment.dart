@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/congres.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Payment extends StatelessWidget {
   const Payment({super.key});
@@ -37,12 +38,7 @@ class Payment extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Congres(),
-                  ),
-                );
+                Get.to(() => const Congres());
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue,

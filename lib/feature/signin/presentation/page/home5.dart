@@ -4,6 +4,7 @@ import 'package:doctor/feature/signin/presentation/page/equipment.dart';
 import 'package:doctor/feature/signin/presentation/page/home51.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Home5 extends StatelessWidget {
   const Home5({super.key});
@@ -65,10 +66,7 @@ class Home5 extends StatelessWidget {
             Primarybutten(
               title: 'Next',
               onpress: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Home51()),
-                );
+                Get.to(() => Home51());
               },
             ),
           ],

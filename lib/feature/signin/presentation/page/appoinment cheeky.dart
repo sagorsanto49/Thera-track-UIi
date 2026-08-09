@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:get/get.dart';
 
 class Appoinmentcheeky extends StatelessWidget {
   const Appoinmentcheeky({super.key});
@@ -137,7 +138,7 @@ class Appoinmentcheeky extends StatelessWidget {
 
             SizedBox(height: 20.h),
             Primarybutten(title: 'Reschedule', onpress: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Calender()));
+              Get.to(() => Calender());
             })
           ],
         ),

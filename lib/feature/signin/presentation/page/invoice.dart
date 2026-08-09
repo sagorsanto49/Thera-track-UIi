@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/invoicesetup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Invoice extends StatelessWidget {
   const Invoice({super.key});
@@ -58,7 +59,7 @@ class Invoice extends StatelessWidget {
                     child: Primarybutten(
                       title: 'Edit',
                       onpress: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => InvoiceSetup()));
+                        Get.to(() => InvoiceSetup());
                       },
                     ),
                   ),

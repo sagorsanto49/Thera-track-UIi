@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/core/widget/text.dart';
+import 'package:get/get.dart';
 
 class PaidScreen extends StatelessWidget {
   const PaidScreen({super.key});
@@ -26,7 +27,7 @@ class PaidScreen extends StatelessWidget {
         centerTitle: true,
         title: Text("Paid"),
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back),
         ),
       ),
@@ -166,7 +167,7 @@ class PaidScreen extends StatelessWidget {
                           width: 140.w,
                           child: Primarybutten(
                             title: "Send", onpress: () { 
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>UnPaidScreen()));
+                              Get.to(() => const UnPaidScreen());
                              },
                           ),
                         ),

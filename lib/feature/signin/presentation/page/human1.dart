@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/home3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Human1 extends StatelessWidget {
   const Human1({super.key});
@@ -124,7 +125,7 @@ class Human1 extends StatelessWidget {
                   height: 55.h,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Home3()));
+                      Get.to(() => const Home3());
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue,

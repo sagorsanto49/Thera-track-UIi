@@ -3,8 +3,7 @@ import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/yourdetails.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';import 'package:get/get.dart';
 class InvoiceSetup extends StatelessWidget {
   const InvoiceSetup({super.key});
 
@@ -242,7 +241,7 @@ class InvoiceSetup extends StatelessWidget {
                 child: Primarybutten(
                   title: 'Save',
                   onpress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Yourdetails()));
+                    Get.to(() => Yourdetails());
                   },
                 ),
               ),

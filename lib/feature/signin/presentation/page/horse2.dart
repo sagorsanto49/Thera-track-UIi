@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/horseedit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Horse2 extends StatelessWidget {
   const Horse2({super.key});
@@ -50,12 +51,7 @@ class Horse2 extends StatelessWidget {
 
             InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => EditHorsePage(),
-                  ),
-                );
+                Get.to(() => const EditHorsePage());
               },
               child: Align(
                 alignment: Alignment.centerLeft,

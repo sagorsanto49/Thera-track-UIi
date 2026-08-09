@@ -3,6 +3,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/treatment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class EditYourDetails extends StatelessWidget {
   const EditYourDetails({super.key});
@@ -132,7 +133,7 @@ class EditYourDetails extends StatelessWidget {
                 child: Primarybutten(
                   title: 'Save',
                   onpress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>TreatmentScreen()));
+                    Get.to(() => TreatmentScreen());
                   },
                 ),
               ),

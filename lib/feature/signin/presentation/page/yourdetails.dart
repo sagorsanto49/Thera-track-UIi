@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/edityourdetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Yourdetails extends StatelessWidget {
   const Yourdetails({super.key});
@@ -43,14 +44,7 @@ class Yourdetails extends StatelessWidget {
 
                 child: ElevatedButton.icon(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-
-                      MaterialPageRoute(
-                        builder: (context) =>
-                            EditYourDetails(),
-                      ),
-                    );
+                    Get.to(() => const EditYourDetails());
                   },
 
                   style: ElevatedButton.styleFrom(

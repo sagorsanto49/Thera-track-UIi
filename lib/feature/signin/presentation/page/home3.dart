@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/hume31.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
@@ -151,12 +152,7 @@ class Home3 extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => Texthome(),
-                            ),
-                          );
+                          Get.to(() => Texthome());
                         },
                         child: Texts(
                           text: 'Description',
@@ -202,12 +198,7 @@ class Home3 extends StatelessWidget {
             Primarybutten(
               title: 'Next',
               onpress: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => Step3Page(),
-                  ),
-                );
+                Get.to(() => const Step3Page());
               },
             ),
           ],

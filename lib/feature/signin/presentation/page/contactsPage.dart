@@ -1,7 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/horse.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor/feature/signin/presentation/page/clientspage.dart';
-// import 'package:doctor/feature/signin/presentation/page/horsepage.dart';
+import 'package:get/get.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
@@ -22,20 +22,9 @@ class ContactsPage extends StatelessWidget {
             title: Text(contacts[index]),
             onTap: () {
               if (contacts[index] == "Clients") {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ClientsPage(),
-                  ),
-                );
-              }
-               else if (contacts[index] == "Horse") {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Horse(),
-                  ),
-                );
+                Get.to(() => const ClientsPage());
+              } else if (contacts[index] == "Horse") {
+                Get.to(() => Horse());
               }
             },
           );

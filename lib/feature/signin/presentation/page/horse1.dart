@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/horse2.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Horse1 extends StatelessWidget {
   const Horse1({super.key});
@@ -23,12 +24,7 @@ class Horse1 extends StatelessWidget {
             title: Text(horses[index]),
             onTap: () {
               if (horses[index] == "Boss") {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => Horse2(),
-                  ),
-                );
+                Get.to(() => const Horse2());
               }
             },
           );

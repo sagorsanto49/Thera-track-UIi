@@ -1,6 +1,7 @@
 import 'package:doctor/subscription1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 
 class Subscription extends StatelessWidget {
@@ -46,12 +47,7 @@ class Subscription extends StatelessWidget {
 
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Subscription1(),
-                          ),
-                        );
+                        Get.to(() => const Subscription1());
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,

@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/cheekychariting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ChartArchivePage extends StatelessWidget {
   const ChartArchivePage({super.key});

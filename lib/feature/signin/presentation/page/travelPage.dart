@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/newdestination.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CostPage extends StatelessWidget {
   const CostPage({super.key});
@@ -21,7 +22,7 @@ class CostPage extends StatelessWidget {
             padding: EdgeInsets.only(right: 10.w),
             child: ElevatedButton(
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>AddCostPage()));
+                Get.to(() => AddCostPage());
               },
               child: Text("Add New"),
             ),

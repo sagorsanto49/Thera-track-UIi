@@ -2,6 +2,7 @@ import 'package:doctor/feature/signin/presentation/page/invoice.dart';
 import 'package:doctor/subscription.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class CustomDrawer extends StatelessWidget {
   const CustomDrawer({super.key});
@@ -113,14 +114,8 @@ class CustomDrawer extends StatelessWidget {
 
                     // BUTTON ACTION
                     onTap: () {
-                      Navigator.push(
-                        context,
-
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              menuItems[index]["page"],
-                        ),
-                      );
+                      final page = menuItems[index]["page"] as Widget;
+                      Get.to(() => page);
                     },
                   );
                 },

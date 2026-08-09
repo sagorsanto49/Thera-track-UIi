@@ -2,6 +2,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/payment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Subscription1 extends StatelessWidget {
   const Subscription1({super.key});
@@ -93,8 +94,7 @@ class Subscription1 extends StatelessWidget {
             ),
             SizedBox(height: 500.h,),
             Primarybutten(title: 'Suscribe Now', onpress: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment()));
-
+              Get.to(() => const Payment());
             })
           ],
 

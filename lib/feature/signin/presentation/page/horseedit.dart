@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class EditHorsePage extends StatelessWidget {
   const EditHorsePage({super.key});
@@ -79,7 +80,7 @@ class EditHorsePage extends StatelessWidget {
               height: 50.h,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Get.back();
                 },
                 child: Text("Done"),
               ),

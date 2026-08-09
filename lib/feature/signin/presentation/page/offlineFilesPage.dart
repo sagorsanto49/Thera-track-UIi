@@ -3,6 +3,7 @@ import 'package:doctor/feature/signin/presentation/page/cheekychariting.dart';
 import 'package:doctor/feature/signin/presentation/page/offlinefiles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class OfflineFilesPage extends StatelessWidget {
   const OfflineFilesPage({super.key});
@@ -49,12 +50,7 @@ class OfflineFilesPage extends StatelessWidget {
             return InkWell(
               onTap: () {
                 if (index == 0) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChartDetailsPage(),
-                    ),
-                  );
+                  Get.to(() => const ChartDetailsPage());
                 }
               },
               child: Container(
@@ -125,7 +121,7 @@ class OfflineFilesPage extends StatelessWidget {
         child: Primarybutten(
           title: "Sync",
           onpress: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Offlinefiles()));
+            Get.to(() => const Offlinefiles());
           },
         ),
       ),

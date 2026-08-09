@@ -1,6 +1,7 @@
 import 'package:doctor/core/widget/headertext.dart';
 import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/xfield.dart';
+import 'package:doctor/feature/signin/presentation/controller/signin_controller.dart';
 import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,15 +13,7 @@ import 'homepage.dart';
 class Signin extends StatelessWidget {
   Signin({super.key});
 
-  // GetX reactive password visibility
-  final RxBool isPasswordHidden = true.obs;
-
-  // Text controllers
-  final TextEditingController emailController =
-      TextEditingController();
-
-  final TextEditingController passwordController =
-      TextEditingController();
+  final SigninController controller = Get.put(SigninController());
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +48,7 @@ class Signin extends StatelessWidget {
               SizedBox(height: 14.h),
 
               Xfield(
-                controller: emailController,
+                controller: controller.emailController,
                 text: 'Thomas Anree',
                 prefixIcons: const Icon(
                   Icons.email_sharp,
@@ -76,20 +69,20 @@ class Signin extends StatelessWidget {
 
               Obx(
                 () => Xfield(
-                  controller: passwordController,
+                  controller: controller.passwordController,
                   text: 'Enter password',
                   prefixIcons: const Icon(
                     Icons.lock,
                   ),
                   obscureText:
-                      isPasswordHidden.value,
+                      controller.isPasswordHidden.value,
 
                   suffixIcons: IconButton(
                     onPressed: () {
-                      isPasswordHidden.toggle();
+                      controller.togglePasswordVisibility();
                     },
                     icon: Icon(
-                      isPasswordHidden.value
+                      controller.isPasswordHidden.value
                           ? Icons.visibility_off
                           : Icons.visibility,
                     ),

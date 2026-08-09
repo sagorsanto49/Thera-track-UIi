@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/clientsdetailspage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ClientsPage extends StatelessWidget {
   const ClientsPage({super.key});
@@ -38,12 +39,7 @@ class ClientsPage extends StatelessWidget {
     foregroundColor: Colors.white, // text color
   ),
   onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => AddClientPage(),
-      ),
-    );
+    Get.to(() => const AddClientPage());
   },
   child: Text("Add Client"),
 ),

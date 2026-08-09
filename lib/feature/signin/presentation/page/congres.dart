@@ -1,5 +1,6 @@
 import 'package:doctor/feature/signin/presentation/page/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Congres extends StatelessWidget {
   const Congres({super.key});
@@ -97,7 +98,7 @@ class Congres extends StatelessWidget {
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                        Get.offAll(() => const HomePage());
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,

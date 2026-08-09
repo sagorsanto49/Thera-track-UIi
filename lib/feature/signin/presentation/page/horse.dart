@@ -2,6 +2,7 @@ import 'package:doctor/feature/signin/presentation/page/clientsdetailspage.dart'
 import 'package:doctor/feature/signin/presentation/page/horse1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Horse extends StatelessWidget {
   const Horse({super.key});
@@ -39,12 +40,7 @@ class Horse extends StatelessWidget {
     foregroundColor: Colors.white, // text color
   ),
   onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => AddClientPage(),
-      ),
-    );
+    Get.to(() => const AddClientPage());
   },
   child: Text("Add Client"),
 ),
@@ -72,15 +68,10 @@ class Horse extends StatelessWidget {
                     trailing:
                         Icon(Icons.arrow_forward_ios, size: 16.r),
                     onTap: () {
-  if (clients[index] == "Richard Turner") {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => Horse1(),
-      ),
-    );
-  }
-},
+                      if (clients[index] == "Richard Turner") {
+                        Get.to(() => const Horse1());
+                      }
+                    },
                   );
                 },
               ),

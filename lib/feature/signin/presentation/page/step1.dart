@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/step_3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Step1 extends StatelessWidget {
   const Step1({super.key});
@@ -103,12 +104,7 @@ class Step1 extends StatelessWidget {
 
                     onTap: () {
                       if (textitem[index] == 'Turner') {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Step3(),
-                          ),
-                        );
+                        Get.to(() => Step3());
                       }
                     },
                   );

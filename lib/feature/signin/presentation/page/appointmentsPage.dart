@@ -1,6 +1,7 @@
 import 'package:doctor/feature/signin/presentation/page/appoinment%20cheeky.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class AppointmentsPage extends StatelessWidget {
   const AppointmentsPage({super.key});
@@ -45,12 +46,7 @@ class AppointmentsPage extends StatelessWidget {
             return InkWell(
               onTap: () {
                 if (index == 0) {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Appoinmentcheeky(),
-                    ),
-                  );
+                  Get.to(() => const Appoinmentcheeky());
                 }
               },
               child: Container(

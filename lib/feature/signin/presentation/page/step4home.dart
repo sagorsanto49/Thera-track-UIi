@@ -4,6 +4,7 @@ import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/step4.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class Step4home extends StatelessWidget {
   const Step4home({super.key});
@@ -89,7 +90,7 @@ class Step4home extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4home()));
+                        Get.to(() => const Step4home());
                       },
                       child: Text(
                         'Add',
@@ -104,7 +105,7 @@ class Step4home extends StatelessWidget {
               ),
               SizedBox(height: 10.h,),
               Primarybutten(title: 'Done', onpress: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4()));
+                Get.to(() => const Step4());
               })
             ],
           ),

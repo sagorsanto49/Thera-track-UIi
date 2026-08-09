@@ -6,6 +6,7 @@ import 'package:doctor/feature/signin/presentation/page/step4home.dart';
 import 'package:doctor/feature/signin/presentation/page/step5.dart';
 import 'package:doctor/feature/signin/presentation/page/texthome.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Step4 extends StatelessWidget {
   const Step4({super.key});
@@ -126,7 +127,7 @@ class Step4 extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Step4home()));
+                      Get.to(() => Step4home());
                     },
                     child: const Text(
                       'Add',
@@ -164,7 +165,7 @@ class Step4 extends StatelessWidget {
                     children: [
                       InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=> Texthome()));
+                            Get.to(() => Texthome());
                           },
                           child
                           : const Texts(text: 'Description')),
@@ -220,7 +221,7 @@ class Step4 extends StatelessWidget {
             Primarybutten(
               title: 'Next',
               onpress: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> Step5()));
+                Get.to(() => Step5());
               },
             ),
           ],

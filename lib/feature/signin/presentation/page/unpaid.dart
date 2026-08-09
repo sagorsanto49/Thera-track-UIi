@@ -4,6 +4,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/core/widget/xfield.dart';
 import 'package:doctor/feature/signin/presentation/page/feadback.dart';
+import 'package:get/get.dart';
 
 class UnPaidScreen extends StatelessWidget {
   const UnPaidScreen({super.key});
@@ -30,7 +31,7 @@ class UnPaidScreen extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () => Get.back(),
           icon: Icon(Icons.arrow_back, color: Colors.black),
         ),
       ),
@@ -146,13 +147,7 @@ class UnPaidScreen extends StatelessWidget {
                   child: Primarybutten(
                     title: "Send",
                     onpress: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) =>
-                              FeedbackPage(),
-                        ),
-                      );
+                      Get.to(() => const FeedbackPage());
                     },
                   ),
                 ),
