@@ -4,6 +4,7 @@ import 'package:doctor/core/widget/primarybutten.dart';
 import 'package:doctor/core/widget/text.dart';
 import 'package:doctor/feature/signin/presentation/page/resetpassword.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pinput/pinput.dart';
 
 class Verifyemail extends StatelessWidget {
@@ -17,42 +18,71 @@ class Verifyemail extends StatelessWidget {
         children: [
           Headertext(
             title: 'Verify Email',
-            subtitle: 'Please check your email and enter the code',
+            subtitle:
+                'Please check your email and enter the code',
           ),
-          SizedBox(height: 30),
+
+          const SizedBox(height: 30),
 
           SizedBox(
             child: Pinput(
               length: 6,
               showCursor: true,
+
               defaultPinTheme: PinTheme(
                 width: 50,
                 height: 40,
+
                 decoration: BoxDecoration(
-                  // color: CustomColor.buttonColor,
-                  border: Border.all(color: CustomColor.buttonColor),
+                  border: Border.all(
+                    color: CustomColor.buttonColor,
+                  ),
                 ),
               ),
             ),
           ),
-          SizedBox(height: 30),
 
-          Texts(text: '2.32',color: Colors.blue,),
-          SizedBox(height: 20),
-          Primarybutten(title: 'Continue', onpress: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Resetpassword() ),);
-          }),
-          SizedBox(height: 40),
+          const SizedBox(height: 30),
+
+          const Texts(
+            text: '2.32',
+            color: Colors.blue,
+          ),
+
+          const SizedBox(height: 20),
+
+          Primarybutten(
+            title: 'Continue',
+            onpress: () {
+              Get.to(
+                () => Resetpassword(),
+              );
+            },
+          ),
+
+          const SizedBox(height: 40),
+
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment:
+                MainAxisAlignment.center,
+
             children: [
-              Texts(text: 'Didnt receive code?'),
-              SizedBox(width: 7),
+              const Texts(
+                text: 'Didnt receive code?',
+              ),
+
+              const SizedBox(width: 7),
+
               InkWell(
-                onTap: () {},
-                child: Text(
+                onTap: () {
+                  // Resend OTP logic এখানে পরে যোগ করতে পারবে
+                },
+
+                child: const Text(
                   'Resend it',
-                  style: TextStyle(color: Colors.indigoAccent),
+                  style: TextStyle(
+                    color: Colors.indigoAccent,
+                  ),
                 ),
               ),
             ],
