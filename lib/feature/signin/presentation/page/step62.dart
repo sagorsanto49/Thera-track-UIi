@@ -1,567 +1,491 @@
-// import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-// class Step62 extends StatelessWidget {
-//   Step62({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text("dkhjfik"),
-//       ),
-//     );
-//   }
-// }
-
+import 'package:doctor/core/widget/primarybutten.dart';
+import 'package:doctor/feature/signin/presentation/controller/treatment_controller.dart';
+import 'package:doctor/feature/signin/presentation/page/advancesetting.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
-class Step62 extends StatefulWidget {
-  const Step62({super.key});
+class TreatmentScreen extends StatelessWidget {
+  TreatmentScreen({super.key});
 
-  @override
-  State<Step62> createState() => Step62State();
-}
+  final TreatmentController controller = Get.put(TreatmentController());
 
-class Step62State extends State<Step62> {
-  DateTime selectedDate = DateTime(2025, 1, 24);
+  static const Color primary = Color(0xff2563EB);
+  static const Color darkText = Color(0xff172033);
+  static const Color greyText = Color(0xff64748B);
+  static const Color background = Color(0xffF6F8FC);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff5f5f5),
+      backgroundColor: background,
 
+      // =========================================================
+      // APP BAR
+      // =========================================================
       appBar: AppBar(
         backgroundColor: Colors.white,
-        elevation: 1,
+        surfaceTintColor: Colors.white,
+        elevation: 0,
         centerTitle: true,
 
-        leading: Icon(
-          Icons.arrow_back_ios,
-          size: 18.r,
-          color: Colors.black,
+        leading: IconButton(
+          onPressed: () => Get.back(),
+          icon: Icon(
+            Icons.arrow_back_ios_new_rounded,
+            color: darkText,
+            size: 19.sp,
+          ),
         ),
 
         title: Text(
-          "Step 6",
+          "Treatment",
           style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w500,
+            color: darkText,
+            fontSize: 19.sp,
+            fontWeight: FontWeight.w700,
           ),
         ),
       ),
 
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(8.r),
-
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-
-            /// DATE
-            Row(
-              children: [
-
-                Text(
-                  "January 24, 2025",
-                  style: TextStyle(fontSize: 1.6.sp,
-                  ),
-                ),
-
-                SizedBox(width: 10.w),
-
-                Container(
-                  padding: EdgeInsets.all(4.r),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue),
-                    borderRadius: BorderRadius.circular(4.r),
-                  ),
-                  child: Icon(
-                    Icons.calendar_today,
-                    size: 18.r,
-                    color: Colors.blue,
-                  ),
-                ),
-              ],
-            ),
-
-            SizedBox(height: 15.h),
-
-            /// CALENDAR
-            Container(
-              padding: EdgeInsets.all(12.r),
-
-              decoration: BoxDecoration(
-                color: Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2.r),
+      // =========================================================
+      // BODY
+      // =========================================================
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              padding: EdgeInsets.fromLTRB(
+                16.w,
+                20.h,
+                16.w,
+                25.h,
               ),
-
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
 
-                  /// HEADER
+                  // =================================================
+                  // PAGE HEADER
+                  // =================================================
                   Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.spaceBetween,
-
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
 
-                      Icon(Icons.chevron_left),
-
-                      Text(
-                        "January 2025",
-                        style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                      Container(
+                        height: 46.h,
+                        width: 46.w,
+                        decoration: BoxDecoration(
+                          color: primary.withOpacity(.10),
+                          borderRadius: BorderRadius.circular(14.r),
+                        ),
+                        child: Icon(
+                          Icons.medical_services_outlined,
+                          color: primary,
+                          size: 24.sp,
                         ),
                       ),
 
-                      Icon(Icons.chevron_right),
-                    ],
-                  ),
+                      SizedBox(width: 12.w),
 
-                  SizedBox(height: 10.h),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Add Treatment",
+                              style: TextStyle(
+                                fontSize: 19.sp,
+                                fontWeight: FontWeight.w700,
+                                color: darkText,
+                              ),
+                            ),
 
-                  Divider(),
+                            SizedBox(height: 3.h),
 
-                  /// DAYS NAME
-                  Row(
-                    mainAxisAlignment:
-                        MainAxisAlignment.spaceAround,
-
-                    children: [
-                      DayName("DAY"),
-                      DayName("DAY"),
-                      DayName("DAY"),
-                      DayName("DAY"),
-                      DayName("DAY"),
-                      DayName("DAY"),
-                      DayName("DAY"),
-                    ],
-                  ),
-
-                  SizedBox(height: 15.h),
-
-                  /// DATES
-                  buildDateRow([
-                    "30",
-                    "31",
-                    "01",
-                    "02",
-                    "03",
-                    "04",
-                    "05"
-                  ]),
-
-                  buildDateRow([
-                    "06",
-                    "07",
-                    "08",
-                    "09",
-                    "10",
-                    "11",
-                    "12"
-                  ]),
-
-                  buildDateRow([
-                    "13",
-                    "14",
-                    "15",
-                    "16",
-                    "17",
-                    "18",
-                    "19"
-                  ]),
-
-                  buildDateRow([
-                    "20",
-                    "21",
-                    "22",
-                    "23",
-                    "24",
-                    "25",
-                    "26"
-                  ], selectedIndex: 4),
-
-                  buildDateRow([
-                    "27",
-                    "28",
-                    "29",
-                    "30",
-                    "31",
-                    "01",
-                    "02"
-                  ]),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 15.h),
-
-            /// TIME PICKER
-            Container(
-              padding: EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 10,
-              ),
-
-              decoration: BoxDecoration(
-                color: Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-
-              child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceAround,
-
-                children: [
-
-                  /// AM PM
-                  Column(
-                    children: [
-
-                      Text(
-                        "AM",
-                        style: TextStyle(fontSize: 2.4.sp),
-                      ),
-
-                      SizedBox(height: 15.h),
-
-                      Text(
-                        "PM",
-                        style: TextStyle(fontSize: 2.4.sp),
+                            Text(
+                              "Add the treatment details below",
+                              style: TextStyle(
+                                fontSize: 12.5.sp,
+                                color: greyText,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
 
+                  SizedBox(height: 22.h),
+
+                  // =================================================
+                  // SECTION CARD
+                  // =================================================
                   Container(
-                    height: 90.h,
-                    width: 1.w,
-                    color: Colors.blue.shade200,
-                  ),
-
-                  /// HOURS
-                  Column(
-                    children: [
-
-                      Text(
-                        "11",
-                        style: TextStyle(fontSize: 2.2.sp,
-                          color: Colors.grey,
-                        ),
+                    width: double.infinity,
+                    padding: EdgeInsets.all(14.r),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(18.r),
+                      border: Border.all(
+                        color: const Color(0xffE8EDF5),
                       ),
-
-                      SizedBox(height: 10.h),
-
-                      Text(
-                        "12",
-                        style: TextStyle(fontSize: 2.6.sp,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(.035),
+                          blurRadius: 18,
+                          offset: const Offset(0, 7),
                         ),
-                      ),
+                      ],
+                    ),
 
-                      SizedBox(height: 10.h),
-
-                      Text(
-                        "01",
-                        style: TextStyle(fontSize: 2.2.sp,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  Container(
-                    height: 90.h,
-                    width: 1.w,
-                    color: Colors.blue.shade200,
-                  ),
-
-                  /// MINUTES
-                  Column(
-                    children: [
-
-                      Text(
-                        "59",
-                        style: TextStyle(fontSize: 2.2.sp,
-                          color: Colors.grey,
-                        ),
-                      ),
-
-                      SizedBox(height: 10.h),
-
-                      Text(
-                        "00",
-                        style: TextStyle(fontSize: 2.6.sp,
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-
-                      SizedBox(height: 10.h),
-
-                      Text(
-                        "01",
-                        style: TextStyle(fontSize: 2.2.sp,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 15.h),
-
-            /// EVENT BOX
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.blue.shade300,
-                ),
-              ),
-
-              child: Column(
-                children: [
-
-                  /// ALL DAY
-                  Padding(
-                    padding: EdgeInsets.all(8.r),
-
-                    child: Row(
-                      mainAxisAlignment:
-                          MainAxisAlignment.spaceBetween,
-
+                    child: Column(
                       children: [
 
-                        Text(
-                          "All-Day",
-                          style: TextStyle(fontSize: 1.8.sp),
+                        // ===========================================
+                        // TABLE HEADER
+                        // ===========================================
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 12.w,
+                            vertical: 12.h,
+                          ),
+                          decoration: BoxDecoration(
+                            color: const Color(0xffF3F7FF),
+                            borderRadius: BorderRadius.circular(12.r),
+                          ),
+
+                          child: Row(
+                            children: [
+
+                              Expanded(
+                                flex: 3,
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.medical_information_outlined,
+                                      size: 16.sp,
+                                      color: primary,
+                                    ),
+                                    SizedBox(width: 6.w),
+                                    Text(
+                                      "Treatment",
+                                      style: TextStyle(
+                                        fontSize: 12.5.sp,
+                                        fontWeight: FontWeight.w700,
+                                        color: darkText,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+
+                              Expanded(
+                                flex: 2,
+                                child: Text(
+                                  "Price",
+                                  style: TextStyle(
+                                    fontSize: 12.5.sp,
+                                    fontWeight: FontWeight.w700,
+                                    color: darkText,
+                                  ),
+                                ),
+                              ),
+
+                              SizedBox(width: 42.w),
+                            ],
+                          ),
                         ),
 
-                        Container(
-                          height: 20.h,
-                          width: 20.w,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.blue,
-                            ),
-                            borderRadius:
-                                BorderRadius.circular(4.r),
+                        SizedBox(height: 12.h),
+
+                        // ===========================================
+                        // TREATMENT LIST
+                        // ===========================================
+                        Obx(
+                          () => ListView.separated(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount:
+                                controller.treatmentList.length + 1,
+
+                            separatorBuilder: (_, __) =>
+                                SizedBox(height: 10.h),
+
+                            itemBuilder: (context, index) {
+                              final isLast =
+                                  index ==
+                                      controller.treatmentList.length;
+
+                              return _buildTreatmentRow(
+                                index: index,
+                                isLast: isLast,
+                              );
+                            },
                           ),
                         ),
                       ],
                     ),
                   ),
-
-                  Divider(
-                    height: 1.h,
-                    color: Colors.grey.shade400,
-                  ),
-
-                  /// START
-                  buildTimeRow(
-                    title: "Start",
-                  ),
-
-                  Divider(
-                    height: 1.h,
-                    color: Colors.grey.shade400,
-                  ),
-
-                  /// END
-                  buildTimeRow(
-                    title: "End",
-                  ),
                 ],
-              ),
-            ),
-
-            SizedBox(height: 20.h),
-
-            /// REMINDER
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 14,
-              ),
-
-              decoration: BoxDecoration(
-                color: Color(0xffdfe9f2),
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-
-              child: Row(
-                mainAxisAlignment:
-                    MainAxisAlignment.spaceBetween,
-
-                children: [
-
-                  Text(
-                    "Reminder",
-                    style: TextStyle(fontSize: 1.8.sp,
-                    ),
-                  ),
-
-                  Icon(Icons.arrow_drop_down),
-                ],
-              ),
-            ),
-
-            SizedBox(height: 40.h),
-
-            /// DONE BUTTON
-            SizedBox(
-              width: double.infinity,
-              height: 50.h,
-
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                ),
-
-                onPressed: () {},
-
-                child: Text(
-                  "Done",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  /// DATE ROW
-  Widget buildDateRow(
-    List<String> dates, {
-    int selectedIndex = -1,
-  }) {
-    return Padding(
-      padding: EdgeInsets.only(bottom: 15.h),
-
-      child: Row(
-        mainAxisAlignment:
-            MainAxisAlignment.spaceAround,
-
-        children: List.generate(
-          dates.length,
-          (index) {
-            bool isSelected =
-                index == selectedIndex;
-
-            return Container(
-              height: 35.h,
-              width: 35.w,
-              alignment: Alignment.center,
-
-              decoration: BoxDecoration(
-                color: isSelected
-                    ? Colors.blue
-                    : Colors.transparent,
-
-                shape: BoxShape.circle,
-              ),
-
-              child: Text(
-                dates[index],
-                style: TextStyle(
-                  color: isSelected
-                      ? Colors.white
-                      : Colors.black87,
-
-                  fontSize: 16.sp,
-                ),
-              ),
-            );
-          },
-        ),
-      ),
-    );
-  }
-
-  /// TIME ROW
-  Widget buildTimeRow({
-    required String title,
-  }) {
-    return Padding(
-      padding: EdgeInsets.all(8.r),
-
-      child: Row(
-        children: [
-
-          SizedBox(
-            width: 80.w,
-            child: Text(
-              title,
-              style: TextStyle(fontSize: 1.8.sp,
-              ),
-            ),
-          ),
-
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: 10,
-              ),
-
-              decoration: BoxDecoration(
-                color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-
-              child: Text(
-                "24 Jan, 2025",
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-
-          SizedBox(width: 8.w),
-
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: 10,
-              ),
-
-              decoration: BoxDecoration(
-                color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(2.r),
-              ),
-
-              child: Text(
-                "12:00AM",
-                textAlign: TextAlign.center,
               ),
             ),
           ),
         ],
       ),
+
+      // ===========================================================
+      // BOTTOM CONTINUE
+      // ===========================================================
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.fromLTRB(
+          16.w,
+          12.h,
+          16.w,
+          16.h,
+        ),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(.06),
+              blurRadius: 18,
+              offset: const Offset(0, -5),
+            ),
+          ],
+        ),
+
+        child: SafeArea(
+          top: false,
+          child: SizedBox(
+            height: 52.h,
+            child: Primarybutten(
+              title: "Continue",
+              onpress: () {
+                Get.to(
+                  () => AdvanceSettingsPage(),
+                  transition: Transition.rightToLeft,
+                  duration: const Duration(milliseconds: 300),
+                );
+              },
+            ),
+          ),
+        ),
+      ),
     );
   }
-}
 
-/// DAY NAME
-class DayName extends StatelessWidget {
-  final String text;
+  // =============================================================
+  // TREATMENT ROW
+  // =============================================================
 
-  const DayName(this.text, {super.key});
+  Widget _buildTreatmentRow({
+    required int index,
+    required bool isLast,
+  }) {
+    return Container(
+      padding: EdgeInsets.all(8.r),
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(fontSize: 1.0.sp,
-        color: Colors.grey,
+      decoration: BoxDecoration(
+        color: const Color(0xffFAFBFD),
+        borderRadius: BorderRadius.circular(14.r),
+        border: Border.all(
+          color: const Color(0xffE8EDF5),
+        ),
+      ),
+
+      child: Row(
+        children: [
+
+          // =======================================================
+          // TREATMENT NAME
+          // =======================================================
+
+          Expanded(
+            flex: 3,
+            child: _buildInput(
+              hint: "Treatment name",
+              icon: Icons.healing_outlined,
+            ),
+          ),
+
+          SizedBox(width: 8.w),
+
+          // =======================================================
+          // PRICE
+          // =======================================================
+
+          Expanded(
+            flex: 2,
+            child: _buildInput(
+              hint: "Price",
+              icon: Icons.currency_exchange_rounded,
+              keyboardType: TextInputType.number,
+            ),
+          ),
+
+          SizedBox(width: 8.w),
+
+          // =======================================================
+          // ADD / DELETE
+          // =======================================================
+
+          if (isLast)
+            _buildAddButton()
+          else
+            _buildDeleteButton(index),
+        ],
+      ),
+    );
+  }
+
+  // =============================================================
+  // INPUT FIELD
+  // =============================================================
+
+  Widget _buildInput({
+    required String hint,
+    required IconData icon,
+    TextInputType? keyboardType,
+  }) {
+    return TextField(
+      keyboardType: keyboardType,
+
+      style: TextStyle(
+        fontSize: 12.5.sp,
+        color: darkText,
+        fontWeight: FontWeight.w500,
+      ),
+
+      decoration: InputDecoration(
+        hintText: hint,
+
+        hintStyle: TextStyle(
+          fontSize: 12.sp,
+          color: const Color(0xffA0A9B8),
+        ),
+
+        prefixIcon: Icon(
+          icon,
+          size: 17.sp,
+          color: const Color(0xff94A3B8),
+        ),
+
+        prefixIconConstraints: BoxConstraints(
+          minWidth: 40.w,
+        ),
+
+        filled: true,
+        fillColor: Colors.white,
+
+        contentPadding: EdgeInsets.symmetric(
+          horizontal: 10.w,
+          vertical: 14.h,
+        ),
+
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(11.r),
+          borderSide: const BorderSide(
+            color: Color(0xffE1E7EF),
+          ),
+        ),
+
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(11.r),
+          borderSide: const BorderSide(
+            color: primary,
+            width: 1.4,
+          ),
+        ),
+
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(11.r),
+          borderSide: BorderSide.none,
+        ),
+      ),
+    );
+  }
+
+  // =============================================================
+  // ADD BUTTON
+  // =============================================================
+
+  Widget _buildAddButton() {
+    return Material(
+      color: Colors.transparent,
+
+      child: InkWell(
+        onTap: controller.addTreatmentRow,
+        borderRadius: BorderRadius.circular(11.r),
+
+        child: Container(
+          height: 48.h,
+          width: 48.w,
+
+          decoration: BoxDecoration(
+            gradient: const LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Color(0xff3B82F6),
+                Color(0xff2563EB),
+              ],
+            ),
+            borderRadius: BorderRadius.circular(11.r),
+            boxShadow: [
+              BoxShadow(
+                color: primary.withOpacity(.20),
+                blurRadius: 8,
+                offset: const Offset(0, 4),
+              ),
+            ],
+          ),
+
+          child: Icon(
+            Icons.add_rounded,
+            color: Colors.white,
+            size: 25.sp,
+          ),
+        ),
+      ),
+    );
+  }
+
+  // =============================================================
+  // DELETE BUTTON
+  // =============================================================
+
+  Widget _buildDeleteButton(int index) {
+    return Material(
+      color: Colors.transparent,
+
+      child: InkWell(
+        onTap: () {
+          controller.removeTreatmentRow(index);
+        },
+
+        borderRadius: BorderRadius.circular(11.r),
+
+        child: Container(
+          height: 48.h,
+          width: 48.w,
+
+          decoration: BoxDecoration(
+            color: const Color(0xffFFF3F3),
+            borderRadius: BorderRadius.circular(11.r),
+            border: Border.all(
+              color: const Color(0xffFFD8D8),
+            ),
+          ),
+
+          child: Icon(
+            Icons.delete_outline_rounded,
+            color: const Color(0xffEF4444),
+            size: 21.sp,
+          ),
+        ),
       ),
     );
   }
